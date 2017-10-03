@@ -1,5 +1,6 @@
 const User = require('../models/User')
 // const multer = require('multer')
+const bcrypt = require('bcrypt')
 const path = require('path')
 const destination = path.join(__dirname, "../public/avatar/")
 // const upload = multer({dest : destination})
@@ -9,15 +10,20 @@ module.exports = {
   editProfile: (req, res, next) => {
     const userId = req.params.id
     const {username, email, password} = req.body;
+
+    const hashPass = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
+
     const updateObject = {
   		username,
   		email,
-  		password
+  		password: hashPass
   	}
     User.findByIdAndUpdate(userId, { $set: updateObject })
     .then( user => res.json({ message: 'user successfully updated', user: user }) )
     .catch( err => res.status(400).json({ message: 'Unable to update user', error: err }) )
   },
+
+
 
 // module.exports = {
 //   profileGet: (req, res, next) => {
