@@ -7,16 +7,30 @@ const debug = require('debug')("angularauth:"+path.basename(__filename).split('.
 
 var authRoutes = express.Router();
 
-/* GET home page. */
-authRoutes.post('/signup', (req, res, next) => {
-  const {username, password} = req.body;
 
-  if (!username || !password)
+authRoutes.get('/users', (req, res, next) => {
+  User.find({})
+  .then( users => res.json(users) )
+  .catch( err => res.json(err).status(500) )
+});
+
+authRoutes.get('/users/:id', (req, res, next) => {
+  User.findById(req.params.id)
+  .then( user => res.json(user) )
+  .catch( err => res.json(err).status(500))
+});
+
+
+authRoutes.post('/signup', (req, res, next) => {
+  const {username, password, email} = req.body;
+
+  if (!username || !password || !email)
     return res.status(400).json({ message: 'Provide username and password' });
 
   debug('Find user in DB');
 
-  User.findOne({ username },'_id').exec().then(user =>{
+  User.findOne({ username },'_id').exec()
+  .then(user =>{
     if(user)
       return res.status(400).json({ message: 'The username already exists' });
 
@@ -25,7 +39,8 @@ authRoutes.post('/signup', (req, res, next) => {
     debug('creating user');
     const theUser = new User({
       username,
-      password: hashPass
+      password: hashPass,
+      email
     });
     return theUser.save()
     .then(user =>{

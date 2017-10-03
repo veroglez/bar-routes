@@ -4,7 +4,7 @@ import {Http} from '@angular/http';
 import 'rxjs';
 import {environment} from '../../environments/environment';
 
-const BASEURL = environment.BASEURL + "/auth";
+const BASEURL = environment.BASEURL + "/api";
 
 @Injectable()
 export class AuthService {
@@ -35,9 +35,9 @@ export class AuthService {
       return Observable.throw(e.json().message);
     }
 
-    signup(username,password) {
+    signup(username,password, email) {
       console.log("entrooo")
-      return this.http.post(`${BASEURL}/signup`, {username,password}, this.options)
+      return this.http.post(`${BASEURL}/signup`, {username,password, email}, this.options)
         .map(res => res.json())
         .map(user => this.emitUserLoginEvent(user))
         .catch(this.handleError);

@@ -9,7 +9,8 @@ import {AuthService} from '../services/auth.service';
 export class SignupformComponent implements OnInit {
 formInfo = {
   username:"",
-  password:""
+  password:"",
+  email:""
 }
   constructor(public auth:AuthService) { }
 
@@ -17,10 +18,10 @@ formInfo = {
   }
 
   signup(){
-    const {username, password} = this.formInfo;
-    if(username != "" && password != ""){
+    const {username, password, email} = this.formInfo;
+    if(username != "" && password != "" && email != ""){
       console.log(`Signup with ${username} ${password}`)
-      this.auth.signup(username, password)
+      this.auth.signup(username, password, email)
       .map(user => console.log(user))
       .subscribe();
     } else{

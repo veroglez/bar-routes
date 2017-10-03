@@ -54,7 +54,7 @@ require('./passport/local');
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/auth', authRoutes);
+app.use('/api', authRoutes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
