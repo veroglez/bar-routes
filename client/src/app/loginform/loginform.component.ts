@@ -22,7 +22,7 @@ export class LoginformComponent implements OnInit {
   constructor(public auth:AuthService, public router: Router) { }
 
   ngOnInit() {
-console.log(this.auth.getUser())
+    console.log(this.auth.getUser())
   }
 
   login(){

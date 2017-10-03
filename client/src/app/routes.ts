@@ -8,7 +8,7 @@ import {IsLoggedInService} from './services/isLoggedIn.canactivate.service';
 
 export const routes: Routes = [
     // { path: '', component: HomeComponent },
-    { path: 'user',  component: UserprofileComponent,  },
+    { path: 'profile/:id',  component: UserprofileComponent,  },
     { path: 'login',  component: LoginformComponent, canActivate: [ IsLoggedInService ] },
     { path: 'signup',  component: SignupformComponent,  canActivate: [ IsLoggedInService ] },
     { path: '**', redirectTo: '' }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+
 
 @Component({
   selector: 'app-root',
@@ -9,4 +11,8 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   title = 'app';
   constructor(public auth:AuthService) {};
+
+  ngOnInit() {
+  }
+
 }
