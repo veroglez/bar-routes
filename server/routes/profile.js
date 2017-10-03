@@ -6,7 +6,7 @@ const router = require('express').Router()
 // const upload = multer({dest : destination})
 const profileController = require("../controllers/profileController")
 
-router.put('/profile', profileController.editProfile);
+router.put('/profile/:id', profileController.editProfile);
 
 // router.get('/profile/:id', profileController.profileGet)
 // router.get('/profile/:id/edit', profileController.editProfileGet)

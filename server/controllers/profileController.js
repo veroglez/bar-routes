@@ -1,14 +1,14 @@
 const User = require('../models/User')
-const multer = require('multer')
+// const multer = require('multer')
 const path = require('path')
 const destination = path.join(__dirname, "../public/avatar/")
-const upload = multer({dest : destination})
+// const upload = multer({dest : destination})
 
 
 module.exports = {
   editProfile: (req, res, next) => {
     const userId = req.params.id
-    const {username, email,password} = req.body;
+    const {username, email, password} = req.body;
     const updateObject = {
   		username,
   		email,
