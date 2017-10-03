@@ -7,11 +7,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import {routes} from './routes';
+import { LoginformComponent } from './loginform/loginform.component';
+import { IsLoggedInService } from './services/isLoggedIn.canactivate.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupformComponent
+    SignupformComponent,
+    LoginformComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +23,7 @@ import {routes} from './routes';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService],
+  providers: [AuthService, IsLoggedInService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
