@@ -31,7 +31,7 @@ console.log(this.auth.getUser())
       console.log(`Login with ${username} ${password}`)
       this.auth.login(username, password)
       .map(user => console.log(user))
-      .subscribe(()=>this.router.navigate(["/signup"]))
+      .subscribe(()=>this.router.navigate(["/"]))
     } else{
       console.log("You must set a username and a password");
     }
