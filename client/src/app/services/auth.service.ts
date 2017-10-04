@@ -8,6 +8,7 @@ const BASEURL = environment.BASEURL + "/api";
 
 @Injectable()
 export class AuthService {
+  userId;
   private user:object;
   private userLoginEvent:EventEmitter<any> = new EventEmitter<any>();
   private options = {withCredentials:true};
@@ -16,19 +17,19 @@ export class AuthService {
     this.isLoggedIn().subscribe();
   }
 
-    public getLoginEventEmitter():EventEmitter<any>{
-      return this.userLoginEvent;
-    }
+  public getLoginEventEmitter():EventEmitter<any>{
+    return this.userLoginEvent;
+  }
 
-    public getUser(){
-      return this.user;
-    }
+  public getUser(){
+    return this.user;
+  }
 
-    private emitUserLoginEvent(user){
-      this.user = user;
-      this.userLoginEvent.emit(user);
-      return user;
-    }
+  public emitUserLoginEvent(user){
+    this.user = user;
+    this.userLoginEvent.emit(user);
+    return user;
+  }
 
     private handleError(e) {
       console.log("AUTH ERROR");
@@ -63,4 +64,18 @@ export class AuthService {
         .map(user => this.emitUserLoginEvent(user))
         .catch(this.handleError);
     }
+
+    editProfile(username,password, email) {
+      this.userId = this.getUser()
+      console.log("editoooo", this.userId)
+      // console.log(this.userId._id)
+      return this.http.put(`${BASEURL}/profile/${this.userId._id}/edit`, {username,password, email}, this.options)
+        .map(res => res.json())
+        .map(response_object => {
+          console.log('response:', response_object.user)
+          this.emitUserLoginEvent(response_object.user)
+        })
+        .catch(this.handleError);
+    }
+
 }

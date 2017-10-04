@@ -10,6 +10,8 @@ import {routes} from './routes';
 import { LoginformComponent } from './loginform/loginform.component';
 import { IsLoggedInService } from './services/isLoggedIn.canactivate.service';
 import { UserprofileComponent } from './userprofile/userprofile.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+import { VerotronikComponent } from './shared/verotronik/verotronik.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
     AppComponent,
     SignupformComponent,
     LoginformComponent,
-    UserprofileComponent
+    UserprofileComponent,
+    EditprofileComponent,
+    VerotronikComponent
   ],
   imports: [
     BrowserModule,

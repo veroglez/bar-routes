@@ -2,7 +2,9 @@
   <h2>NO USER LOGGED IN</h2>
 </div>
 
+
 <div *ngIf="user">
+  <a [routerLink]="['/profile', user._id, 'edit']">Edit Profile</a>
   <h2> You are now logged in as {{ user.username }}!! </h2>
   <p> Here's the user object </p>
   <pre> {{ user | json }} </pre>
