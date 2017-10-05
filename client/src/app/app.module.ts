@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { AppComponent } from './app.component';
 import { SignupformComponent } from './signupform/signupform.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import {routes} from './routes';
@@ -12,6 +12,10 @@ import { IsLoggedInService } from './services/isLoggedIn.canactivate.service';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { VerotronikComponent } from './shared/verotronik/verotronik.component';
+import { CommonModule } from '@angular/common';
+import { AgmCoreModule } from '@agm/core';
+import { MapComponent } from './map/map.component';
+
 
 
 @NgModule({
@@ -21,13 +25,21 @@ import { VerotronikComponent } from './shared/verotronik/verotronik.component';
     LoginformComponent,
     UserprofileComponent,
     EditprofileComponent,
-    VerotronikComponent
+    VerotronikComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    // ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyD6kQpdkVk-xQXObw1jvODNoEgIOLDfVBc',
+      libraries: ["places"]
+    }),
+    ReactiveFormsModule
   ],
   providers: [AuthService, IsLoggedInService],
   bootstrap: [AppComponent]
