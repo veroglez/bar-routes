@@ -8,7 +8,7 @@ import {IsLoggedInService} from './services/isLoggedIn.canactivate.service';
 import {MapComponent} from './map/map.component';
 
 export const routes: Routes = [
-    { path: 'route',  component: MapComponent,  },
+    { path: 'routes/new',  component: MapComponent,  },
     { path: 'profile/:id',  component: UserprofileComponent,  },
     { path: 'profile/:id/edit',  component: EditprofileComponent,  },
     { path: 'login',  component: LoginformComponent, canActivate: [ IsLoggedInService ] },

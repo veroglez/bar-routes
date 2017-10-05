@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import {routes} from './routes';
 import { LoginformComponent } from './loginform/loginform.component';
 import { IsLoggedInService } from './services/isLoggedIn.canactivate.service';
+import { PlacesService } from './services/places.service';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { VerotronikComponent } from './shared/verotronik/verotronik.component';
@@ -41,7 +42,7 @@ import { MapComponent } from './map/map.component';
     }),
     ReactiveFormsModule
   ],
-  providers: [AuthService, IsLoggedInService],
+  providers: [AuthService, IsLoggedInService, PlacesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

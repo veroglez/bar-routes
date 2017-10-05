@@ -9,7 +9,6 @@ module.exports = {
     .then(place =>{
       if(place)
         return res.status(400).json({ message: 'The place already exists' })
-        console.log('llego aqui')
       const thePlace = new Place({
         id,
         latitude,

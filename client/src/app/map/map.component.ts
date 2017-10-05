@@ -2,7 +2,7 @@ import { ElementRef, NgZone, Component, OnInit, ViewChild } from '@angular/core'
 import { FormControl } from '@angular/forms';
 import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
-// import {PlacesService} from '../services/places.service';
+import {PlacesService} from '../services/places.service';
 
 
 
@@ -10,10 +10,10 @@ interface Place{
   latitude:any;
   longitude:any;
   id:string;
-  name:string;
-  types:Array<string>;
-  photos:Array<object>;
-  address_components: Array<object>;
+  // name:string;
+  // types:Array<string>;
+  // photos:Array<object>;
+  // address_components: Array<object>;
 }
 
 @Component({
@@ -25,10 +25,10 @@ export class MapComponent implements OnInit{
   latitude;
   longitude;
   id;
-  name;
-  types;
-  photos;
-  address_components;
+  // name;
+  // types;
+  // photos;
+  // address_components;
   place:Place;
 
 
@@ -40,7 +40,7 @@ export class MapComponent implements OnInit{
     constructor(
       private mapsAPILoader: MapsAPILoader,
       private ngZone: NgZone,
-      // public places:PlacesService
+      public places:PlacesService
     ) {}
 
     ngOnInit() {
@@ -74,10 +74,10 @@ export class MapComponent implements OnInit{
             this.latitude = place.geometry.location.lat();
             this.longitude = place.geometry.location.lng();
             this.id = place.id;
-            this.name = place.name;
-            this.types = place.types;
-            this.photos = place.photos;
-            this.address_components = place.address_components;
+            // this.name = place.name;
+            // this.types = place.types;
+            // this.photos = place.photos;
+            // this.address_components = place.address_components;
 
 
             this.zoom = 12;
@@ -98,15 +98,16 @@ export class MapComponent implements OnInit{
     }
 
 
-    //
-    // createPlace(){
-    //   // const {username, password} = this.formInfo;
-    //   // if(username != "" && password != ""){
-    //     // console.log(`Login with ${username} ${password}`)
-    //     this.places.create(this.latitude, this.longitude, this.id)
-    //     // .map(place => console.log(place))
-    //     // .subscribe()
-    // }
+
+    createPlace(){
+      // const {username, password} = this.formInfo;
+      // if(username != "" && password != ""){
+        // console.log(`Login with ${username} ${password}`)
+        console.log('entro al componente')
+        this.places.create(this.id, this.latitude, this.longitude).subscribe()
+        // .map(place => console.log(place))
+        // .subscribe()
+    }
 
 
   }

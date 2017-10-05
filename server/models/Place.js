@@ -3,8 +3,8 @@ const Schema   = mongoose.Schema;
 
 const placeSchema = new Schema({
   id: String,
-  latitude: String,
-  longitude: String
+  latitude: Number,
+  longitude: Number
 }, {
   timestamps: {
     createdAt: 'created_at',
