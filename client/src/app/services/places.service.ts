@@ -41,6 +41,7 @@ export class PlacesService {
       .map(res => {
         this.response = JSON.parse(res["_body"])
         this.routeId = this.response.route._id
+        console.log('Servicio',this.routeId )
         return res.json()
       })
       .catch(this.handleError)

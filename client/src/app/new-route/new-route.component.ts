@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 
 
 
@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-route.component.css']
 })
 export class NewRouteComponent implements OnInit {
+  routeId:boolean = false
+
 
   constructor() { }
 
@@ -16,4 +18,15 @@ export class NewRouteComponent implements OnInit {
   }
 
 
+  receiveEmitter(a){
+    this.routeId = a
+    console.log('componente padre', this.routeId)
+
+
+    // setTimeout(function () {
+    //   this.routeId = a
+    //   console.log('componente padre', this.routeId)
+    //     this.receiveEmitter(a);
+    // }, 1000);
+  }
 }
