@@ -32,8 +32,12 @@ export class NewRouteDataComponent implements OnInit {
     this.user = this.auth.getUser()
     // console.log('entro al componente', this.user._id, this.formInfo.routename)
     this.places.createRoutes(this.user._id, this.formInfo.routename).subscribe()
-    this.onSubmitId.emit(true)
-    console.log(this.places.routeId)
+    setTimeout(()=> {
+        this.onSubmitId.emit(true)
+        console.log("componente hijo", this.places.routeId)
+    }, 1000);
+
+
   }
 
 }
