@@ -25,9 +25,6 @@ export class EditprofileComponent implements OnInit {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
       .subscribe( user => {
-
-        // console.log('receiving emitEditProfileEvent')
-        // console.log('this.user',user)
         this.user=user
       } );
   }

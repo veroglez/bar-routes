@@ -8,6 +8,6 @@
   <h2> You are now logged in as {{ user.username }}!! </h2>
   <p> Here's the user object </p>
   <pre> {{ user | json }} </pre>
-
+  <a [routerLink]="['/profile', user._id, 'routes','new']">Create route</a>
   <button (click)="auth.logout().subscribe()"> logout </button>
 </div>

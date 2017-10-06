@@ -14,6 +14,6 @@ export class IsLoggedInService implements CanActivate {
 
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
     console.log("Checking can activate");
-    return this.auth.getUser() ? true : false
+    return this.auth.getUser() ? false : true
   }
 }

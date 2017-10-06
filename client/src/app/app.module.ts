@@ -16,6 +16,8 @@ import { VerotronikComponent } from './shared/verotronik/verotronik.component';
 import { CommonModule } from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
 import { MapComponent } from './map/map.component';
+import { NewRouteComponent } from './new-route/new-route.component';
+import { NewRouteDataComponent } from './new-route-data/new-route-data.component';
 
 
 
@@ -27,7 +29,9 @@ import { MapComponent } from './map/map.component';
     UserprofileComponent,
     EditprofileComponent,
     VerotronikComponent,
-    MapComponent
+    MapComponent,
+    NewRouteComponent,
+    NewRouteDataComponent
   ],
   imports: [
     BrowserModule,
