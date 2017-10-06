@@ -10,7 +10,9 @@ const BASEURL = environment.BASEURL + "/api"
 
 @Injectable()
 export class PlacesService {
+  response
   userId
+  routeId
   private options = {withCredentials:true}
 
   private handleError(e) {
@@ -21,7 +23,7 @@ export class PlacesService {
   constructor( private http: Http, private auth:AuthService ) { }
 
 
-  create(id, latitude, longitude) {
+  createPlaces(id, latitude, longitude) {
     console.log('entro al servicio')
     return this.http.post(`${BASEURL}/routes/new`, {id, latitude, longitude}, this.options)
       .map(res => res.json())
@@ -35,15 +37,12 @@ export class PlacesService {
 
 
   createRoutes(userId, routeName) {
-    // this.userId = this.auth.getUser()
-    console.log('entro al servicio')
-    console.log(userId, routeName)
     return this.http.post(`${BASEURL}/profile/${userId}/routes/new`, {userId, routeName}, this.options)
-      .map(res => res.json())
-      // .map(response_object => {
-      //   console.log('response:', response_object.user)
-      //   // this.emitUserLoginEvent(response_object.user)
-      // })
+      .map(res => {
+        this.response = JSON.parse(res["_body"])
+        this.routeId = this.response.route._id
+        return res.json()
+      })
       .catch(this.handleError)
 
   }

@@ -34,8 +34,6 @@ export class EditprofileComponent implements OnInit {
     const {username, password, email} = this.formInfo;
       this.auth.editProfile(username, password, email)
       .map(user => console.log('holi',user))
-      // .subscribe( ()=>this.router.navigate([`/profile/${this.userId._id}}`]) );
       .subscribe( result => this.user = result);
-
   }
 }
