@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const BarsrouteSchema = new Schema({
-  routeId: String,
-  placesId: Array,
+  routeId: { type: Schema.Types.ObjectId, ref: 'Route' },
+  places: [{ type: Schema.Types.ObjectId, ref: 'Place' }],
 }, {
   timestamps: {
     createdAt: 'created_at',
