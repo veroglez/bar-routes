@@ -10,7 +10,7 @@ interface Place{
   latitude:any
   longitude:any
   id:string
-  // name:string
+  name:string
   // types:Array<string>
   // photos:Array<object>
   // address_components: Array<object>
@@ -24,8 +24,8 @@ interface Place{
 export class MapComponent implements OnInit{
   latitude
   longitude
-  id
-  // name
+  placeId
+  name
   // types
   // photos
   // address_components
@@ -73,8 +73,8 @@ export class MapComponent implements OnInit{
             //set latitude, longitude and zoom
             this.latitude = place.geometry.location.lat()
             this.longitude = place.geometry.location.lng()
-            this.id = place.id
-            // this.name = place.name
+            this.placeId = place.id
+            this.name = place.name
             // this.types = place.types
             // this.photos = place.photos
             // this.address_components = place.address_components
@@ -101,7 +101,8 @@ export class MapComponent implements OnInit{
 
     createPlace(){
       console.log('entro al componente')
-      this.places.createPlaces(this.id, this.latitude, this.longitude).subscribe()
+      console.log("Id de la ruta:", this.places.routeId)
+      this.places.createPlaces(this.name, this.places.routeId, this.placeId, this.latitude, this.longitude).subscribe()
         // .map(route => console.log(route))
         // .subscribe()
     }

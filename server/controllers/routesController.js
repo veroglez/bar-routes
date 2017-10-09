@@ -1,29 +1,35 @@
 const Place = require('../models/Place')
 const Route = require('../models/Route')
+const Barsroute = require('../models/Barsroute')
 const path = require('path')
 
 module.exports = {
   createPlace: (req, res, next) => {
-    const {id, latitude, longitude} = req.body
+    const {name, placeId, latitude, longitude} = req.body
 
-    Place.findOne({id:id}).exec()
+    Place.findOne({id:placeId}).exec()
     .then(place =>{
       if(place)
         return res.status(400).json({ message: 'The place already exists' })
       const thePlace = new Place({
-        id,
+        id:placeId,
+        name: name,
         latitude,
         longitude
       })
       return thePlace.save()
-      .then(place =>{ res.status(200).json(place) })
+      .then(place =>{
+        res.status(200).json(place)
+
+        console.log('place:',place)
+
+      })
     })
     .catch(e => {res.status(400).json(e)
     })
   },
 
   createRoute: (req, res, next) => {
-    // const userId = req.params.id;
     const {userId, routeName} = req.body
 
     Route.findOne({ name:routeName }).exec()
@@ -42,25 +48,17 @@ module.exports = {
       })
       theRoute.save()
       .then(route =>{
-        res.status(200).json({route}) })
+        res.status(200).json({route})
+        const theBarsroute = new Barsroute({
+          routeId:route._id,
+        })
+        theBarsroute.save()
+          .then(res =>{res.status(200).json({res}) })
+      })
     })
     .catch(e => {res.status(400).json(e)
     })
   },
 
-  // 
-  // createBarsRoute: (req, res, next) => {
-  //   // const userId = req.params.id;
-  //   const {routeId, placesId} = req.body
-  //
-  //   const theBarsroute = new Barsroute({
-  //     routeId,
-  //     placesId
-  //   })
-  //   theBarsroute.save()
-  //   .then(route =>{res.status(200).json({route}) })
-  //   .catch(e => {res.status(400).json(e)})
-  //
-  // },
 
 }
