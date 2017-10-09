@@ -1,14 +1,9 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
-const barsrouteSchema = new Schema({
-  name: String,
-  userID: String,
-  username: String,
-  city: String,
-  options: Array,
-  schedule: String,
-  price: Array
+const BarsrouteSchema = new Schema({
+  routeId: String,
+  placesId: Array,
 }, {
   timestamps: {
     createdAt: 'created_at',
@@ -16,5 +11,5 @@ const barsrouteSchema = new Schema({
   }
 });
 
-const Barsroute = mongoose.model('Barsroute', barsrouteSchema);
+const Barsroute = mongoose.model('Barsroute', BarsrouteSchema);
 module.exports = Barsroute;

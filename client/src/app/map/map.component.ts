@@ -100,11 +100,8 @@ export class MapComponent implements OnInit{
 
 
     createPlace(){
-      // const {username, password} = this.formInfo
-      // if(username != "" && password != ""){
-        // console.log(`Login with ${username} ${password}`)
-        console.log('entro al componente')
-        this.places.createPlaces(this.id, this.latitude, this.longitude).subscribe()
+      console.log('entro al componente')
+      this.places.createPlaces(this.id, this.latitude, this.longitude).subscribe()
         // .map(route => console.log(route))
         // .subscribe()
     }
