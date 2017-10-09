@@ -6,7 +6,7 @@ import {environment} from '../../environments/environment'
 import {AuthService} from './auth.service'
 
 
-const BASEURL = environment.BASEURL + "/api"
+const BASEURL:string = environment.BASEURL + "/api"
 
 @Injectable()
 export class PlacesService {

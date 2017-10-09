@@ -4,7 +4,7 @@ import {Http} from '@angular/http'
 import 'rxjs'
 import {environment} from '../../environments/environment'
 
-const BASEURL = environment.BASEURL + "/api"
+const BASEURL:string = environment.BASEURL + "/api"
 
 @Injectable()
 export class AuthService {
