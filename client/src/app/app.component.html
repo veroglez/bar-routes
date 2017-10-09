@@ -16,17 +16,20 @@
         <ul class="nav navbar-nav navbar-right">
           <div *ngIf="user">
             <li><a [routerLink]="['/profile', user._id]">Profile</a></li>
-            <li><button (click)="auth.logout().subscribe()"> logout </button></li>
+            <li><button (click)="auth.logout().subscribe()"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span></button></li>
           </div>
           <div *ngIf="!user">
             <li><a [routerLink]="['/signup']">Signup</a></li>
             <li><a [routerLink]="['/login']">Login</a></li>
           </div>
-
         </ul>
       </div>
     </div>
   </nav>
+    <router-outlet></router-outlet>
 
-  <router-outlet></router-outlet>
 </div>
+
+<footer>
+  
+</footer>

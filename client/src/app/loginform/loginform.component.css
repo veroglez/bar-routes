@@ -1,0 +1,16 @@
+.login{
+  height: 80vh;
+  background: url('../../assets/images/bg-pattern.png'),linear-gradient(to left,#7b4397,#dc2430);
+  display: flex;
+}
+
+.login-form{
+  background: rgba(255,255,255,0.9);
+  margin: 100px auto;
+  display: flex;
+  height: auto;
+}
+
+.form-group{
+  margin: 20px auto;
+}

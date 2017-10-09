@@ -1,1 +1,109 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Catamaran:300,400,500,600,700|Muli:300,400,600,700');
+
+body{
+  font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+}
+nav{
+  margin: 0;
+}
+nav li{
+  display: inline-block;
+  padding: 20px;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+h2{ margin: 50px}
+.navbar{
+  background: white;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-radius: 0px;
+  z-index: 300;
+}
+nav{
+  margin: 0;
+}
+.navbar li a, .navbar li{
+  color: #fdcc52;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+.navbar li a:hover{
+  text-decoration: none;
+  color: #fcbd20;
+}
+.navbar li button{
+  background: white;
+  border: 0px;
+}
+a {
+  color: #fdcc52;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  transition: all .35s; }
+a:hover, a:focus {
+  color: #fcbd20;
+}
+footer{
+  background: #fcbd20;
+  height: 20vh;
+  bottom:0;
+}
+.btn {
+  border-radius: 300px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 2px solid  #fdcc52;
+  background-color: #fdcc52;
+  color: white;
+  padding: 10px 30px;
+}
+.btn:hover {
+  color: #fdcc52;
+  background-color: transparent;
+}
+.btn-create{
+  border-radius: 300px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 2px solid  #fdcc52;
+  background-color: transparent;
+  color: #fdcc52;
+  padding: 10px 30px;
+}
+.btn-create:hover{
+  border-radius: 300px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 2px solid  #fdcc52;
+  background-color: #fdcc52;
+  color: white;
+  padding: 10px 30px;
+}
+
+.btn-search{
+  margin-top: 20px
+}
+
+input{
+  padding: 30px;
+  border-radius: 5px;
+}
+
+option:not(:checked) {
+    background-color: white;
+    color:#000;
+}
+.input-lg{
+  font-size: 14px;
+  color: #999;
+}
+.form-control{
+  padding: 21px 10px;
+}
