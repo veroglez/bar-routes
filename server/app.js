@@ -18,7 +18,9 @@ const cors = require('cors');
 const app = express();
 
 // mongoose.connect('mongodb://localhost/bar-routes');
+// mongoose.connect(process.env.MONGODB_URI);
 require('./config/database');
+require("dotenv").config();
 
 var whitelist = [
     'http://localhost:4200',

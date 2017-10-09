@@ -6,9 +6,11 @@ import {LoginformComponent} from './loginform/loginform.component';
 import {SignupformComponent} from './signupform/signupform.component';
 import {IsLoggedInService} from './services/isLoggedIn.canactivate.service';
 import {MapComponent} from './map/map.component';
+import {HomeComponent} from './home/home.component';
 import {NewRouteComponent} from './new-route/new-route.component';
 
 export const routes: Routes = [
+    { path: '',  component: HomeComponent },
     { path: 'profile/:id/routes/new',  component: NewRouteComponent },
     { path: 'profile/:id',  component: UserprofileComponent, },
     { path: 'profile/:id/edit',  component: EditprofileComponent,  },

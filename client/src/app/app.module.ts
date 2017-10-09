@@ -18,6 +18,7 @@ import { AgmCoreModule } from '@agm/core';
 import { MapComponent } from './map/map.component';
 import { NewRouteComponent } from './new-route/new-route.component';
 import { NewRouteDataComponent } from './new-route-data/new-route-data.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -31,7 +32,8 @@ import { NewRouteDataComponent } from './new-route-data/new-route-data.component
     VerotronikComponent,
     MapComponent,
     NewRouteComponent,
-    NewRouteDataComponent
+    NewRouteDataComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

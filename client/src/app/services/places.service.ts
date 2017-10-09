@@ -47,4 +47,12 @@ export class PlacesService {
       .catch(this.handleError)
 
   }
+
+
+  getList() {
+    return this.http.get(`${BASEURL}/routesBaby`)
+      .map(res => res.json());
+  }
+
+
 }
