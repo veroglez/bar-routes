@@ -18,25 +18,26 @@ module.exports = {
         longitude
       })
       thePlace.save().then(place =>{
-        res.status(200).json(place)
-        console.log('place:',place)
-        console.log('routeId:',routeId)
+        // console.log('place:',place)
+        // console.log('routeId:',routeId)
 
         Barsroute.findOne({routeId:routeId}).then( res => {
-          console.log('route:',res)
-          console.log(place.name)
+          // console.log('route:',res)
+          // console.log(place.name)
           res.places.push(place._id)
           // res.placesId.push({placeName:place.name, placeId:place._id})
-          res.save()
+          return res.save()
+        }).then(() => {
+          console.log('8============D '+ place)
+          return res.status(200).json(place)
         })
       })
     })
-    .catch(e => {res.status(400).json(e)
-    })
+    .catch(e => res.status(400).json(e))
   },
 
   createRoute: (req, res, next) => {
-    const {userId, routeName} = req.body
+    const {userId, routeName, routeGenre, priceRange, schedule, city} = req.body
 
     Route.findOne({ name:routeName }).exec().then(route =>{
       if(route)
@@ -45,28 +46,36 @@ module.exports = {
       const theRoute = new Route({
         name:routeName,
         userID: userId,
-        // city: String,
-        // options: Array,
-        // schedule: String,
-        // price: Array
+        genre: routeGenre,
+        priceRange: priceRange,
+        schedule:schedule,
+        city: city
       })
       theRoute.save().then(route =>{
-        res.status(200).json({route})
         const theBarsroute = new Barsroute({
+          userId:userId,
           routeId:route._id,
         })
-        theBarsroute.save().then(res =>{
-          res.status(200).json({res})
+        theBarsroute.save().then( br =>{
+          console.log('ruta:',br)
+          res.status(200).json(br);
         })
       })
     })
-    .catch(e => {res.status(400).json(e)
-    })
+    .catch(e => {res.status(400).json(e) })
   },
-  thisRouteIsForyouBaby: (req, res, next) => {
+  showAllRoutes: (req, res, next) => {
     Barsroute.find().populate('places routeId').exec().then( barRoute => {
       return res.status(200).json(barRoute)
     })
-  }
+  },
+
+  showNewPlaces: (req, res, next) => {
+    // userId = req.params.id
+    // console.log(userId)
+    Barsroute.find({ }).exec().then( barRoute => {
+      return res.status(200).json(barRoute)
+    })
+  },
 
 }

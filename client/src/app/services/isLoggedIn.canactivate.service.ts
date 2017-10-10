@@ -5,8 +5,6 @@ import { Observable }  from 'rxjs/Rx';
 import {AuthService} from './auth.service';
 
 
-const timeout = (nS) => new Promise((resolve) => setTimeout(resolve,nS * 1000));
-
 @Injectable()
 export class IsLoggedInService implements CanActivate {
 

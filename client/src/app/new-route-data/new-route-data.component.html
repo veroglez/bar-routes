@@ -1,8 +1,35 @@
-<div>
-  <form >
-    <h2> Create Route </h2>
-    <label> Route Name </label>
-    <input type="text" [(ngModel)]="formInfo.routename" name="routename"/>
-    <button (click)="createRoute()"> Create route </button>
-  </form>
+<div class="flex">
+  <div class="center">
+    <form>
+      <h2> Create Route </h2>
+      <div class="form-group">
+        <input class="form-control" type="text" [(ngModel)]="formInfo.routename" name="routename" placeholder="Route name"/>
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" [(ngModel)]="formInfo.city" name="city" placeholder="City"/>
+      </div>
+      <div class="form-group">
+        <select class="form-control input-lg" [(ngModel)]="formInfo.schedule" name="schedule" placeholder="Seleccionar">
+          <option value="">--- Please select ---</option>
+          <option  *ngFor="let sched of schedule" value="{{ sched }}">{{ sched }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control input-lg" [(ngModel)]="formInfo.routegenre" name="routegenre" placeholder="Seleccionar">
+          <option value="">--- Please select ---</option>
+          <option  *ngFor="let genre of places_genre" value="{{ genre }}">{{ genre }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control input-lg" [(ngModel)]="formInfo.pricerange" name="pricerange" placeholder="Seleccionar">
+          <option value="">--- Please select ---</option>
+          <option  *ngFor="let price of price_range" value="{{ price }}">{{ price }}</option>
+        </select>
+      </div>
+      <br>
+
+      <button class="btn btn-default" (click)="createRoute()"> Create route </button>
+    </form>
+  </div>
+
 </div>

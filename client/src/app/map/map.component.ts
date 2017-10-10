@@ -52,9 +52,6 @@ export class MapComponent implements OnInit{
       //create search FormControl
       this.searchControl = new FormControl()
 
-      //set current position
-      this.setCurrentPosition()
-
       //load Places Autocomplete
       this.mapsAPILoader.load().then(() => {
         let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
@@ -87,22 +84,16 @@ export class MapComponent implements OnInit{
       })
     }
 
-    private setCurrentPosition() {
-      if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition((position) => {
-          this.latitude = position.coords.latitude
-          this.longitude = position.coords.longitude
-          this.zoom = 12
-        })
-      }
-    }
 
 
 
     createPlace(){
       console.log('entro al componente')
       console.log("Id de la ruta:", this.places.routeId)
-      this.places.createPlaces(this.name, this.places.routeId, this.placeId, this.latitude, this.longitude).subscribe()
+      console.log("Id del barsroute:", this.places.barsroute.places)
+      this.places.createPlaces(this.name, this.places.routeId, this.placeId, this.latitude, this.longitude).subscribe( place => {
+        console.log(place)
+      })
         // .map(route => console.log(route))
         // .subscribe()
     }

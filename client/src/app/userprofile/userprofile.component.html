@@ -1,3 +1,6 @@
+<div class="page-container">
+
+
 <div *ngIf="!user">
   <h2>NO USER LOGGED IN</h2>
 </div>
@@ -10,4 +13,6 @@
   <pre> {{ user | json }} </pre>
   <a [routerLink]="['/profile', user._id, 'routes','new']">Create route</a>
   <button (click)="auth.logout().subscribe()"> logout </button>
+</div>
+
 </div>

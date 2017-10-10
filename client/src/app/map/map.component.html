@@ -1,19 +1,23 @@
-<!-- <div class="container">
-     <h1>Angular 2 + Google Maps Places Autocomplete</h1>
-     <div class="form-group">
-     </div>
-     <agm-map [latitude]="lat" [longitude]="lng">
-      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-    </agm-map>
-   </div> -->
 
-   <div class="container">
-      <h1>Angular 2 + Google Maps Places Autocomplete</h1>
-      <div class="form-group">
-        <input placeholder="search for location" style="width: 400px" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
-        <button (click)="createPlace()"> Create place </button>
+   <div>
+     <div class="places col-md-6">
+
+     </div>
+     <div class="map col-md-6">
+       <div class="form-group">
+         <input placeholder="search for location" style="width: 400px" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+         <button (click)="createPlace()"> Create place </button>
+       </div>
+       <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+         <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+       </agm-map>
+     </div>
+
+      <div >
+
+        <ul>
+          <li>holi</li>
+          <li>holi</li>
+        </ul>
       </div>
-      <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
-        <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
-      </agm-map>
-    </div>
+  </div>

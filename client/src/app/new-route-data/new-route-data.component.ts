@@ -5,6 +5,10 @@ import { AuthService } from '../services/auth.service'
 
 interface LoginForm{
   routename:string
+  routegenre:string
+  pricerange:string
+  schedule:string
+  city:string
 }
 
 
@@ -15,26 +19,40 @@ interface LoginForm{
 })
 export class NewRouteDataComponent implements OnInit {
   @Output() onSubmitId = new EventEmitter<boolean>();
-
   user
+  places_genre = [
+    'Romántica',
+    'Música en directo',
+    'De after',
+    'Comer'
+  ]
+  price_range = [
+    '€',
+    '€€',
+    '€€€'
+  ]
+  schedule = [
+    'Mañana',
+    'Tarde',
+    'Noche'
+  ]
   formInfo:LoginForm = {
-    routename: ""
+    routename: "",
+    routegenre: "",
+    pricerange: "",
+    schedule:"",
+    city:""
   }
-
 
   constructor( public places:PlacesService, public auth:AuthService  ) { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 
   createRoute(){
     this.user = this.auth.getUser()
-    // console.log('entro al componente', this.user._id, this.formInfo.routename)
-    this.places.createRoutes(this.user._id, this.formInfo.routename).subscribe()
+    this.places.createRoutes(this.user._id, this.formInfo.routename, this.formInfo.routegenre, this.formInfo.pricerange, this.formInfo.schedule, this.formInfo.city).subscribe()
     setTimeout(()=> {
         this.onSubmitId.emit(true)
-        console.log("componente hijo", this.places.routeId)
     }, 1000);
 
 

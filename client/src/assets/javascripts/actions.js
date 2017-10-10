@@ -3,7 +3,6 @@ $(window).scroll(function() {
 
     if (scroll > 10) {
         $(".navbar").addClass("scrolling");
-        console.log('holis');
     } else {
         $(".navbar").removeClass("scrolling");
     }

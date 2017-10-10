@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const BarsrouteSchema = new Schema({
+  userId: String,
   routeId: { type: Schema.Types.ObjectId, ref: 'Route' },
   places: [{ type: Schema.Types.ObjectId, ref: 'Place' }],
 }, {

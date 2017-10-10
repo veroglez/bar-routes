@@ -21,12 +21,5 @@ export class NewRouteComponent implements OnInit {
   receiveEmitter(a){
     this.routeId = a
     console.log('componente padre', this.routeId)
-
-
-    // setTimeout(function () {
-    //   this.routeId = a
-    //   console.log('componente padre', this.routeId)
-    //     this.receiveEmitter(a);
-    // }, 1000);
   }
 }

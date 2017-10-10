@@ -1,9 +1,10 @@
-<p>
-  new-route works!
-</p>
-<app-new-route-data (onSubmitId)="receiveEmitter($event)"></app-new-route-data>
-
-<div *ngIf="routeId">
-  <app-map ></app-map>
+<div class="page-container">
+  <div class="create-route">
+    <app-new-route-data (onSubmitId)="receiveEmitter($event)"></app-new-route-data>
+  </div>
+<!-- <div *ngIf="routeId"> -->
+  <!-- <div class="route-map">
+    <app-map ></app-map>
+  </div> -->
+<app-map></app-map>
 </div>
-<!-- <app-map></app-map> -->

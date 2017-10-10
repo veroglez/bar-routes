@@ -5,10 +5,18 @@ const RouteSchema = new Schema({
   name: String,
   userID: String,
   username: String,
-  city: String,
-  options: Array,
-  schedule: String,
-  price: Array
+  genre: {
+    type: String,
+    enum: [
+      'Romántica',
+      'Música en directo',
+      'De after',
+      'Comer'
+    ]
+  },
+  priceRange: String,
+  schedule:String,
+  city: String  
 }, {
   timestamps: {
     createdAt: 'created_at',

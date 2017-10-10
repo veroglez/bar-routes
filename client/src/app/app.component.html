@@ -15,8 +15,8 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <div *ngIf="user">
-            <li><a [routerLink]="['/profile', user._id]">Profile</a></li>
-            <li><button (click)="auth.logout().subscribe()"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span></button></li>
+            <li><a [routerLink]="['/profile', user._id]">Mi perfil</a></li>
+            <li><button style="background:transparent" (click)="auth.logout().subscribe()"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span></button></li>
           </div>
           <div *ngIf="!user">
             <li><a [routerLink]="['/signup']">Signup</a></li>

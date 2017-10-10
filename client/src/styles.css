@@ -59,6 +59,7 @@ a:hover, a:focus {
   text-decoration: none;
   opacity: 0.8;
 }
+
 footer{
   background: #fcbd20;
   height: 20vh;
@@ -74,10 +75,11 @@ footer{
   padding: 10px 30px;
   margin-top: 20px;
 }
-.btn:hover {
+.btn:hover, .btn:focus {
   color: #fdcc52;
   border: 2px solid  #fdcc52;
   background-color: transparent;
+  outline: 0px;
 }
 .btn-create{
   border-radius: 300px;
@@ -121,4 +123,27 @@ option:not(:checked) {
   -webkit-transition: all .2s;
   -moz-transition: all .2s;
   transition: all .2s;
+}
+
+.page-container{
+  height: 80vh;
+  width: 100%;
+  /*display: flex;*/
+}
+.flex{
+  display: flex;
+}
+.center{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.create-route{
+  margin: 50px auto;
+  width: 60%;
+}
+
+.route-map{
+  margin: 50px auto;
+  width: 60%;
 }

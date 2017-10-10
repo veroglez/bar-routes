@@ -4,6 +4,7 @@ const routesController = require("../controllers/routesController")
 
 router.post('/profile/:id/routes/new', routesController.createRoute);
 router.post('/profile/places/new', routesController.createPlace);
-router.get('/routesBaby', routesController.thisRouteIsForyouBaby);
+router.get('/routes', routesController.showAllRoutes);
+router.get('/profile/:id/routes', routesController.showNewPlaces);
 
 module.exports = router
