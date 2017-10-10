@@ -26,6 +26,8 @@ export class MapComponent implements OnInit{
   longitude
   placeId
   name
+  arrPlaces:Array<string> = []
+  arrPlacesIds:Array<string> = []
   // types
   // photos
   // address_components
@@ -84,19 +86,17 @@ export class MapComponent implements OnInit{
       })
     }
 
-
-
-
     createPlace(){
-      console.log('entro al componente')
-      console.log("Id de la ruta:", this.places.routeId)
-      console.log("Id del barsroute:", this.places.barsroute.places)
       this.places.createPlaces(this.name, this.places.routeId, this.placeId, this.latitude, this.longitude).subscribe( place => {
-        console.log(place)
+        this.arrPlaces.push(place.name)
+        this.arrPlacesIds.push(place._id)
       })
-        // .map(route => console.log(route))
-        // .subscribe()
     }
 
-
+    deletePlace(place){
+      let positionId = this.arrPlaces.indexOf(place)
+      this.places.deletePlace(this.arrPlacesIds[positionId], this.places.barsroute._id).subscribe()
+      this.arrPlaces.splice(positionId,1)
+      this.arrPlacesIds.splice(positionId,1)
+    }
   }

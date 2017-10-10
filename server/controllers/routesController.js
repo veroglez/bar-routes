@@ -6,7 +6,6 @@ const path = require('path')
 module.exports = {
   createPlace: (req, res, next) => {
     const {name, routeId, placeId, latitude, longitude} = req.body
-    console.log('Esta es el id de la ruta que busco', routeId)
 
     Place.findOne({id:placeId}).exec().then(place =>{
       if(place)
@@ -18,17 +17,10 @@ module.exports = {
         longitude
       })
       thePlace.save().then(place =>{
-        // console.log('place:',place)
-        // console.log('routeId:',routeId)
-
         Barsroute.findOne({routeId:routeId}).then( res => {
-          // console.log('route:',res)
-          // console.log(place.name)
           res.places.push(place._id)
-          // res.placesId.push({placeName:place.name, placeId:place._id})
           return res.save()
         }).then(() => {
-          console.log('8============D '+ place)
           return res.status(200).json(place)
         })
       })
@@ -57,7 +49,6 @@ module.exports = {
           routeId:route._id,
         })
         theBarsroute.save().then( br =>{
-          console.log('ruta:',br)
           res.status(200).json(br);
         })
       })
@@ -70,12 +61,18 @@ module.exports = {
     })
   },
 
-  showNewPlaces: (req, res, next) => {
-    // userId = req.params.id
-    // console.log(userId)
-    Barsroute.find({ }).exec().then( barRoute => {
-      return res.status(200).json(barRoute)
-    })
-  },
+  // showNewPlaces: (req, res, next) => {
+  //   Barsroute.find({ }).exec().then( barRoute => {
+  //     return res.status(200).json(barRoute)
+  //   })
+  // },
+
+
+  deletePlaces: (req, res, next) => {
+    const {barsrouteId, placeId} = req.body
+    Barsroute.findByIdAndUpdate( barsrouteId, {$pull:{"places": placeId}}, {new: true})
+    .then( barRoute => {res.json( {barRoute: barRoute} )})
+    .catch(e => {res.status(400).json(e) })
+  }
 
 }

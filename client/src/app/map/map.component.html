@@ -1,23 +1,22 @@
 
-   <div>
-     <div class="places col-md-6">
 
+
+    <div class=" col-md-6">
+       <ul *ngFor = "let place of arrPlaces">
+         <li>{{place}} |   <span (click)="deletePlace(place)" class="glyphicon glyphicon-remove" aria-hidden="true"></span></li>
+       </ul>
      </div>
-     <div class="map col-md-6">
-       <div class="form-group">
-         <input placeholder="search for location" style="width: 400px" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
-         <button (click)="createPlace()"> Create place </button>
+
+     <div class="col-md-6">
+       <div>
+         <input placeholder="search for location" style="width: 80%; float:left" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+         <button style="width: 20%; float:left; margin:0" class="btn"(click)="createPlace()"> Add </button>
+         <div style="clear:both"></div>
        </div>
-       <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
-         <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
-       </agm-map>
+       <div>
+         <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+           <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+         </agm-map>
+       </div>
+
      </div>
-
-      <div >
-
-        <ul>
-          <li>holi</li>
-          <li>holi</li>
-        </ul>
-      </div>
-  </div>

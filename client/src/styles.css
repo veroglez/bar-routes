@@ -142,6 +142,11 @@ option:not(:checked) {
   margin: 50px auto;
   width: 60%;
 }
+.create-places{
+  margin: 50px auto;
+  width: 100%;
+  height: 600px;
+}
 
 .route-map{
   margin: 50px auto;
