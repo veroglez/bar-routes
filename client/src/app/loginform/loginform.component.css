@@ -1,6 +1,8 @@
 .login{
   height: 80vh;
-  background: url('../../assets/images/bg-pattern.png'),linear-gradient(to left,#7b4397,#dc2430);
+  background: url('../../assets/images/bar4.jpg');
+  /*,linear-gradient(to left,#7b4397,#dc2430);*/
+  background-size: cover;
   display: flex;
 }
 

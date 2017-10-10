@@ -17,8 +17,14 @@ h1,h2,h3,h4,h5,h6{
   letter-spacing: 1px;
 }
 h2{ margin: 50px}
+
+.navbar-brand img{
+  width: 110px;
+}
 .navbar{
-  background: white;
+  background: transparent;
+  border: 0;
+  padding: 0 5%;
   margin: 0;
   position: fixed;
   top: 0;
@@ -33,6 +39,7 @@ nav{
   color: #fdcc52;
   text-transform: uppercase;
   font-size: 1.2rem;
+  font-weight: 600;
 }
 .navbar li a:hover{
   text-decoration: none;
@@ -46,9 +53,11 @@ a {
   color: #fdcc52;
   -webkit-transition: all .35s;
   -moz-transition: all .35s;
-  transition: all .35s; }
+  transition: all .35s;
+}
 a:hover, a:focus {
-  color: #fcbd20;
+  text-decoration: none;
+  opacity: 0.8;
 }
 footer{
   background: #fcbd20;
@@ -63,9 +72,11 @@ footer{
   background-color: #fdcc52;
   color: white;
   padding: 10px 30px;
+  margin-top: 20px;
 }
 .btn:hover {
   color: #fdcc52;
+  border: 2px solid  #fdcc52;
   background-color: transparent;
 }
 .btn-create{
@@ -87,9 +98,6 @@ footer{
   padding: 10px 30px;
 }
 
-.btn-search{
-  margin-top: 20px
-}
 
 input{
   padding: 30px;
@@ -106,4 +114,11 @@ option:not(:checked) {
 }
 .form-control{
   padding: 21px 10px;
+}
+
+.scrolling{
+  background-color: white;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  transition: all .2s;
 }

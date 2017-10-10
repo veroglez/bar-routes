@@ -1,13 +1,10 @@
-$(document).ready(function() {
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
 
-  $(".selLabel").click(function () {
-    $('.dropdown').toggleClass('active');
-  });
-
-  $(".dropdown-list li").click(function() {
-    $('.selLabel').text($(this).text());
-    $('.dropdown').removeClass('active');
-    $('.selected-item p span').text($('.selLabel').text());
-  });
-
+    if (scroll > 10) {
+        $(".navbar").addClass("scrolling");
+        console.log('holis');
+    } else {
+        $(".navbar").removeClass("scrolling");
+    }
 });
