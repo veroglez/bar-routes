@@ -47,6 +47,7 @@ export class DirectionsMapDirective {
         //travelMode: 'DRIVING'
       }, function(response: any, status: any) {
         if (status === 'OK') {
+          console.log('lugares:',this.originPlaceId, this.destinationPlaceId, this.waypoints)
           me.directionsDisplay.setDirections(response);
           map.setZoom(30);
           var point = response.routes[0].legs[0];

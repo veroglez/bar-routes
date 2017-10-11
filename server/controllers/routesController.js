@@ -8,8 +8,16 @@ module.exports = {
     const {name, routeId, placeId, latitude, longitude} = req.body
 
     Place.findOne({id:placeId}).exec().then(place =>{
-      if(place)
-        return res.status(400).json({ message: 'The place already exists' })
+      if(place){
+        console.log('estoy retornando', place)
+        Barsroute.findOne({routeId:routeId}).then( res => {
+          res.places.push(place._id)
+        })
+        return res.status(200).json(place)
+      }
+        // return res.status(400).json({ message: 'The place already exists' })
+
+
       const thePlace = new Place({
         id:placeId,
         name: name,

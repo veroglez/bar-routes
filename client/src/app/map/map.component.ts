@@ -160,16 +160,33 @@ export class MapComponent implements OnInit {
       this.arrPlacesIds.push(place._id)
     })
   }
+
   deletePlace(place){
-    console.log(this.arrPlacesName)
+
     console.log(place)
 
-      let positionId = this.arrPlacesName.indexOf(place)
-      console.log(positionId)
-      this.places.deletePlace(this.arrPlacesIds[positionId], this.places.barsroute._id).subscribe()
-      this.arrPlacesName.splice(positionId,1)
-      this.arrPlacesIds.splice(positionId,1)
+    let positionId = this.arrPlacesName.indexOf(place)
+    console.log(positionId)
+    this.places.deletePlace(this.arrPlacesIds[positionId], this.places.barsroute._id).subscribe()
+    this.arrPlacesName.splice(positionId,1)
+    this.arrPlacesIds.splice(positionId,1)
+    this.arrPlaces.splice(positionId,1)
+
+    console.log(this.arrPlacesName)
+    this.vc.waypoints=[]
+    this.vc.origin = { longitude: this.arrPlaces[0]['lng'], latitude: this.arrPlaces[0]['lat'] }
+    this.vc.originPlaceId = this.arrPlaces[0]['placeId']
+
+    for(let i=0; i<this.arrPlaces.length-2; i++){
+      this.vc.waypoints.push({ location: this.arrPlaces[i+1]['placeName'] })
     }
+    this.vc.destination = { longitude: this.arrPlaces[this.arrPlaces.length - 1]['lng'], latitude: this.arrPlaces[this.arrPlaces.length - 1]['lat'] }
+    this.vc.destinationPlaceId = this.arrPlaces[this.arrPlaces.length - 1]['placeId']
+
+    this.vc.updateDirections()
+
+
+  }
 
 
 }
