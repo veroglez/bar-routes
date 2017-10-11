@@ -2,7 +2,7 @@ import { ElementRef, NgZone, Component, OnInit, ViewChild } from '@angular/core'
 import { FormControl } from '@angular/forms'
 import { } from 'googlemaps'
 import { MapsAPILoader } from '@agm/core'
-import {PlacesService} from '../services/places.service'
+import { PlacesService } from '../services/places.service'
 
 
 

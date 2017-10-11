@@ -1,7 +1,4 @@
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
-
-
-
+import { Component, OnInit, Output,EventEmitter } from '@angular/core'
 
 @Component({
   selector: 'app-new-route',
@@ -11,12 +8,9 @@ import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 export class NewRouteComponent implements OnInit {
   routeId:boolean = false
 
-
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 
   receiveEmitter(a){
     this.routeId = a

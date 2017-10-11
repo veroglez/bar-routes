@@ -8,6 +8,7 @@ import {IsLoggedInService} from './services/isLoggedIn.canactivate.service';
 import {MapComponent} from './map/map.component';
 import {HomeComponent} from './home/home.component';
 import {NewRouteComponent} from './new-route/new-route.component';
+import {TestComponent} from './test/test.component';
 
 export const routes: Routes = [
     { path: '',  component: HomeComponent },
@@ -16,5 +17,6 @@ export const routes: Routes = [
     { path: 'profile/:id/edit',  component: EditprofileComponent,  },
     { path: 'login',  component: LoginformComponent, canActivate: [ IsLoggedInService ] },
     { path: 'signup',  component: SignupformComponent,  canActivate: [ IsLoggedInService ] },
-    { path: '**', redirectTo: '' }
+    { path: 'test', component: TestComponent },
+    { path: '**', redirectTo: '' },
 ];
