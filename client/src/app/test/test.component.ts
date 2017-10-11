@@ -17,7 +17,7 @@
 import { Component, NgModule, NgZone, OnInit, ViewChild, ElementRef, Directive, Input  } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
-import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from '@agm/core';
+import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from 'angular2-google-maps/core';
 import { DirectionsMapDirective } from './google-map.directive';
 
 declare var google:any;

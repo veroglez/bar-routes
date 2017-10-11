@@ -1,4 +1,4 @@
-import {GoogleMapsAPIWrapper}  from '@agm/core';
+import {GoogleMapsAPIWrapper}  from 'angular2-google-maps/core';
 import { Directive,  Input, Output } from '@angular/core';
 
 

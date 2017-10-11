@@ -7,7 +7,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 // Packages
-import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core'
+import { AgmCoreModule, GoogleMapsAPIWrapper } from 'angular2-google-maps/core'
 
 // Directives
 import { DirectionsMapDirective } from './test/google-map.directive'
