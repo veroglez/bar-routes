@@ -45,6 +45,7 @@ export class TestComponent implements OnInit {
     public mapCustomStyles : any;
     public estimatedTime: any;
     public estimatedDistance: any;
+    waypoints:any;
 
     @ViewChild("pickupInput")
     public pickupInputElementRef: ElementRef;
@@ -108,7 +109,9 @@ export class TestComponent implements OnInit {
               }
               if (mode === 'ORG') {
                   this.vc.origin = { longitude: place.geometry.location.lng(), latitude: place.geometry.location.lat() };
+                  console.log('this.vc.origin', this.vc.origin)
                   this.vc.originPlaceId = place.place_id;
+                  console.log('this.vc.originPlaceId',this.vc.originPlaceId)
               } else {
                   this.vc.destination = { longitude: place.geometry.location.lng(), latitude: place.geometry.location.lat() }; // its a example aleatory position
                   this.vc.destinationPlaceId = place.place_id;
