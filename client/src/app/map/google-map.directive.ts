@@ -44,8 +44,7 @@ export class DirectionsMapDirective {
       directionsService.route({
         origin: { placeId: this.originPlaceId },
         destination: { placeId: this.destinationPlaceId },
-        waypoints: this.waypoints,
-        // waypoints: [{ location: 'grand central station, new york, ny' }, { location: 'moma, New York, NY' }],
+        waypoints: [{ location: 'grand central station, new york, ny' }, { location: 'moma, New York, NY' }],
         avoidHighways: true,
         travelMode: google.maps.DirectionsTravelMode.DRIVING
         //travelMode: 'DRIVING'

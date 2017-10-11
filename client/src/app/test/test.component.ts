@@ -1,19 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-
-// @Component({
-//   selector: 'app-test',
-//   templateUrl: './test.component.html',
-//   styleUrls: ['./test.component.css']
-// })
-// export class TestComponent implements OnInit {
-//
-//   constructor() { }
-//
-//   ngOnInit() {
-//   }
-//
-// }
-
 import { Component, NgModule, NgZone, OnInit, ViewChild, ElementRef, Directive, Input  } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
@@ -45,7 +29,8 @@ export class TestComponent implements OnInit {
     public mapCustomStyles : any;
     public estimatedTime: any;
     public estimatedDistance: any;
-    waypoints:any;
+    public waypoints:Array<string> = [] ;
+    arrPlaces:Array<object> = [];
 
     @ViewChild("pickupInput")
     public pickupInputElementRef: ElementRef;
@@ -73,8 +58,7 @@ export class TestComponent implements OnInit {
       this.zoom = 4;
       this.latitude = 39.8282;
       this.longitude = -98.5795;
-      //this.iconurl = '../image/map-icon.png';
-      this.iconurl = '../image/map-icon.png';
+      // this.iconurl = '../image/map-icon.png';
 
      // this.mapCustomStyles = this.getMapCusotmStyles();
       //create search FormControl
@@ -89,42 +73,51 @@ export class TestComponent implements OnInit {
             types: ["address"]
           });
 
-          let autocompleteOutput = new google.maps.places.Autocomplete(this.pickupOutputElementRef.nativeElement, {
-            types: ["address"]
-          });
+          // let autocompleteOutput = new google.maps.places.Autocomplete(this.pickupOutputElementRef.nativeElement, {
+          //   types: ["address"]
+          // });
 
-                this.setupPlaceChangedListener(autocompleteInput, 'ORG');
-                this.setupPlaceChangedListener(autocompleteOutput, 'DES');
+          this.setupPlaceChangedListener(autocompleteInput, 'ORG');
+          // this.setupPlaceChangedListener(autocompleteOutput, 'DES');
       });
     }
 
     private setupPlaceChangedListener(autocomplete: any, mode: any ) {
       autocomplete.addListener("place_changed", () => {
             this.ngZone.run(() => {
-              //get the place result
+
               let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-              //verify result
+              this.arrPlaces.push({placeId:place.place_id, placeName: place.name, lng: place.geometry.location.lng(), lat: place.geometry.location.lat()})
+              console.log(this.arrPlaces[0]['lng'], this.arrPlaces[0]['lat'])
+
               if (place.geometry === undefined) {
                 return;
               }
               if (mode === 'ORG') {
-                  this.vc.origin = { longitude: place.geometry.location.lng(), latitude: place.geometry.location.lat() };
-                  console.log('this.vc.origin', this.vc.origin)
-                  this.vc.originPlaceId = place.place_id;
-                  console.log('this.vc.originPlaceId',this.vc.originPlaceId)
-              } else {
-                  this.vc.destination = { longitude: place.geometry.location.lng(), latitude: place.geometry.location.lat() }; // its a example aleatory position
-                  this.vc.destinationPlaceId = place.place_id;
+                  this.vc.origin = { longitude: this.arrPlaces[0]['lng'], latitude: this.arrPlaces[0]['lat'] };
+                  this.vc.originPlaceId = this.arrPlaces[0]['placeId'];
+
+                  if(this.arrPlaces.length > 2){
+                    this.vc.waypoints.push({location:this.arrPlaces[this.arrPlaces.length-2]['placeName']})
+                  }
+
+                  console.log(this.waypoints)
+
+                  this.vc.destination = { longitude: this.arrPlaces[this.arrPlaces.length-1]['lng'], latitude: this.arrPlaces[this.arrPlaces.length-1]['lat'] }; // its a example aleatory position
+                  this.vc.destinationPlaceId = this.arrPlaces[this.arrPlaces.length-1]['placeId'];
+
+
               }
 
               if(this.vc.directionsDisplay === undefined){ this.mapsAPILoader.load().then(() => {
-                    this.vc.directionsDisplay = new google.maps.DirectionsRenderer;
-                  });
+                this.vc.directionsDisplay = new google.maps.DirectionsRenderer;
+              });
             }
 
               //Update the directions
               this.vc.updateDirections();
               this.zoom = 12;
+
             });
 
          });
