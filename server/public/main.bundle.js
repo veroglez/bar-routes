@@ -25,7 +25,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "nav li{\n  display: inline-block;\n  padding: 20px;\n}\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n\n  <nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\n          <span class=\"sr-only\">Toggle navigation</span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n        </button>\n        <a class=\"navbar-brand\" [routerLink]=\"['/']\">Logo</a>\n      </div>\n      <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n        <ul class=\"nav navbar-nav navbar-right\">\n          <div *ngIf=\"user\">\n            <li><a [routerLink]=\"['/profile', user._id]\">Profile</a></li>\n            <li><button (click)=\"auth.logout().subscribe()\"> logout </button></li>\n          </div>\n          <div *ngIf=\"!user\">\n            <li><a [routerLink]=\"['/signup']\">Signup</a></li>\n            <li><a [routerLink]=\"['/login']\">Login</a></li>\n          </div>\n\n        </ul>\n      </div>\n    </div>\n  </nav>\n\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n\n  <nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\n          <span class=\"sr-only\">Toggle navigation</span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n        </button>\n        <a class=\"navbar-brand\" [routerLink]=\"['/']\"><img src=\"../assets/images/logo.png\" alt=\"\"></a>\n      </div>\n      <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n        <ul class=\"nav navbar-nav navbar-right\">\n          <div *ngIf=\"user\">\n            <li><a [routerLink]=\"['/profile', user._id]\">Mi perfil</a></li>\n            <li><button style=\"background:transparent\" (click)=\"auth.logout().subscribe()\"> <span class=\"glyphicon glyphicon-off\" aria-hidden=\"true\"></span></button></li>\n          </div>\n          <div *ngIf=\"!user\">\n            <li><a [routerLink]=\"['/signup']\">Signup</a></li>\n            <li><a [routerLink]=\"['/login']\">Login</a></li>\n          </div>\n        </ul>\n      </div>\n    </div>\n  </nav>\n    <router-outlet></router-outlet>\n\n</div>\n\n<footer>\n\n</footer>\n"
 
 /***/ }),
 
@@ -203,7 +203,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/editprofile/editprofile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form >\n  <h2> Edit profile </h2>\n\n  <pre>\n    {{auth.user | json}}\n  </pre>\n\n  <label> Username </label>\n  <input type=\"text\" [(ngModel)]=\"formInfo.username\" name=\"username\" value=\"1\"/>\n  <br>\n  <label> Password </label>\n  <input type=\"password\" [(ngModel)]=\"formInfo.password\" name=\"password\" value=\"1\"/>\n  <br>\n  <label> Email </label>\n  <input type=\"text\" [(ngModel)]=\"formInfo.email\" name=\"email\" value=\"q\"/>\n  <br>\n  <button (click)=\"editProfile()\"> Edit </button>\n</form>\n"
+module.exports = "<div class=\"page-container\">\n\n\n  <form >\n    <h2> Edit profile </h2>\n\n    <pre>\n      {{auth.user | json}}\n    </pre>\n\n    <label> Username </label>\n    <input type=\"text\" [(ngModel)]=\"formInfo.username\" name=\"username\" value=\"1\"/>\n    <br>\n    <label> Password </label>\n    <input type=\"password\" [(ngModel)]=\"formInfo.password\" name=\"password\" value=\"1\"/>\n    <br>\n    <label> Email </label>\n    <input type=\"text\" [(ngModel)]=\"formInfo.email\" name=\"email\" value=\"q\"/>\n    <br>\n    <button (click)=\"editProfile()\"> Edit </button>\n  </form>\n\n\n\n</div>\n"
 
 /***/ }),
 
@@ -277,7 +277,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".header h1{\n  color: white;\n  font-size: 6rem;\n  font-weight: 400;\n  /*text-shadow: 3px 3px #000;*/\n}\n\n.header .row{\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n text-align: left;\n}\n.header .image{\n  height: 600px;\n  background: url(" + __webpack_require__("../../../../../src/assets/images/mobile-phone.png") + ");\n  background-size: contain;\n  background-repeat: no-repeat;\n  margin: auto;\n  margin-left: 10%;\n  background-position: 30% 20%;\n}\n.header .title{\n  padding-left: 10%;\n  margin: auto;\n  font-weight: 500;\n  text-align:left;\n}\n.header .title h1{\n  margin: 50px 0;\n}\n\n.header{\n  padding-top: 80px;\n  height: 700px;\n  background: url(" + __webpack_require__("../../../../../src/assets/images/bar4.jpg") + ");\n  /*,linear-gradient(to left,#7b4397,#dc2430);*/\n  background-size: cover;\n  background-attachment: fixed;\n  /*filter: saturate(2);*/\n}\n\n.filter{\n  padding: 50px 0;\n  text-align: center;\n  width: 100%;\n  margin: 0;\n}\n.container{\n  width: 100%;\n}\n\n.filter .title{\n  color: #fdcc52;\n  margin: 50px 0;\n}\n.filter .title h2{\n  font-size: 5rem;\n}\n.filter .btn{\n  margin: 50px;\n  padding: 10px 30px\n}\n\n\n@media screen and (max-width: 768px){\n  .header .title  h1{\n    text-align: center;\n    font-size: 5rem;\n    font-weight: 300;\n    margin-bottom: 10px\n  }\n  .header .title{\n    padding-left: 0;\n    text-align: center;\n  }\n  .header{\n    overflow: hidden;\n    padding-bottom: 80px;\n    height: auto;\n  }\n\n  .row {\n      display: block;\n  }\n  .header .image{\n    display: none\n  }\n  .form-inline{\n    padding: 10px;\n  }\n\n  .profile{\n    text-align: center;\n  }\n}\n", ""]);
 
 // exports
 
@@ -290,7 +290,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"routes\">\n  <ul *ngFor=\"let e of barsRoutes\">\n    <li>{{e.routeId.name}}</li>\n  </ul>\n</div>\n<!--  -->\n"
+module.exports = "<div class=\"header\">\n  <div class=\"\">\n    <div class=\"col-xs-12 col-sm-6 col-md-6 title\">\n      <h1>Deja de estar perdido y encuentra tu ruta</h1>\n      <button type=\"submit\" class=\"btn-create btn\">Crea tu ruta</button>\n    </div>\n    <div class=\"col-xs-12 col-sm-4 col-md-4 image\"><img src=\"\" alt=\"\"></div>\n  </div>\n</div>\n\n<div class=\"\">\n  <!-- <div class=\"col-sm-6 col-md-4\">\n    <div class=\"thumbnail\" *ngFor=\"let e of barsRoutes\">\n      <img src=\"...\" alt=\"...\">\n      <div class=\"caption\">\n        <h3>Thumbnail label</h3>\n        <p>{{e.routeId.name}}</p>\n        <p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">Button</a> <a href=\"#\" class=\"btn btn-default\" role=\"button\">Button</a></p>\n      </div>\n    </div>\n  </div> -->\n  <div class=\"filter\">\n    <form class=\"form-inline\">\n      <div class=\"title\"><h2>Elige tu ruta</h2></div>\n      <div class=\"form-group\">\n        <input type=\"search\" class=\"form-control\" id=\"exampleInputName2\" placeholder=\"Ciudad\">\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\">\n          <option>Seleccionar </option>\n          <option>Mañana</option>\n          <option>Tarde</option>\n          <option>Noche</option>\n        </select>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\">\n          <option>Romántica</option>\n          <option>Música en directo</option>\n          <option>De after</option>\n          <option>Comer</option>\n        </select>\n      </div>\n      <br>\n      <button type=\"submit\" class=\"btn\">Buscar</button>\n    </form>\n  </div>\n</div>\n\n\n\n\n\n<!--  -->\n"
 
 /***/ }),
 
@@ -347,7 +347,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".login{\n  height: 80vh;\n  background: url(" + __webpack_require__("../../../../../src/assets/images/bar4.jpg") + ");\n  /*,linear-gradient(to left,#7b4397,#dc2430);*/\n  background-size: cover;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.login-form{\n  background: rgba(255,255,255,0.9);\n  margin: 100px auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: auto;\n}\n\n.form-group{\n  margin: 20px auto;\n}\n", ""]);
 
 // exports
 
@@ -360,7 +360,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/loginform/loginform.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form >\n  <h2> Login </h2>\n  <label> Username </label>\n  <input type=\"text\" [(ngModel)]=\"formInfo.username\" name=\"username\"/>\n  <br>\n  <label> Password </label>\n  <input type=\"password\" [(ngModel)]=\"formInfo.password\" name=\"password\"/>\n  <br>\n  <button (click)=\"login()\"> login </button>\n</form>\n"
+module.exports = "<div class=\"page-container login\">\n  <div class=\"col-md-6 col-xs-10 login-form\">\n    <form class=\"form-group col-md-8 col-xs-12\">\n      <h2> Login </h2>\n      <input class=\"form-control\" type=\"text\" [(ngModel)]=\"formInfo.username\" placeholder=\"Username\" name=\"username\"/>\n      <br>\n      <input class=\"form-control\" type=\"password\" [(ngModel)]=\"formInfo.password\" placeholder=\"Password\" name=\"password\"/>\n      <br>\n      <button class=\"btn btn-default\"  (click)=\"login()\"> login </button>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -433,7 +433,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*agm-map {\n  height: 300px;\n}*/\n\nagm-map {\n      height: 300px;\n    }\n", ""]);
+exports.push([module.i, "/*agm-map {\n  height: 300px;\n}*/\n\nagm-map {\n      height: 300px;\n    }\n.map{\n  height: 300px;\n}\n", ""]);
 
 // exports
 
@@ -446,7 +446,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/map/map.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"container\">\n     <h1>Angular 2 + Google Maps Places Autocomplete</h1>\n     <div class=\"form-group\">\n     </div>\n     <agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n      <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n    </agm-map>\n   </div> -->\n\n   <div class=\"container\">\n      <h1>Angular 2 + Google Maps Places Autocomplete</h1>\n      <div class=\"form-group\">\n        <input placeholder=\"search for location\" style=\"width: 400px\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #search [formControl]=\"searchControl\">\n        <button (click)=\"createPlace()\"> Create place </button>\n      </div>\n      <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [scrollwheel]=\"false\" [zoom]=\"zoom\">\n        <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\n      </agm-map>\n    </div>\n"
+module.exports = "\n\n\n    <div class=\"list-places col-md-6\">\n      <h3>Lugares</h3>\n       <ul *ngFor = \"let place of arrPlaces\">\n         <li>{{place}} |   <span (click)=\"deletePlace(place)\" class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></li>\n       </ul>\n     </div>\n\n     <div class=\"col-md-6 map\">\n       <div>\n         <input placeholder=\"search for location\" style=\"width: 80%; float:left\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #search [formControl]=\"searchControl\">\n         <button style=\"width: 20%; float:left; margin:0\" class=\"btn add\"(click)=\"createPlace()\"> Add </button>\n         <div style=\"clear:both\"></div>\n       </div>\n       <div>\n         <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [scrollwheel]=\"false\" [zoom]=\"zoom\">\n           <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\n           <agm-marker [latitude]=\"-31\" [longitude]=\"-60\"></agm-marker>\n           <!-- <sebm-google-map-directions [origin]=\"[-31,14]\" [destination]=\"[-31,15]\"></sebm-google-map-directions> -->\n         </agm-map>\n       </div>\n\n     </div>\n"
 
 /***/ }),
 
@@ -477,6 +477,8 @@ var MapComponent = (function () {
         this.mapsAPILoader = mapsAPILoader;
         this.ngZone = ngZone;
         this.places = places;
+        this.arrPlaces = [];
+        this.arrPlacesIds = [];
     }
     MapComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -486,8 +488,6 @@ var MapComponent = (function () {
         this.longitude = -98.5795;
         //create search FormControl
         this.searchControl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormControl */]();
-        //set current position
-        this.setCurrentPosition();
         //load Places Autocomplete
         this.mapsAPILoader.load().then(function () {
             var autocomplete = new google.maps.places.Autocomplete(_this.searchElementRef.nativeElement, {
@@ -515,22 +515,18 @@ var MapComponent = (function () {
             });
         });
     };
-    MapComponent.prototype.setCurrentPosition = function () {
-        var _this = this;
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                _this.latitude = position.coords.latitude;
-                _this.longitude = position.coords.longitude;
-                _this.zoom = 12;
-            });
-        }
-    };
     MapComponent.prototype.createPlace = function () {
-        console.log('entro al componente');
-        console.log("Id de la ruta:", this.places.routeId);
-        this.places.createPlaces(this.name, this.places.routeId, this.placeId, this.latitude, this.longitude).subscribe();
-        // .map(route => console.log(route))
-        // .subscribe()
+        var _this = this;
+        this.places.createPlaces(this.name, this.places.routeId, this.placeId, this.latitude, this.longitude).subscribe(function (place) {
+            _this.arrPlaces.push(place.name);
+            _this.arrPlacesIds.push(place._id);
+        });
+    };
+    MapComponent.prototype.deletePlace = function (place) {
+        var positionId = this.arrPlaces.indexOf(place);
+        this.places.deletePlace(this.arrPlacesIds[positionId], this.places.barsroute._id).subscribe();
+        this.arrPlaces.splice(positionId, 1);
+        this.arrPlacesIds.splice(positionId, 1);
     };
     return MapComponent;
 }());
@@ -573,7 +569,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/new-route-data/new-route-data.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <form >\n    <h2> Create Route </h2>\n    <label> Route Name </label>\n    <input type=\"text\" [(ngModel)]=\"formInfo.routename\" name=\"routename\"/>\n    <button (click)=\"createRoute()\"> Create route </button>\n  </form>\n</div>\n"
+module.exports = "  <div style=\"display:flex\">\n    <form class=\"center\">\n      <h2> Create Route </h2>\n      <div class=\"form-group\">\n        <input class=\"form-control\" type=\"text\" [(ngModel)]=\"formInfo.routename\" name=\"routename\" placeholder=\"Route name\"/>\n      </div>\n      <div class=\"form-group\">\n        <input class=\"form-control\" type=\"text\" [(ngModel)]=\"formInfo.city\" name=\"city\" placeholder=\"City\"/>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.schedule\" name=\"schedule\" placeholder=\"Seleccionar\">\n          <option value=\"\">--- Please select ---</option>\n          <option  *ngFor=\"let sched of schedule\" value=\"{{ sched }}\">{{ sched }}</option>\n        </select>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.routegenre\" name=\"routegenre\" placeholder=\"Seleccionar\">\n          <option value=\"\">--- Please select ---</option>\n          <option  *ngFor=\"let genre of places_genre\" value=\"{{ genre }}\">{{ genre }}</option>\n        </select>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.pricerange\" name=\"pricerange\" placeholder=\"Seleccionar\">\n          <option value=\"\">--- Please select ---</option>\n          <option  *ngFor=\"let price of price_range\" value=\"{{ price }}\">{{ price }}</option>\n        </select>\n      </div>\n      <br>\n\n      <button class=\"btn btn-default\" (click)=\"createRoute()\"> Create route </button>\n    </form>\n  </div>\n"
 
 /***/ }),
 
@@ -602,20 +598,37 @@ var NewRouteDataComponent = (function () {
         this.places = places;
         this.auth = auth;
         this.onSubmitId = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+        this.places_genre = [
+            'Romántica',
+            'Música en directo',
+            'De after',
+            'Comer'
+        ];
+        this.price_range = [
+            '€',
+            '€€',
+            '€€€'
+        ];
+        this.schedule = [
+            'Mañana',
+            'Tarde',
+            'Noche'
+        ];
         this.formInfo = {
-            routename: ""
+            routename: "",
+            routegenre: "",
+            pricerange: "",
+            schedule: "",
+            city: ""
         };
     }
-    NewRouteDataComponent.prototype.ngOnInit = function () {
-    };
+    NewRouteDataComponent.prototype.ngOnInit = function () { };
     NewRouteDataComponent.prototype.createRoute = function () {
         var _this = this;
         this.user = this.auth.getUser();
-        // console.log('entro al componente', this.user._id, this.formInfo.routename)
-        this.places.createRoutes(this.user._id, this.formInfo.routename).subscribe();
+        this.places.createRoutes(this.user._id, this.formInfo.routename, this.formInfo.routegenre, this.formInfo.pricerange, this.formInfo.schedule, this.formInfo.city).subscribe();
         setTimeout(function () {
             _this.onSubmitId.emit(true);
-            console.log("componente hijo", _this.places.routeId);
         }, 1000);
     };
     return NewRouteDataComponent;
@@ -646,7 +659,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".create-route{\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n", ""]);
 
 // exports
 
@@ -659,7 +672,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/new-route/new-route.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  new-route works!\n</p>\n<app-new-route-data (onSubmitId)=\"receiveEmitter($event)\"></app-new-route-data>\n\n<div *ngIf=\"routeId\">\n  <app-map ></app-map>\n</div>\n<!-- <app-map></app-map> -->\n"
+module.exports = "  <div class=\"create-route\">\n    <app-new-route-data (onSubmitId)=\"receiveEmitter($event)\" style=\"width:100%\"></app-new-route-data>\n  </div>\n  <!-- <div *ngIf=\"routeId\"> -->\n    <div class=\"route-map\">\n    <app-map ></app-map>\n  <!-- </div> -->\n\n\n  <div style=\"clear:both\"></div>\n"
 
 /***/ }),
 
@@ -688,11 +701,6 @@ var NewRouteComponent = (function () {
     NewRouteComponent.prototype.receiveEmitter = function (a) {
         this.routeId = a;
         console.log('componente padre', this.routeId);
-        // setTimeout(function () {
-        //   this.routeId = a
-        //   console.log('componente padre', this.routeId)
-        //     this.receiveEmitter(a);
-        // }, 1000);
     };
     return NewRouteComponent;
 }());
@@ -862,7 +870,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var timeout = function (nS) { return new Promise(function (resolve) { return setTimeout(resolve, nS * 1000); }); };
 var IsLoggedInService = (function () {
     function IsLoggedInService(auth) {
         this.auth = auth;
@@ -923,29 +930,33 @@ var PlacesService = (function () {
         return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].throw(e.json().message);
     };
     PlacesService.prototype.createPlaces = function (name, routeId, placeId, latitude, longitude) {
-        console.log('entro al servicio');
         return this.http.post(BASEURL + "/profile/places/new", { name: name, routeId: routeId, placeId: placeId, latitude: latitude, longitude: longitude }, this.options)
             .map(function (res) { return res.json(); })
-            .map(function (response_object) {
-            console.log('response:', response_object.user);
-            // this.emitUserLoginEvent(response_object.user)
+            .map(function (place) {
+            return place;
         })
             .catch(this.handleError);
     };
-    PlacesService.prototype.createRoutes = function (userId, routeName) {
+    PlacesService.prototype.createRoutes = function (userId, routeName, routeGenre, priceRange, schedule, city) {
         var _this = this;
-        return this.http.post(BASEURL + "/profile/" + userId + "/routes/new", { userId: userId, routeName: routeName }, this.options)
-            .map(function (res) {
-            _this.response = JSON.parse(res["_body"]);
-            _this.routeId = _this.response.route._id;
-            console.log('Servicio', _this.routeId);
-            return res.json();
+        return this.http.post(BASEURL + "/profile/" + userId + "/routes/new", { userId: userId, routeName: routeName, routeGenre: routeGenre, priceRange: priceRange, schedule: schedule, city: city }, this.options)
+            .map(function (res) { return res.json(); })
+            .map(function (route) {
+            _this.routeId = route.routeId;
+            _this.barsrouteId = route._id;
+            _this.barsroute = route;
+            return route;
         })
             .catch(this.handleError);
     };
     PlacesService.prototype.getList = function () {
-        return this.http.get(BASEURL + "/routesBaby")
+        return this.http.get(BASEURL + "/routes", this.options)
             .map(function (res) { return res.json(); });
+    };
+    PlacesService.prototype.deletePlace = function (placeId, barsrouteId) {
+        return this.http.put(BASEURL + "/profile/delete/place", { placeId: placeId, barsrouteId: barsrouteId }, this.options)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
     };
     return PlacesService;
 }());
@@ -1028,7 +1039,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".signup{\n  height: 80vh;\n  background: url(" + __webpack_require__("../../../../../src/assets/images/bar4.jpg") + "),linear-gradient(to left,#7b4397,#dc2430);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  background-size: cover;\n}\n\n.signup-form{\n  background: rgba(255,255,255,0.9);\n  margin: 100px auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: auto;\n}\n\n.form-group{\n  margin: 20px auto;\n}\n\n@media screen and (max-width: 768px){\n  h2{\n    margin:20px;\n  }\n\n}\n", ""]);
 
 // exports
 
@@ -1041,7 +1052,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/signupform/signupform.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form >\n  <h2> Signup </h2>\n  <label> Username </label>\n  <input type=\"text\" [(ngModel)]=\"formInfo.username\" name=\"username\" required/>\n  <br>\n  <label> Password </label>\n  <input type=\"password\" [(ngModel)]=\"formInfo.password\" name=\"password\" required/>\n  <br>\n  <label> Email </label>\n  <input type=\"text\" [(ngModel)]=\"formInfo.email\" name=\"email\" required/>\n  <br>\n  <button (click)=\"signup()\"> signup </button>\n</form>\n"
+module.exports = "<div class=\"page-container signup\">\n  <div class=\"col-md-6 col-xs-10  signup-form\">\n    <form class=\"form-group col-md-8 col-xs-12\">\n      <h2> Signup </h2>\n      <input class=\"form-control\" type=\"text\" placeholder=\"Username\" [(ngModel)]=\"formInfo.username\" name=\"username\" required/>\n      <br>\n      <input class=\"form-control\"  type=\"password\" placeholder=\"Password\"  [(ngModel)]=\"formInfo.password\" name=\"password\" required/>\n      <br>\n      <input class=\"form-control\"  type=\"email\" placeholder=\"Email\"  [(ngModel)]=\"formInfo.email\" name=\"email\" required/>\n      <br>\n      <button class=\"btn btn-default\" (click)=\"signup()\"> signup </button>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1127,7 +1138,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/userprofile/userprofile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"!user\">\n  <h2>NO USER LOGGED IN</h2>\n</div>\n\n\n<div *ngIf=\"user\">\n  <a [routerLink]=\"['/profile', user._id, 'edit']\">Edit Profile</a>\n  <h2> You are now logged in as {{ user.username }}!! </h2>\n  <p> Here's the user object </p>\n  <pre> {{ user | json }} </pre>\n  <a [routerLink]=\"['/profile', user._id, 'routes','new']\">Create route</a>\n  <button (click)=\"auth.logout().subscribe()\"> logout </button>\n</div>\n"
+module.exports = "<div class=\"page-container\" style=\"padding-top:50px\">\n\n\n<div *ngIf=\"!user\">\n  <h2>NO USER LOGGED IN</h2>\n</div>\n\n\n<div *ngIf=\"user\">\n  <!-- <a [routerLink]=\"['/profile', user._id, 'edit']\">Edit Profile</a>\n  <h2> You are now logged in as {{ user.username }}!! </h2>\n  <p> Here's the user object </p>\n  <pre> {{ user | json }} </pre>\n  <a [routerLink]=\"['/profile', user._id, 'routes','new']\">Create route</a> -->\n  <!-- <button (click)=\"auth.logout().subscribe()\"> logout </button> -->\n\n  <h1>Profile</h1>\n  <div class=\"profile col-md-12\">\n    <div class=\" col-md-8\">\n      <div class=\" col-md-4\">\n        <img src=\"http://www.dinneer.com/images/users/user_icon.png\" alt=\"\">\n      </div>\n      <div class=\" col-md-8 text-left\">\n        <h4>Username:  {{ user.username }}</h4>\n        <h4>Email:  {{ user.email }}</h4>\n        <button [routerLink]=\"['/profile', user._id, 'edit']\" class=\"btn\">Edit profile</button>\n        <button [routerLink]=\"['/profile', user._id, 'routes','new']\" class=\"btn\">Create route</button>\n      </div>\n\n    </div>\n\n\n    <div class=\"profile col-md-4 text-left my-routes\">\n      <h3>Mis rutas</h3>\n    </div>\n  </div>\n\n</div>\n\n\n\n</div>\n"
 
 /***/ }),
 
@@ -1172,6 +1183,20 @@ UserprofileComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=userprofile.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/assets/images/bar4.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "bar4.24b9b3dbe098fa4e122c.jpg";
+
+/***/ }),
+
+/***/ "../../../../../src/assets/images/mobile-phone.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "mobile-phone.98f2e92d74787a11d71e.png";
 
 /***/ }),
 
