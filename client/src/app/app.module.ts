@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AgmCoreModule, GoogleMapsAPIWrapper } from 'angular2-google-maps/core'
 
 // Directives
-import { DirectionsMapDirective } from './test/google-map.directive'
+import { DirectionsMapDirective } from './map/google-map.directive'
 
 // Components
 import { MapComponent } from './map/map.component'

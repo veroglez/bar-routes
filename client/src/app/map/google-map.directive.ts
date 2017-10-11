@@ -1,10 +1,7 @@
 import { GoogleMapsAPIWrapper } from 'angular2-google-maps/core';
 import { Directive, Input, Output } from '@angular/core';
 
-
 declare var google: any;
-
-
 
 @Directive({
   selector: 'sebm-google-map-directions'
@@ -44,7 +41,7 @@ export class DirectionsMapDirective {
       directionsService.route({
         origin: { placeId: this.originPlaceId },
         destination: { placeId: this.destinationPlaceId },
-        waypoints: [{ location: 'grand central station, new york, ny' }, { location: 'moma, New York, NY' }],
+        waypoints: this.waypoints,
         avoidHighways: true,
         travelMode: google.maps.DirectionsTravelMode.DRIVING
         //travelMode: 'DRIVING'
@@ -52,7 +49,6 @@ export class DirectionsMapDirective {
         if (status === 'OK') {
           me.directionsDisplay.setDirections(response);
           map.setZoom(30);
-          //console.log(me.getcomputeDistance (latLngA, latLngB));
           var point = response.routes[0].legs[0];
           me.estimatedTime = point.duration.text;
           me.estimatedDistance = point.distance.text;
