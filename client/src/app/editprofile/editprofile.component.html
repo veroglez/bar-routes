@@ -1,18 +1,25 @@
-<form >
-  <h2> Edit profile </h2>
+<div class="page-container">
 
-  <pre>
-    {{auth.user | json}}
-  </pre>
 
-  <label> Username </label>
-  <input type="text" [(ngModel)]="formInfo.username" name="username" value="1"/>
-  <br>
-  <label> Password </label>
-  <input type="password" [(ngModel)]="formInfo.password" name="password" value="1"/>
-  <br>
-  <label> Email </label>
-  <input type="text" [(ngModel)]="formInfo.email" name="email" value="q"/>
-  <br>
-  <button (click)="editProfile()"> Edit </button>
-</form>
+  <form >
+    <h2> Edit profile </h2>
+
+    <pre>
+      {{auth.user | json}}
+    </pre>
+
+    <label> Username </label>
+    <input type="text" [(ngModel)]="formInfo.username" name="username" value="1"/>
+    <br>
+    <label> Password </label>
+    <input type="password" [(ngModel)]="formInfo.password" name="password" value="1"/>
+    <br>
+    <label> Email </label>
+    <input type="text" [(ngModel)]="formInfo.email" name="email" value="q"/>
+    <br>
+    <button (click)="editProfile()"> Edit </button>
+  </form>
+
+
+
+</div>

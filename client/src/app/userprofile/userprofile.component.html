@@ -1,4 +1,4 @@
-<div class="page-container">
+<div class="page-container" style="padding-top:50px">
 
 
 <div *ngIf="!user">
@@ -7,12 +7,36 @@
 
 
 <div *ngIf="user">
-  <a [routerLink]="['/profile', user._id, 'edit']">Edit Profile</a>
+  <!-- <a [routerLink]="['/profile', user._id, 'edit']">Edit Profile</a>
   <h2> You are now logged in as {{ user.username }}!! </h2>
   <p> Here's the user object </p>
   <pre> {{ user | json }} </pre>
-  <a [routerLink]="['/profile', user._id, 'routes','new']">Create route</a>
-  <button (click)="auth.logout().subscribe()"> logout </button>
+  <a [routerLink]="['/profile', user._id, 'routes','new']">Create route</a> -->
+  <!-- <button (click)="auth.logout().subscribe()"> logout </button> -->
+
+  <h1>Profile</h1>
+  <div class="profile col-md-12">
+    <div class=" col-md-8">
+      <div class=" col-md-4">
+        <img src="http://www.dinneer.com/images/users/user_icon.png" alt="">
+      </div>
+      <div class=" col-md-8 text-left">
+        <h4>Username:  {{ user.username }}</h4>
+        <h4>Email:  {{ user.email }}</h4>
+        <button [routerLink]="['/profile', user._id, 'edit']" class="btn">Edit profile</button>
+        <button [routerLink]="['/profile', user._id, 'routes','new']" class="btn">Create route</button>
+      </div>
+
+    </div>
+
+
+    <div class="profile col-md-4 text-left my-routes">
+      <h3>Mis rutas</h3>
+    </div>
+  </div>
+
 </div>
+
+
 
 </div>
