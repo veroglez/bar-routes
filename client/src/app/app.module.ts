@@ -29,7 +29,7 @@ import { PlacesService } from './services/places.service'
 import { IsLoggedInService } from './services/isLoggedIn.canactivate.service'
 
 import { routes } from './routes';
-import { TestComponent } from './test/test.component'
+import { ShowRoutesComponent } from './show-routes/show-routes.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +43,7 @@ import { TestComponent } from './test/test.component'
     NewRouteDataComponent,
     HomeComponent,
     DirectionsMapDirective,
-    TestComponent
+    ShowRoutesComponent
   ],
   imports: [
     BrowserModule,

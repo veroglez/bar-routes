@@ -34,7 +34,11 @@
         </select>
       </div>
       <br>
-      <button type="submit" (click)="searchRoutes()" class="btn">Buscar</button>
+      <!-- <li><a [routerLink]="['/signup']">Signup</a></li> -->
+
+      <a [routerLink]="['/routes']">
+        <button type="submit" (click)="searchRoutes()" class="btn">Buscar</button>
+      </a>
     </form>
   </div>
 </div>

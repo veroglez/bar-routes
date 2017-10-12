@@ -15,6 +15,7 @@ export class PlacesService {
   routeId
   barsrouteId
   barsroute
+  allRoutes
   private options = {withCredentials:true}
 
   private handleError(e) {
@@ -46,12 +47,6 @@ export class PlacesService {
       .catch(this.handleError)
   }
 
-
-  getList() {
-    return this.http.get(`${BASEURL}/routes`, this.options)
-      .map(res => res.json())
-  }
-
   deletePlace(placeId, barsrouteId) {
     return this.http.put(`${BASEURL}/profile/delete/place`, {placeId, barsrouteId}, this.options)
       .map(res => res.json())
@@ -60,7 +55,10 @@ export class PlacesService {
 
   searchRoutes(city, schedule, routegenre, pricerange) {
     return this.http.post(`${BASEURL}/`, {city, schedule, routegenre, pricerange}, this.options)
-      .map(res => res.json())
+      .map(res => {
+        console.log(res)
+        return this.allRoutes = res.json()
+      })
       .catch(this.handleError)
   }
 

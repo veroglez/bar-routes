@@ -2,6 +2,7 @@ const Place = require('../models/Place')
 const Route = require('../models/Route')
 const Barsroute = require('../models/Barsroute')
 const path = require('path')
+const mongoose = require('mongoose')
 
 module.exports = {
   createPlace: (req, res, next) => {
@@ -78,42 +79,77 @@ module.exports = {
 
 
   deletePlaces: (req, res, next) => {
-    const {barsrouteId, placeId} = req.body
+    const { barsrouteId, placeId } = req.body
     Barsroute.findByIdAndUpdate( barsrouteId, {$pull:{"places": placeId}}, {new: true})
     .then( barRoute => {res.json( {barRoute: barRoute} )})
     .catch(e => {res.status(400).json(e) })
   },
 
   searchRoutes: (req, res, next) => {
-    const {city, schedule, routegenre, pricerange} = req.body
+    const { city, schedule, routegenre, pricerange } = req.body
 
     console.log(city, schedule, routegenre, pricerange)
 
-
-
-
     Route.find( { $and:[ {'city':city}, {'schedule':schedule}]} )
-    .then( barRoute => {
-      console.log(barRoute)
-      if(barRoute.length === 0 ){
-        Route.find( { $or:[ {'city':city} ]} )
-        .then( res => {
-          console.log(res)
-          console.log('No ha encontrado nada, te muestro todo')
-          return res.json( {res: res} )
-        })
-       }
-
-       return res.json( {barRoute: barRoute} )
+      .then( barRoute => {
+        // console.log(barRoute)
+        if(barRoute.length === 0 ){
+          Route.find( { $or:[ {'city':city}, {'schedule':schedule}, {'routegenre':routegenre}, {'pricerange':pricerange} ]} )
+          .then( routes => searchBarroutes(routes))
+          .catch(e => { res.status(400).json(e) })
+        } else {
+          searchBarroutes(barRoute)
+          // return res.json( {barRoute: barRoute} )
+        }
      })
     .catch(err => next(err))
 
-    // Barsroute.find( { "routeId.city": { $regex: city, $options: 'i' } })
-    // .then( barRoute => {
-    //   console.log(barRoute)
-    //   res.json( {barRoute: barRoute} )} )
-    // // .then(response => { res.render('index', {products: response, subtitle: 'Products', banner:false  }) })
-    // .catch(err => next(err))
+
+    searchBarroutes = function (routes){
+      const misplaces = []
+      for(let i = 0; i<routes.length; i++){
+        let pleis = routes[i]._id
+        misplaces.push(String(pleis))
+      }
+      Barsroute.find( {'routeId': {$in: misplaces}} )
+      .then(barsroute => {
+        console.log(barsroute)
+        return res.status(200).json(barsroute)
+      })
+
+    }
+
   }
+
+
+
+  // searchRoutes: (req, res, next) => {
+  //   const { city, schedule, routegenre, pricerange } = req.body
+  //
+  //   console.log(city, schedule, routegenre, pricerange)
+  //
+  //   Route.find( { $and:[ {'city':city}, {'schedule':schedule}]} )
+  //     .then( barRoute => {
+  //       console.log(barRoute)
+  //       if(barRoute.length === 0 ){
+  //         Route.find( { $or:[ {'city':city}, {'schedule':schedule}, {'routegenre':routegenre}, {'pricerange':pricerange} ]} )
+  //         .then( routes => {
+  //           const misplaces = []
+  //           for(let i = 0; i<routes.length; i++){
+  //             let pleis = routes[i]._id
+  //             misplaces.push(String(pleis))
+  //           }
+  //           Barsroute.find( {'routeId': {$in: misplaces}} )
+  //             .then(barsroute => {
+  //               return res.status(200).json(barsroute)
+  //             }).catch(e => { res.status(400).json(e) })
+  //         }).catch(e => { res.status(400).json(e) })
+  //       } else {
+  //         return res.json( {barRoute: barRoute} )
+  //       }
+  //    })
+  //   .catch(err => next(err))
+  //
+  // }
 
 }

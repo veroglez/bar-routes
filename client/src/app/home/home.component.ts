@@ -38,18 +38,18 @@ export class HomeComponent implements OnInit {
     schedule:"",
     city:""
   }
+  resultRoutes
 
   constructor(public places:PlacesService) { }
 
-  ngOnInit() {
-    // this.places.getList()
-    //   .subscribe(d => { this.barsRoutes = d;});
-  }
+  ngOnInit() {}
 
 
   searchRoutes(){
     const {city, schedule, routegenre, pricerange} = this.formInfo;
-    this.places.searchRoutes(city, schedule, routegenre, pricerange).subscribe()
+    this.places.searchRoutes(city, schedule, routegenre, pricerange).subscribe(
+      res => console.log(res)
+    )
   }
 
 }

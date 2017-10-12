@@ -9,4 +9,5 @@ router.get('/routes', routesController.showAllRoutes);
 router.put('/profile/delete/place', routesController.deletePlaces);
 router.post('/', routesController.searchRoutes);
 
+
 module.exports = router
