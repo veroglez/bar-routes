@@ -28,7 +28,6 @@ export class PlacesService {
 
 
   createPlaces(name, routeId, placeId, latitude, longitude, photos, mapPlaceId) {
-    console.log('photos en el servicio',photos)
     return this.http.post(`${BASEURL}/profile/places/new`, {name, routeId, placeId, latitude, longitude, photos, mapPlaceId}, this.options)
       .map(res => res.json())
       .map(place => {

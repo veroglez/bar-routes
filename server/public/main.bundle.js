@@ -75,7 +75,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -93,27 +93,31 @@ var _a;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signupform_signupform_component__ = __webpack_require__("../../../../../src/app/signupform/signupform.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__routes__ = __webpack_require__("../../../../../src/app/routes.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__loginform_loginform_component__ = __webpack_require__("../../../../../src/app/loginform/loginform.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_isLoggedIn_canactivate_service__ = __webpack_require__("../../../../../src/app/services/isLoggedIn.canactivate.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_places_service__ = __webpack_require__("../../../../../src/app/services/places.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__userprofile_userprofile_component__ = __webpack_require__("../../../../../src/app/userprofile/userprofile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__editprofile_editprofile_component__ = __webpack_require__("../../../../../src/app/editprofile/editprofile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__shared_verotronik_verotronik_component__ = __webpack_require__("../../../../../src/app/shared/verotronik/verotronik.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__map_map_component__ = __webpack_require__("../../../../../src/app/map/map.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__new_route_new_route_component__ = __webpack_require__("../../../../../src/app/new-route/new-route.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__new_route_data_new_route_data_component__ = __webpack_require__("../../../../../src/app/new-route-data/new-route-data.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular2_google_maps_core__ = __webpack_require__("../../../../angular2-google-maps/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular2_google_maps_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_angular2_google_maps_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__map_google_map_directive__ = __webpack_require__("../../../../../src/app/map/google-map.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__map_map_component__ = __webpack_require__("../../../../../src/app/map/map.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__new_route_new_route_component__ = __webpack_require__("../../../../../src/app/new-route/new-route.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__loginform_loginform_component__ = __webpack_require__("../../../../../src/app/loginform/loginform.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__signupform_signupform_component__ = __webpack_require__("../../../../../src/app/signupform/signupform.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__userprofile_userprofile_component__ = __webpack_require__("../../../../../src/app/userprofile/userprofile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__editprofile_editprofile_component__ = __webpack_require__("../../../../../src/app/editprofile/editprofile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__shared_verotronik_verotronik_component__ = __webpack_require__("../../../../../src/app/shared/verotronik/verotronik.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__new_route_data_new_route_data_component__ = __webpack_require__("../../../../../src/app/new-route-data/new-route-data.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_places_service__ = __webpack_require__("../../../../../src/app/services/places.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_isLoggedIn_canactivate_service__ = __webpack_require__("../../../../../src/app/services/isLoggedIn.canactivate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__routes__ = __webpack_require__("../../../../../src/app/routes.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__show_routes_show_routes_component__ = __webpack_require__("../../../../../src/app/show-routes/show-routes.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__show_simple_route_show_simple_route_component__ = __webpack_require__("../../../../../src/app/show-simple-route/show-simple-route.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -127,6 +131,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+// Packages
+
+// Directives
+
+// Components
 
 
 
@@ -135,6 +144,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+// Services
 
 
 
@@ -147,34 +158,37 @@ var AppModule = (function () {
     return AppModule;
 }());
 AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* NgModule */])({
+    Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_4__signupform_signupform_component__["a" /* SignupformComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__loginform_loginform_component__["a" /* LoginformComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__userprofile_userprofile_component__["a" /* UserprofileComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__editprofile_editprofile_component__["a" /* EditprofileComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__shared_verotronik_verotronik_component__["a" /* VerotronikComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__map_map_component__["a" /* MapComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__new_route_new_route_component__["a" /* NewRouteComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__new_route_data_new_route_data_component__["a" /* NewRouteDataComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__home_home_component__["a" /* HomeComponent */]
+            __WEBPACK_IMPORTED_MODULE_1__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__signupform_signupform_component__["a" /* SignupformComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__loginform_loginform_component__["a" /* LoginformComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__userprofile_userprofile_component__["a" /* UserprofileComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__editprofile_editprofile_component__["a" /* EditprofileComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__shared_verotronik_verotronik_component__["a" /* VerotronikComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__map_map_component__["a" /* MapComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__new_route_new_route_component__["a" /* NewRouteComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__new_route_data_new_route_data_component__["a" /* NewRouteDataComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__map_google_map_directive__["a" /* DirectionsMapDirective */],
+            __WEBPACK_IMPORTED_MODULE_22__show_routes_show_routes_component__["a" /* ShowRoutesComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__show_simple_route_show_simple_route_component__["a" /* ShowSimpleRouteComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_15__angular_common__["b" /* CommonModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_http__["b" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_router__["b" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_8__routes__["a" /* routes */]),
+            __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_forms__["b" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_21__routes__["a" /* routes */]),
             // ReactiveFormsModule,
-            __WEBPACK_IMPORTED_MODULE_16__agm_core__["a" /* AgmCoreModule */].forRoot({
+            __WEBPACK_IMPORTED_MODULE_7_angular2_google_maps_core__["AgmCoreModule"].forRoot({
                 apiKey: 'AIzaSyD6kQpdkVk-xQXObw1jvODNoEgIOLDfVBc',
                 libraries: ["places"]
             }),
-            __WEBPACK_IMPORTED_MODULE_5__angular_forms__["c" /* ReactiveFormsModule */]
+            __WEBPACK_IMPORTED_MODULE_6__angular_forms__["c" /* ReactiveFormsModule */]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_10__services_isLoggedIn_canactivate_service__["a" /* IsLoggedInService */], __WEBPACK_IMPORTED_MODULE_11__services_places_service__["a" /* PlacesService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_18__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_20__services_isLoggedIn_canactivate_service__["a" /* IsLoggedInService */], __WEBPACK_IMPORTED_MODULE_19__services_places_service__["a" /* PlacesService */], __WEBPACK_IMPORTED_MODULE_7_angular2_google_maps_core__["GoogleMapsAPIWrapper"]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_1__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -256,12 +270,12 @@ var EditprofileComponent = (function () {
     return EditprofileComponent;
 }());
 EditprofileComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-editprofile',
         template: __webpack_require__("../../../../../src/app/editprofile/editprofile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/editprofile/editprofile.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], EditprofileComponent);
 
 var _a, _b;
@@ -290,7 +304,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header\">\n  <div class=\"\">\n    <div class=\"col-xs-12 col-sm-6 col-md-6 title\">\n      <h1>Deja de estar perdido y encuentra tu ruta</h1>\n      <button type=\"submit\" class=\"btn-create btn\">Crea tu ruta</button>\n    </div>\n    <div class=\"col-xs-12 col-sm-4 col-md-4 image\"><img src=\"\" alt=\"\"></div>\n  </div>\n</div>\n\n<div class=\"\">\n  <!-- <div class=\"col-sm-6 col-md-4\">\n    <div class=\"thumbnail\" *ngFor=\"let e of barsRoutes\">\n      <img src=\"...\" alt=\"...\">\n      <div class=\"caption\">\n        <h3>Thumbnail label</h3>\n        <p>{{e.routeId.name}}</p>\n        <p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">Button</a> <a href=\"#\" class=\"btn btn-default\" role=\"button\">Button</a></p>\n      </div>\n    </div>\n  </div> -->\n  <div class=\"filter\">\n    <form class=\"form-inline\">\n      <div class=\"title\"><h2>Elige tu ruta</h2></div>\n      <div class=\"form-group\">\n        <input type=\"search\" class=\"form-control\" id=\"exampleInputName2\" placeholder=\"Ciudad\">\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\">\n          <option>Seleccionar </option>\n          <option>Mañana</option>\n          <option>Tarde</option>\n          <option>Noche</option>\n        </select>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\">\n          <option>Romántica</option>\n          <option>Música en directo</option>\n          <option>De after</option>\n          <option>Comer</option>\n        </select>\n      </div>\n      <br>\n      <button type=\"submit\" class=\"btn\">Buscar</button>\n    </form>\n  </div>\n</div>\n\n\n\n\n\n<!--  -->\n"
+module.exports = "<div class=\"header\">\n  <div class=\"\">\n    <div class=\"col-xs-12 col-sm-6 col-md-6 title\">\n      <h1>Deja de estar perdido y encuentra tu ruta</h1>\n      <button type=\"submit\" class=\"btn-create btn\">Crea tu ruta</button>\n    </div>\n    <div class=\"col-xs-12 col-sm-4 col-md-4 image\"><img src=\"\" alt=\"\"></div>\n  </div>\n</div>\n\n<div class=\"\">\n  <div class=\"filter\">\n    <form class=\"form-inline\">\n      <div class=\"title\"><h2>Elige tu ruta</h2></div>\n      <div class=\"form-group\">\n        <input class=\"form-control\" type=\"text\" [(ngModel)]=\"formInfo.city\" name=\"city\" placeholder=\"City\"/>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.schedule\" name=\"schedule\" placeholder=\"Seleccionar\">\n          <option value=\"\">--- Select schedule ---</option>\n          <option  *ngFor=\"let sched of schedule\" value=\"{{ sched }}\">{{ sched }}</option>\n        </select>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.routegenre\" name=\"routegenre\" placeholder=\"Seleccionar\">\n          <option value=\"\">--- Selecet type ---</option>\n          <option  *ngFor=\"let genre of places_genre\" value=\"{{ genre }}\">{{ genre }}</option>\n        </select>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.pricerange\" name=\"pricerange\" placeholder=\"Seleccionar\">\n          <option value=\"\">--- Select price ---</option>\n          <option  *ngFor=\"let price of price_range\" value=\"{{ price }}\">{{ price }}</option>\n        </select>\n      </div>\n      <br>\n\n      <a [routerLink]=\"['/routes']\">\n        <button type=\"submit\" (click)=\"searchRoutes()\" class=\"btn\">Buscar</button>\n      </a>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -315,18 +329,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var HomeComponent = (function () {
     function HomeComponent(places) {
         this.places = places;
+        this.places_genre = [
+            'Romantic',
+            'Live music',
+            'After',
+            'Brunch',
+        ];
+        this.price_range = [
+            'Cheap',
+            'Moderate',
+            'Expensive'
+        ];
+        this.schedule = [
+            'Morning',
+            'Afternoon',
+            'Night'
+        ];
+        this.formInfo = {
+            routename: "",
+            routegenre: "",
+            pricerange: "",
+            schedule: "",
+            city: ""
+        };
     }
-    HomeComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.places.getList()
-            .subscribe(function (d) {
-            _this.barsRoutes = d;
-        });
+    HomeComponent.prototype.ngOnInit = function () { };
+    HomeComponent.prototype.searchRoutes = function () {
+        var _a = this.formInfo, city = _a.city, schedule = _a.schedule, routegenre = _a.routegenre, pricerange = _a.pricerange;
+        this.places.searchRoutes(city, schedule, routegenre, pricerange).subscribe(function (res) { return console.log('componente', res); });
     };
     return HomeComponent;
 }());
 HomeComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-home',
         template: __webpack_require__("../../../../../src/app/home/home.component.html"),
         styles: [__webpack_require__("../../../../../src/app/home/home.component.css")]
@@ -412,16 +447,133 @@ var LoginformComponent = (function () {
     return LoginformComponent;
 }());
 LoginformComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-loginform',
         template: __webpack_require__("../../../../../src/app/loginform/loginform.component.html"),
         styles: [__webpack_require__("../../../../../src/app/loginform/loginform.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], LoginformComponent);
 
 var _a, _b;
 //# sourceMappingURL=loginform.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/map/google-map.directive.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DirectionsMapDirective; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_google_maps_core__ = __webpack_require__("../../../../angular2-google-maps/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_google_maps_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular2_google_maps_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var DirectionsMapDirective = (function () {
+    function DirectionsMapDirective(gmapsApi) {
+        this.gmapsApi = gmapsApi;
+    }
+    DirectionsMapDirective.prototype.updateDirections = function () {
+        var _this = this;
+        this.gmapsApi.getNativeMap().then(function (map) {
+            if (!_this.originPlaceId || !_this.destinationPlaceId) {
+                return;
+            }
+            var directionsService = new google.maps.DirectionsService;
+            var me = _this;
+            var latLngA = new google.maps.LatLng({ lat: _this.origin.latitude, lng: _this.origin.longitude });
+            var latLngB = new google.maps.LatLng({ lat: _this.destination.latitude, lng: _this.destination.longitude });
+            _this.directionsDisplay.setMap(map);
+            _this.directionsDisplay.setOptions({
+                polylineOptions: {
+                    strokeWeight: 8,
+                    strokeOpacity: 0.7,
+                    strokeColor: '#00468c'
+                }
+            });
+            console.log('origin', _this.originPlaceId);
+            console.log('origin', _this.destinationPlaceId);
+            _this.directionsDisplay.setDirections({ routes: [] });
+            directionsService.route({
+                origin: { placeId: _this.originPlaceId },
+                destination: { placeId: _this.destinationPlaceId },
+                waypoints: _this.waypoints,
+                avoidHighways: true,
+                travelMode: google.maps.DirectionsTravelMode.WALKING
+                //travelMode: 'DRIVING'
+            }, function (response, status) {
+                if (status === 'OK') {
+                    console.log('lugares:', this.originPlaceId, this.destinationPlaceId, this.waypoints);
+                    me.directionsDisplay.setDirections(response);
+                    map.setZoom(30);
+                    var point = response.routes[0].legs[0];
+                    me.estimatedTime = point.duration.text;
+                    me.estimatedDistance = point.distance.text;
+                    console.log(me.estimatedTime);
+                    console.log('Estimated travel time: ' + point.duration.text + ' (' + point.distance.text + ')');
+                }
+                else {
+                    console.log('Directions request failed due to ' + status);
+                }
+            });
+        });
+    };
+    DirectionsMapDirective.prototype.getcomputeDistance = function (latLngA, latLngB) {
+        return (google.maps.geometry.spherical.computeDistanceBetween(latLngA, latLngB) / 1000).toFixed(2);
+    };
+    return DirectionsMapDirective;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], DirectionsMapDirective.prototype, "origin", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], DirectionsMapDirective.prototype, "destination", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], DirectionsMapDirective.prototype, "originPlaceId", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], DirectionsMapDirective.prototype, "destinationPlaceId", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], DirectionsMapDirective.prototype, "waypoints", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], DirectionsMapDirective.prototype, "directionsDisplay", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], DirectionsMapDirective.prototype, "estimatedTime", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], DirectionsMapDirective.prototype, "estimatedDistance", void 0);
+DirectionsMapDirective = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"])({
+        selector: 'sebm-google-map-directions'
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0_angular2_google_maps_core__["GoogleMapsAPIWrapper"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_angular2_google_maps_core__["GoogleMapsAPIWrapper"]) === "function" && _a || Object])
+], DirectionsMapDirective);
+
+var _a;
+//# sourceMappingURL=google-map.directive.js.map
 
 /***/ }),
 
@@ -433,7 +585,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*agm-map {\n  height: 300px;\n}*/\n\nagm-map {\n      height: 300px;\n    }\n.map{\n  height: 300px;\n}\n", ""]);
+exports.push([module.i, ".sebm-google-map-container {\n   height: 300px;\n }\n", ""]);
 
 // exports
 
@@ -446,7 +598,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/map/map.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n\n    <div class=\"list-places col-md-6\">\n      <h3>Lugares</h3>\n       <ul *ngFor = \"let place of arrPlaces\">\n         <li>{{place}} |   <span (click)=\"deletePlace(place)\" class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></li>\n       </ul>\n     </div>\n\n     <div class=\"col-md-6 map\">\n       <div>\n         <input placeholder=\"search for location\" style=\"width: 80%; float:left\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #search [formControl]=\"searchControl\">\n         <button style=\"width: 20%; float:left; margin:0\" class=\"btn add\"(click)=\"createPlace()\"> Add </button>\n         <div style=\"clear:both\"></div>\n       </div>\n       <div>\n         <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [scrollwheel]=\"false\" [zoom]=\"zoom\">\n           <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\n           <agm-marker [latitude]=\"-31\" [longitude]=\"-60\"></agm-marker>\n           <!-- <sebm-google-map-directions [origin]=\"[-31,14]\" [destination]=\"[-31,15]\"></sebm-google-map-directions> -->\n         </agm-map>\n       </div>\n\n     </div>\n"
+module.exports = "<div class=\"list-places col-md-6\">\n  <h3>Lugares</h3>\n  <ul *ngFor=\"let place of arrPlacesName\">\n    <li>{{place}} | <span (click)=\"deletePlace(place)\" class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></li>\n  </ul>\n</div>\n\n<div class=\"col-md-6 map\">\n  <div class=\"form-group\">\n    <input placeholder=\"Enter source location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #pickupInput [formControl]=\"destinationInput\">\n    <sebm-google-map [latitude]=\"latitude\" [longitude]=\"longitude\" [scrollwheel]=\"false\" [zoom]=\"zoom\" [styles]=\"mapCustomStyles\">\n      <sebm-google-map-directions [origin]=\"origin\" [destination]=\"destination\" [waypoints]=\"waypoints\"></sebm-google-map-directions>\n    </sebm-google-map>\n  </div>\n</div>\n\n<!-- <button style=\"width: 20%; float:left; margin:0\" class=\"btn add\"(click)=\"createPlace()\"> Add </button> -->\n"
 
 /***/ }),
 
@@ -457,8 +609,10 @@ module.exports = "\n\n\n    <div class=\"list-places col-md-6\">\n      <h3>Luga
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_places_service__ = __webpack_require__("../../../../../src/app/services/places.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core__ = __webpack_require__("../../../../angular2-google-maps/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__google_map_directive__ = __webpack_require__("../../../../../src/app/map/google-map.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_places_service__ = __webpack_require__("../../../../../src/app/services/places.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -472,78 +626,142 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MapComponent = (function () {
-    function MapComponent(mapsAPILoader, ngZone, places) {
+    function MapComponent(mapsAPILoader, ngZone, gmapsApi, _elementRef, places) {
         this.mapsAPILoader = mapsAPILoader;
         this.ngZone = ngZone;
+        this.gmapsApi = gmapsApi;
+        this._elementRef = _elementRef;
         this.places = places;
+        this.waypoints = [];
         this.arrPlaces = [];
+        this.arrPlacesName = [];
         this.arrPlacesIds = [];
     }
     MapComponent.prototype.ngOnInit = function () {
         var _this = this;
-        //set google maps defaults
         this.zoom = 4;
         this.latitude = 39.8282;
         this.longitude = -98.5795;
-        //create search FormControl
-        this.searchControl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormControl */]();
-        //load Places Autocomplete
+        this.destinationInput = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormControl */]();
+        this.destinationOutput = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormControl */]();
+        this.setCurrentPosition();
         this.mapsAPILoader.load().then(function () {
-            var autocomplete = new google.maps.places.Autocomplete(_this.searchElementRef.nativeElement, {
+            var autocompleteInput = new google.maps.places.Autocomplete(_this.pickupInputElementRef.nativeElement, {
                 types: ["establishment"]
             });
-            autocomplete.addListener("place_changed", function () {
-                _this.ngZone.run(function () {
-                    //get the place result
-                    var place = autocomplete.getPlace();
-                    //verify result
-                    if (place.geometry === undefined || place.geometry === null) {
-                        return;
-                    }
-                    //set latitude, longitude and zoom
-                    _this.latitude = place.geometry.location.lat();
-                    _this.longitude = place.geometry.location.lng();
-                    _this.placeId = place.id;
-                    _this.name = place.name;
-                    // this.types = place.types
-                    // this.photos = place.photos
-                    // this.address_components = place.address_components
-                    _this.zoom = 12;
-                    console.log(place);
-                });
+            _this.setupPlaceChangedListener(autocompleteInput, 'ORG');
+        });
+    };
+    MapComponent.prototype.setupPlaceChangedListener = function (autocomplete, mode) {
+        var _this = this;
+        autocomplete.addListener("place_changed", function () {
+            _this.ngZone.run(function () {
+                var place = autocomplete.getPlace();
+                console.log(place);
+                _this.placeLatitude = place.geometry.location.lat();
+                _this.placeLongitude = place.geometry.location.lng();
+                _this.placePlaceId = place.id;
+                _this.placeName = place.name;
+                _this.placePhotos = place.photos;
+                _this.mapPlaceId = place.place_id;
+                _this.createPlace();
+                _this.arrPlaces.push({ placeId: place.place_id, placeName: place.name, lng: place.geometry.location.lng(), lat: place.geometry.location.lat() });
+                if (place.geometry === undefined)
+                    return;
+                if (mode === 'ORG') {
+                    _this.vc.origin = { longitude: _this.arrPlaces[0]['lng'], latitude: _this.arrPlaces[0]['lat'] };
+                    _this.vc.originPlaceId = _this.arrPlaces[0]['placeId'];
+                    if (_this.arrPlaces.length > 2)
+                        _this.vc.waypoints.push({ location: _this.arrPlaces[_this.arrPlaces.length - 2]['placeName'] });
+                    _this.vc.destination = { longitude: _this.arrPlaces[_this.arrPlaces.length - 1]['lng'], latitude: _this.arrPlaces[_this.arrPlaces.length - 1]['lat'] }; // its a example aleatory position
+                    _this.vc.destinationPlaceId = _this.arrPlaces[_this.arrPlaces.length - 1]['placeId'];
+                }
+                if (_this.vc.directionsDisplay === undefined)
+                    _this.mapsAPILoader.load().then(function () { _this.vc.directionsDisplay = new google.maps.DirectionsRenderer; });
+                _this.vc.updateDirections();
+                _this.zoom = 12;
             });
         });
     };
+    MapComponent.prototype.getDistanceAndDuration = function () {
+        this.estimatedTime = this.vc.estimatedTime;
+        this.estimatedDistance = this.vc.estimatedDistance;
+    };
+    MapComponent.prototype.setPickUpLocation = function (place) {
+        if (place.geometry === undefined || place.geometry === null) {
+            return;
+        }
+        this.latitude = place.geometry.location.lat();
+        this.longitude = place.geometry.location.lng();
+        this.zoom = 12;
+    };
+    MapComponent.prototype.setCurrentPosition = function () {
+        var _this = this;
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                _this.latitude = position.coords.latitude;
+                _this.longitude = position.coords.longitude;
+                _this.zoom = 12;
+            });
+        }
+    };
     MapComponent.prototype.createPlace = function () {
         var _this = this;
-        this.places.createPlaces(this.name, this.places.routeId, this.placeId, this.latitude, this.longitude).subscribe(function (place) {
-            _this.arrPlaces.push(place.name);
+        this.places.createPlaces(this.placeName, this.places.routeId, this.placePlaceId, this.placeLatitude, this.placeLongitude, this.placePhotos, this.mapPlaceId).subscribe(function (place) {
+            _this.arrPlacesName.push(place.name);
             _this.arrPlacesIds.push(place._id);
         });
     };
     MapComponent.prototype.deletePlace = function (place) {
-        var positionId = this.arrPlaces.indexOf(place);
+        console.log(place);
+        var positionId = this.arrPlacesName.indexOf(place);
+        console.log(positionId);
         this.places.deletePlace(this.arrPlacesIds[positionId], this.places.barsroute._id).subscribe();
-        this.arrPlaces.splice(positionId, 1);
+        this.arrPlacesName.splice(positionId, 1);
         this.arrPlacesIds.splice(positionId, 1);
+        this.arrPlaces.splice(positionId, 1);
+        console.log(this.arrPlacesName);
+        this.vc.waypoints = [];
+        this.vc.origin = { longitude: this.arrPlaces[0]['lng'], latitude: this.arrPlaces[0]['lat'] };
+        this.vc.originPlaceId = this.arrPlaces[0]['placeId'];
+        for (var i = 0; i < this.arrPlaces.length - 2; i++) {
+            this.vc.waypoints.push({ location: this.arrPlaces[i + 1]['placeName'] });
+        }
+        this.vc.destination = { longitude: this.arrPlaces[this.arrPlaces.length - 1]['lng'], latitude: this.arrPlaces[this.arrPlaces.length - 1]['lat'] };
+        this.vc.destinationPlaceId = this.arrPlaces[this.arrPlaces.length - 1]['placeId'];
+        this.vc.updateDirections();
     };
     return MapComponent;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_17" /* ViewChild */])("search"),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object)
-], MapComponent.prototype, "searchElementRef", void 0);
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("pickupInput"),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
+], MapComponent.prototype, "pickupInputElementRef", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("pickupOutput"),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _b || Object)
+], MapComponent.prototype, "pickupOutputElementRef", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("scrollMe"),
+    __metadata("design:type", typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _c || Object)
+], MapComponent.prototype, "scrollContainer", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_3__google_map_directive__["a" /* DirectionsMapDirective */]),
+    __metadata("design:type", typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__google_map_directive__["a" /* DirectionsMapDirective */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__google_map_directive__["a" /* DirectionsMapDirective */]) === "function" && _d || Object)
+], MapComponent.prototype, "vc", void 0);
 MapComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-map',
         template: __webpack_require__("../../../../../src/app/map/map.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/map/map.component.css")]
+        styles: [__webpack_require__("../../../../../src/app/map/map.component.css")],
+        providers: [__WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core__["GoogleMapsAPIWrapper"]]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_places_service__["a" /* PlacesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_places_service__["a" /* PlacesService */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core__["MapsAPILoader"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core__["MapsAPILoader"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core__["GoogleMapsAPIWrapper"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core__["GoogleMapsAPIWrapper"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_4__services_places_service__["a" /* PlacesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_places_service__["a" /* PlacesService */]) === "function" && _j || Object])
 ], MapComponent);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 //# sourceMappingURL=map.component.js.map
 
 /***/ }),
@@ -569,7 +787,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/new-route-data/new-route-data.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "  <div style=\"display:flex\">\n    <form class=\"center\">\n      <h2> Create Route </h2>\n      <div class=\"form-group\">\n        <input class=\"form-control\" type=\"text\" [(ngModel)]=\"formInfo.routename\" name=\"routename\" placeholder=\"Route name\"/>\n      </div>\n      <div class=\"form-group\">\n        <input class=\"form-control\" type=\"text\" [(ngModel)]=\"formInfo.city\" name=\"city\" placeholder=\"City\"/>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.schedule\" name=\"schedule\" placeholder=\"Seleccionar\">\n          <option value=\"\">--- Please select ---</option>\n          <option  *ngFor=\"let sched of schedule\" value=\"{{ sched }}\">{{ sched }}</option>\n        </select>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.routegenre\" name=\"routegenre\" placeholder=\"Seleccionar\">\n          <option value=\"\">--- Please select ---</option>\n          <option  *ngFor=\"let genre of places_genre\" value=\"{{ genre }}\">{{ genre }}</option>\n        </select>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.pricerange\" name=\"pricerange\" placeholder=\"Seleccionar\">\n          <option value=\"\">--- Please select ---</option>\n          <option  *ngFor=\"let price of price_range\" value=\"{{ price }}\">{{ price }}</option>\n        </select>\n      </div>\n      <br>\n\n      <button class=\"btn btn-default\" (click)=\"createRoute()\"> Create route </button>\n    </form>\n  </div>\n"
+module.exports = "  <div class=\"row\">\n    <h2> Create Route </h2>\n    <form class=\"center\">\n      <div class=\"col-md-6\">\n        <div class=\"form-group\">\n          <input class=\"form-control\" type=\"text\" [(ngModel)]=\"formInfo.routename\" name=\"routename\" placeholder=\"Route name\"/>\n        </div>\n        <div class=\"form-group\">\n          <input class=\"form-control\" type=\"text\" [(ngModel)]=\"formInfo.city\" name=\"city\" placeholder=\"City\"/>\n        </div>\n        <div class=\"form-group\">\n          <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.schedule\" name=\"schedule\" placeholder=\"Seleccionar\">\n            <option value=\"\">--- Please select ---</option>\n            <option  *ngFor=\"let sched of schedule\" value=\"{{ sched }}\">{{ sched }}</option>\n          </select>\n        </div>\n        <div class=\"form-group\">\n          <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.routegenre\" name=\"routegenre\" placeholder=\"Seleccionar\">\n            <option value=\"\">--- Please select ---</option>\n            <option  *ngFor=\"let genre of places_genre\" value=\"{{ genre }}\">{{ genre }}</option>\n          </select>\n        </div>\n        <div class=\"form-group\">\n          <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.pricerange\" name=\"pricerange\" placeholder=\"Seleccionar\">\n            <option value=\"\">--- Please select ---</option>\n            <option  *ngFor=\"let price of price_range\" value=\"{{ price }}\">{{ price }}</option>\n          </select>\n        </div>\n        <br>\n      </div>\n      <div class=\"col-md-6\">\n        <div class=\"form-group form-inline\">\n          <textarea class=\"form-control\" rows=\"5\" cols=\"50\"[(ngModel)]=\"formInfo.description\" name=\"description\" placeholder=\"Write a description of the route\"></textarea>\n        </div>\n      </div>\n\n      <button class=\"btn btn-default\" (click)=\"createRoute()\"> Create route </button>\n    </form>\n  </div>\n"
 
 /***/ }),
 
@@ -597,36 +815,37 @@ var NewRouteDataComponent = (function () {
     function NewRouteDataComponent(places, auth) {
         this.places = places;
         this.auth = auth;
-        this.onSubmitId = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+        this.onSubmitId = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.places_genre = [
-            'Romántica',
-            'Música en directo',
-            'De after',
-            'Comer'
+            'Romantic',
+            'Live music',
+            'After',
+            'Brunch',
         ];
         this.price_range = [
-            '€',
-            '€€',
-            '€€€'
+            'Cheap',
+            'Moderate',
+            'Expensive'
         ];
         this.schedule = [
-            'Mañana',
-            'Tarde',
-            'Noche'
+            'Morning',
+            'Afternoon',
+            'Night'
         ];
         this.formInfo = {
             routename: "",
             routegenre: "",
             pricerange: "",
             schedule: "",
-            city: ""
+            city: "",
+            description: ""
         };
     }
     NewRouteDataComponent.prototype.ngOnInit = function () { };
     NewRouteDataComponent.prototype.createRoute = function () {
         var _this = this;
         this.user = this.auth.getUser();
-        this.places.createRoutes(this.user._id, this.formInfo.routename, this.formInfo.routegenre, this.formInfo.pricerange, this.formInfo.schedule, this.formInfo.city).subscribe();
+        this.places.createRoutes(this.user._id, this.formInfo.routename, this.formInfo.routegenre, this.formInfo.pricerange, this.formInfo.schedule, this.formInfo.city, this.formInfo.description).subscribe();
         setTimeout(function () {
             _this.onSubmitId.emit(true);
         }, 1000);
@@ -634,11 +853,11 @@ var NewRouteDataComponent = (function () {
     return NewRouteDataComponent;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Output */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", Object)
 ], NewRouteDataComponent.prototype, "onSubmitId", void 0);
 NewRouteDataComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-new-route-data',
         template: __webpack_require__("../../../../../src/app/new-route-data/new-route-data.component.html"),
         styles: [__webpack_require__("../../../../../src/app/new-route-data/new-route-data.component.css")]
@@ -696,8 +915,7 @@ var NewRouteComponent = (function () {
     function NewRouteComponent() {
         this.routeId = false;
     }
-    NewRouteComponent.prototype.ngOnInit = function () {
-    };
+    NewRouteComponent.prototype.ngOnInit = function () { };
     NewRouteComponent.prototype.receiveEmitter = function (a) {
         this.routeId = a;
         console.log('componente padre', this.routeId);
@@ -705,7 +923,7 @@ var NewRouteComponent = (function () {
     return NewRouteComponent;
 }());
 NewRouteComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-new-route',
         template: __webpack_require__("../../../../../src/app/new-route/new-route.component.html"),
         styles: [__webpack_require__("../../../../../src/app/new-route/new-route.component.css")]
@@ -729,6 +947,10 @@ NewRouteComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_isLoggedIn_canactivate_service__ = __webpack_require__("../../../../../src/app/services/isLoggedIn.canactivate.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__new_route_new_route_component__ = __webpack_require__("../../../../../src/app/new-route/new-route.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__show_routes_show_routes_component__ = __webpack_require__("../../../../../src/app/show-routes/show-routes.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__show_simple_route_show_simple_route_component__ = __webpack_require__("../../../../../src/app/show-simple-route/show-simple-route.component.ts");
+
+
 
 
 
@@ -743,7 +965,9 @@ var routes = [
     { path: 'profile/:id/edit', component: __WEBPACK_IMPORTED_MODULE_1__editprofile_editprofile_component__["a" /* EditprofileComponent */], },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_2__loginform_loginform_component__["a" /* LoginformComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_4__services_isLoggedIn_canactivate_service__["a" /* IsLoggedInService */]] },
     { path: 'signup', component: __WEBPACK_IMPORTED_MODULE_3__signupform_signupform_component__["a" /* SignupformComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_4__services_isLoggedIn_canactivate_service__["a" /* IsLoggedInService */]] },
-    { path: '**', redirectTo: '' }
+    { path: 'routes', component: __WEBPACK_IMPORTED_MODULE_7__show_routes_show_routes_component__["a" /* ShowRoutesComponent */] },
+    { path: 'routes/:id', component: __WEBPACK_IMPORTED_MODULE_8__show_simple_route_show_simple_route_component__["a" /* ShowSimpleRouteComponent */] },
+    { path: '**', redirectTo: '' },
 ];
 //# sourceMappingURL=routes.js.map
 
@@ -779,7 +1003,7 @@ var BASEURL = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* env
 var AuthService = (function () {
     function AuthService(http) {
         this.http = http;
-        this.userLoginEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+        this.userLoginEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.options = { withCredentials: true };
         this.isLoggedIn().subscribe();
     }
@@ -843,7 +1067,7 @@ var AuthService = (function () {
     return AuthService;
 }());
 AuthService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]) === "function" && _a || Object])
 ], AuthService);
 
@@ -881,7 +1105,7 @@ var IsLoggedInService = (function () {
     return IsLoggedInService;
 }());
 IsLoggedInService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */]) === "function" && _a || Object])
 ], IsLoggedInService);
 
@@ -929,17 +1153,17 @@ var PlacesService = (function () {
         console.log("PLACE ERROR");
         return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"].throw(e.json().message);
     };
-    PlacesService.prototype.createPlaces = function (name, routeId, placeId, latitude, longitude) {
-        return this.http.post(BASEURL + "/profile/places/new", { name: name, routeId: routeId, placeId: placeId, latitude: latitude, longitude: longitude }, this.options)
+    PlacesService.prototype.createPlaces = function (name, routeId, placeId, latitude, longitude, photos, mapPlaceId) {
+        return this.http.post(BASEURL + "/profile/places/new", { name: name, routeId: routeId, placeId: placeId, latitude: latitude, longitude: longitude, photos: photos, mapPlaceId: mapPlaceId }, this.options)
             .map(function (res) { return res.json(); })
             .map(function (place) {
             return place;
         })
             .catch(this.handleError);
     };
-    PlacesService.prototype.createRoutes = function (userId, routeName, routeGenre, priceRange, schedule, city) {
+    PlacesService.prototype.createRoutes = function (userId, routeName, routeGenre, priceRange, schedule, city, description) {
         var _this = this;
-        return this.http.post(BASEURL + "/profile/" + userId + "/routes/new", { userId: userId, routeName: routeName, routeGenre: routeGenre, priceRange: priceRange, schedule: schedule, city: city }, this.options)
+        return this.http.post(BASEURL + "/profile/" + userId + "/routes/new", { userId: userId, routeName: routeName, routeGenre: routeGenre, priceRange: priceRange, schedule: schedule, city: city, description: description }, this.options)
             .map(function (res) { return res.json(); })
             .map(function (route) {
             _this.routeId = route.routeId;
@@ -949,19 +1173,28 @@ var PlacesService = (function () {
         })
             .catch(this.handleError);
     };
-    PlacesService.prototype.getList = function () {
-        return this.http.get(BASEURL + "/routes", this.options)
-            .map(function (res) { return res.json(); });
-    };
     PlacesService.prototype.deletePlace = function (placeId, barsrouteId) {
         return this.http.put(BASEURL + "/profile/delete/place", { placeId: placeId, barsrouteId: barsrouteId }, this.options)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
+    PlacesService.prototype.searchRoutes = function (city, schedule, routegenre, pricerange) {
+        var _this = this;
+        return this.http.post(BASEURL + "/", { city: city, schedule: schedule, routegenre: routegenre, pricerange: pricerange }, this.options)
+            .map(function (res) {
+            return _this.allRoutes = res.json();
+        })
+            .catch(this.handleError);
+    };
+    PlacesService.prototype.getRoute = function (id) {
+        return this.http.get(BASEURL + "/routes/" + id, this.options)
             .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };
     return PlacesService;
 }());
 PlacesService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__auth_service__["a" /* AuthService */]) === "function" && _b || Object])
 ], PlacesService);
 
@@ -1019,7 +1252,7 @@ var VerotronikComponent = (function () {
     return VerotronikComponent;
 }());
 VerotronikComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-verotronik',
         template: __webpack_require__("../../../../../src/app/shared/verotronik/verotronik.component.html"),
         styles: [__webpack_require__("../../../../../src/app/shared/verotronik/verotronik.component.css")]
@@ -1028,6 +1261,204 @@ VerotronikComponent = __decorate([
 ], VerotronikComponent);
 
 //# sourceMappingURL=verotronik.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/show-routes/show-routes.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/show-routes/show-routes.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  show-routes works!\n</p>\n<div class=\"routes\">\n  <ul *ngFor=\"let e of places.allRoutes\">\n    <li><img src=\"\" alt=\"\"></li>\n    <li><a href=\"/routes/{{e._id}}\">{{e.routeId.name}}</a></li>\n    <li>{{e.routeId.description}}</li>\n  </ul>\n</div>\n\n<div class=\"row\">\n  <div class=\"col-sm-6 col-md-4\">\n    <div class=\"thumbnail\">\n      <img src=\"...\" alt=\"...\">\n      <div class=\"caption\">\n        <h3>Thumbnail label</h3>\n        <p>...</p>\n        <p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">Button</a> <a href=\"#\" class=\"btn btn-default\" role=\"button\">Button</a></p>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/show-routes/show-routes.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShowRoutesComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_places_service__ = __webpack_require__("../../../../../src/app/services/places.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ShowRoutesComponent = (function () {
+    function ShowRoutesComponent(places) {
+        this.places = places;
+    }
+    ShowRoutesComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        setTimeout(function () {
+            console.log('estoy en /routes:', _this.places.allRoutes);
+        }, 100);
+    };
+    return ShowRoutesComponent;
+}());
+ShowRoutesComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-show-routes',
+        template: __webpack_require__("../../../../../src/app/show-routes/show-routes.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/show-routes/show-routes.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_places_service__["a" /* PlacesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_places_service__["a" /* PlacesService */]) === "function" && _a || Object])
+], ShowRoutesComponent);
+
+var _a;
+//# sourceMappingURL=show-routes.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/show-simple-route/show-simple-route.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".sebm-google-map-container {\n   height: 300px;\n }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/show-simple-route/show-simple-route.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  show-simple-route works!\n</p>\n<pre>{{route}}</pre>\n\n\n<div class=\"col-md-6 map\">\n  <div class=\"form-group\">\n    <sebm-google-map [latitude]=\"latitude\" [longitude]=\"longitude\" [scrollwheel]=\"false\" [zoom]=\"zoom\" [styles]=\"mapCustomStyles\">\n      <sebm-google-map-directions [origin]=\"origin\" [destination]=\"destination\" [waypoints]=\"waypoints\"></sebm-google-map-directions>\n    </sebm-google-map>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/show-simple-route/show-simple-route.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShowSimpleRouteComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core__ = __webpack_require__("../../../../angular2-google-maps/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__map_google_map_directive__ = __webpack_require__("../../../../../src/app/map/google-map.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_places_service__ = __webpack_require__("../../../../../src/app/services/places.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ShowSimpleRouteComponent = (function () {
+    function ShowSimpleRouteComponent(mapsAPILoader, ngZone, gmapsApi, _elementRef, places, router) {
+        this.mapsAPILoader = mapsAPILoader;
+        this.ngZone = ngZone;
+        this.gmapsApi = gmapsApi;
+        this._elementRef = _elementRef;
+        this.places = places;
+        this.router = router;
+        this.waypoints = [];
+    }
+    ShowSimpleRouteComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.router.params.subscribe(function (params) {
+            _this.getRoute(params['id']);
+        });
+        this.zoom = 4;
+        this.latitude = 39.8282;
+        this.longitude = -98.5795;
+        this.mapsAPILoader.load().then(function () {
+            _this.showRoute();
+        });
+    };
+    ShowSimpleRouteComponent.prototype.getRoute = function (id) {
+        var _this = this;
+        this.places.getRoute(id).subscribe(function (route) {
+            console.log(route);
+            _this.route = route;
+        });
+    };
+    ShowSimpleRouteComponent.prototype.showRoute = function () {
+        var _this = this;
+        this.vc.origin = { longitude: this.route.places[0].longitude, latitude: this.route.places[0].longitude };
+        this.vc.originPlaceId = this.route.places[0].mapPlaceId;
+        if (this.route.places.length > 2)
+            this.vc.waypoints.push({ location: this.route.places[this.route.places.length - 2].name });
+        this.vc.destination = { longitude: this.route.places[this.route.places.length - 1].longitude, latitude: this.route.places[this.route.places.length - 1].latitude }; // its a example aleatory position
+        this.vc.destinationPlaceId = this.route.places[this.route.places.length - 1].mapPlaceId;
+        if (this.vc.directionsDisplay === undefined)
+            this.mapsAPILoader.load().then(function () { _this.vc.directionsDisplay = new google.maps.DirectionsRenderer; });
+        this.vc.updateDirections();
+        this.zoom = 12;
+    };
+    ShowSimpleRouteComponent.prototype.getDistanceAndDuration = function () {
+        this.estimatedTime = this.vc.estimatedTime;
+        this.estimatedDistance = this.vc.estimatedDistance;
+    };
+    return ShowSimpleRouteComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])("pickupInput"),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"]) === "function" && _a || Object)
+], ShowSimpleRouteComponent.prototype, "pickupInputElementRef", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])("pickupOutput"),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"]) === "function" && _b || Object)
+], ShowSimpleRouteComponent.prototype, "pickupOutputElementRef", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])("scrollMe"),
+    __metadata("design:type", typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"]) === "function" && _c || Object)
+], ShowSimpleRouteComponent.prototype, "scrollContainer", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_3__map_google_map_directive__["a" /* DirectionsMapDirective */]),
+    __metadata("design:type", typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__map_google_map_directive__["a" /* DirectionsMapDirective */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__map_google_map_directive__["a" /* DirectionsMapDirective */]) === "function" && _d || Object)
+], ShowSimpleRouteComponent.prototype, "vc", void 0);
+ShowSimpleRouteComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: 'app-show-simple-route',
+        template: __webpack_require__("../../../../../src/app/show-simple-route/show-simple-route.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/show-simple-route/show-simple-route.component.css")],
+        providers: [__WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core__["GoogleMapsAPIWrapper"]]
+    }),
+    __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core__["MapsAPILoader"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core__["MapsAPILoader"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_core__["NgZone"]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core__["GoogleMapsAPIWrapper"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_google_maps_core__["GoogleMapsAPIWrapper"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_4__services_places_service__["a" /* PlacesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_places_service__["a" /* PlacesService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* ActivatedRoute */]) === "function" && _k || Object])
+], ShowSimpleRouteComponent);
+
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+//# sourceMappingURL=show-simple-route.component.js.map
 
 /***/ }),
 
@@ -1104,12 +1535,12 @@ var SignupformComponent = (function () {
     return SignupformComponent;
 }());
 SignupformComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-signupform',
         template: __webpack_require__("../../../../../src/app/signupform/signupform.component.html"),
         styles: [__webpack_require__("../../../../../src/app/signupform/signupform.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], SignupformComponent);
 
 var _a, _b;
@@ -1173,7 +1604,7 @@ var UserprofileComponent = (function () {
     return UserprofileComponent;
 }());
 UserprofileComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-userprofile',
         template: __webpack_require__("../../../../../src/app/userprofile/userprofile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/userprofile/userprofile.component.css")]
@@ -1227,7 +1658,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_24" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
