@@ -15,6 +15,7 @@ export class PlacesService {
   routeId
   barsrouteId
   barsroute
+  simpleRoute
   allRoutes
   private options = {withCredentials:true}
 
@@ -26,8 +27,9 @@ export class PlacesService {
   constructor( private http: Http, private auth:AuthService ) { }
 
 
-  createPlaces(name, routeId, placeId, latitude, longitude) {
-    return this.http.post(`${BASEURL}/profile/places/new`, {name, routeId, placeId, latitude, longitude}, this.options)
+  createPlaces(name, routeId, placeId, latitude, longitude, photos) {
+    console.log('photos en el servicio',photos)
+    return this.http.post(`${BASEURL}/profile/places/new`, {name, routeId, placeId, latitude, longitude, photos}, this.options)
       .map(res => res.json())
       .map(place => {
         return place
@@ -56,10 +58,15 @@ export class PlacesService {
   searchRoutes(city, schedule, routegenre, pricerange) {
     return this.http.post(`${BASEURL}/`, {city, schedule, routegenre, pricerange}, this.options)
       .map(res => {
-        console.log(res)
         return this.allRoutes = res.json()
       })
       .catch(this.handleError)
+  }
+
+  getRoute(id) {
+    return this.http.get(`${BASEURL}/routes/${id}`, this.options)
+    .map(res => res.json())
+    .catch(this.handleError)
   }
 
 }

@@ -29,7 +29,8 @@ import { PlacesService } from './services/places.service'
 import { IsLoggedInService } from './services/isLoggedIn.canactivate.service'
 
 import { routes } from './routes';
-import { ShowRoutesComponent } from './show-routes/show-routes.component'
+import { ShowRoutesComponent } from './show-routes/show-routes.component';
+import { ShowSimpleRouteComponent } from './show-simple-route/show-simple-route.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { ShowRoutesComponent } from './show-routes/show-routes.component'
     NewRouteDataComponent,
     HomeComponent,
     DirectionsMapDirective,
-    ShowRoutesComponent
+    ShowRoutesComponent,
+    ShowSimpleRouteComponent
   ],
   imports: [
     BrowserModule,

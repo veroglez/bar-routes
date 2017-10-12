@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 
 module.exports = {
   createPlace: (req, res, next) => {
-    const {name, routeId, placeId, latitude, longitude} = req.body
+    const {name, routeId, placeId, latitude, longitude, photos} = req.body
 
     Place.findOne({id:placeId}).exec().then(place =>{
       if(place){
@@ -23,7 +23,8 @@ module.exports = {
         id:placeId,
         name: name,
         latitude,
-        longitude
+        longitude,
+        photos
       })
       thePlace.save().then(place =>{
         Barsroute.findOne({routeId:routeId}).then( res => {
@@ -65,18 +66,18 @@ module.exports = {
     })
     .catch(e => {res.status(400).json(e) })
   },
+
   showAllRoutes: (req, res, next) => {
     Barsroute.find().populate('places routeId').exec().then( barRoute => {
       return res.status(200).json(barRoute)
     })
   },
 
-  // showNewPlaces: (req, res, next) => {
-  //   Barsroute.find({ }).exec().then( barRoute => {
-  //     return res.status(200).json(barRoute)
-  //   })
-  // },
-
+  getRoute: (req, res, next) => {
+    Barsroute.findById(req.params.id).populate('places routeId')
+    .then( barsroute => res.json(barsroute) )
+    .catch( err => res.json(err).status(500))
+  },
 
   deletePlaces: (req, res, next) => {
     const { barsrouteId, placeId } = req.body
@@ -88,22 +89,18 @@ module.exports = {
   searchRoutes: (req, res, next) => {
     const { city, schedule, routegenre, pricerange } = req.body
 
-    console.log(city, schedule, routegenre, pricerange)
-
     Route.find( { $and:[ {'city':city}, {'schedule':schedule}]} )
       .then( barRoute => {
-        // console.log(barRoute)
         if(barRoute.length === 0 ){
           Route.find( { $or:[ {'city':city}, {'schedule':schedule}, {'routegenre':routegenre}, {'pricerange':pricerange} ]} )
+          .populate('places routeId')
           .then( routes => searchBarroutes(routes))
           .catch(e => { res.status(400).json(e) })
         } else {
           searchBarroutes(barRoute)
-          // return res.json( {barRoute: barRoute} )
         }
      })
     .catch(err => next(err))
-
 
     searchBarroutes = function (routes){
       const misplaces = []
@@ -111,45 +108,14 @@ module.exports = {
         let pleis = routes[i]._id
         misplaces.push(String(pleis))
       }
-      Barsroute.find( {'routeId': {$in: misplaces}} )
+      Barsroute.find( {'routeId': {$in: misplaces}} ).populate('places routeId')
       .then(barsroute => {
         console.log(barsroute)
         return res.status(200).json(barsroute)
       })
-
     }
-
   }
 
 
-
-  // searchRoutes: (req, res, next) => {
-  //   const { city, schedule, routegenre, pricerange } = req.body
-  //
-  //   console.log(city, schedule, routegenre, pricerange)
-  //
-  //   Route.find( { $and:[ {'city':city}, {'schedule':schedule}]} )
-  //     .then( barRoute => {
-  //       console.log(barRoute)
-  //       if(barRoute.length === 0 ){
-  //         Route.find( { $or:[ {'city':city}, {'schedule':schedule}, {'routegenre':routegenre}, {'pricerange':pricerange} ]} )
-  //         .then( routes => {
-  //           const misplaces = []
-  //           for(let i = 0; i<routes.length; i++){
-  //             let pleis = routes[i]._id
-  //             misplaces.push(String(pleis))
-  //           }
-  //           Barsroute.find( {'routeId': {$in: misplaces}} )
-  //             .then(barsroute => {
-  //               return res.status(200).json(barsroute)
-  //             }).catch(e => { res.status(400).json(e) })
-  //         }).catch(e => { res.status(400).json(e) })
-  //       } else {
-  //         return res.json( {barRoute: barRoute} )
-  //       }
-  //    })
-  //   .catch(err => next(err))
-  //
-  // }
 
 }

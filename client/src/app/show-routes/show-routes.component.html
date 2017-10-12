@@ -2,7 +2,9 @@
   show-routes works!
 </p>
 <div class="routes">
-  <ul *ngFor="let e of routes">
-    <li>{{e}}</li>
+  <ul *ngFor="let e of places.allRoutes">
+    <li><img src="" alt=""></li>
+    <li><a href="/routes/{{e._id}}">{{e.routeId.name}}</a></li>
+    <li>{{e.routeId.description}}</li>
   </ul>
 </div>

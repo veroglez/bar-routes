@@ -9,6 +9,7 @@ import {MapComponent} from './map/map.component';
 import {HomeComponent} from './home/home.component';
 import {NewRouteComponent} from './new-route/new-route.component';
 import {ShowRoutesComponent} from './show-routes/show-routes.component';
+import {ShowSimpleRouteComponent} from './show-simple-route/show-simple-route.component';
 
 export const routes: Routes = [
     { path: '',  component: HomeComponent },
@@ -18,5 +19,6 @@ export const routes: Routes = [
     { path: 'login',  component: LoginformComponent, canActivate: [ IsLoggedInService ] },
     { path: 'signup',  component: SignupformComponent,  canActivate: [ IsLoggedInService ] },
     { path: 'routes', component: ShowRoutesComponent },
+    { path: 'routes/:id',  component: ShowSimpleRouteComponent},
     { path: '**', redirectTo: '' },
 ];

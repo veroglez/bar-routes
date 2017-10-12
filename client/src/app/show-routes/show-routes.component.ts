@@ -12,8 +12,10 @@ export class ShowRoutesComponent implements OnInit {
   constructor(public places:PlacesService) { }
 
   ngOnInit() {
+    setTimeout(()=> {
+        console.log('estoy en /routes:',this.places.allRoutes)
+    }, 100);
 
-    console.log(this.places.allRoutes)
   }
 
 

@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
   searchRoutes(){
     const {city, schedule, routegenre, pricerange} = this.formInfo;
     this.places.searchRoutes(city, schedule, routegenre, pricerange).subscribe(
-      res => console.log(res)
+      res => console.log('componente',res)
     )
   }
 
