@@ -27,9 +27,9 @@ export class PlacesService {
   constructor( private http: Http, private auth:AuthService ) { }
 
 
-  createPlaces(name, routeId, placeId, latitude, longitude, photos) {
+  createPlaces(name, routeId, placeId, latitude, longitude, photos, mapPlaceId) {
     console.log('photos en el servicio',photos)
-    return this.http.post(`${BASEURL}/profile/places/new`, {name, routeId, placeId, latitude, longitude, photos}, this.options)
+    return this.http.post(`${BASEURL}/profile/places/new`, {name, routeId, placeId, latitude, longitude, photos, mapPlaceId}, this.options)
       .map(res => res.json())
       .map(place => {
         return place

@@ -6,7 +6,8 @@ const placeSchema = new Schema({
   name: String,
   latitude: Number,
   longitude: Number,
-  photos: Array
+  photos: Array,
+  mapPlaceId: String,
 }, {
   timestamps: {
     createdAt: 'created_at',

@@ -6,11 +6,11 @@ const mongoose = require('mongoose')
 
 module.exports = {
   createPlace: (req, res, next) => {
-    const {name, routeId, placeId, latitude, longitude, photos} = req.body
+    const {name, routeId, placeId, latitude, longitude, photos, mapPlaceId} = req.body
 
     Place.findOne({id:placeId}).exec().then(place =>{
       if(place){
-        console.log('estoy retornando', place)
+        // console.log('estoy retornando', place)
         Barsroute.findOne({routeId:routeId}).then( res => {
           res.places.push(place._id)
         })
@@ -18,15 +18,17 @@ module.exports = {
       }
         // return res.status(400).json({ message: 'The place already exists' })
 
-
+      console.log('llego hasta aqui')
       const thePlace = new Place({
         id:placeId,
         name: name,
         latitude,
         longitude,
-        photos
+        photos,
+        mapPlaceId
       })
       thePlace.save().then(place =>{
+        console.log(place)
         Barsroute.findOne({routeId:routeId}).then( res => {
           res.places.push(place._id)
           return res.save()
@@ -110,7 +112,7 @@ module.exports = {
       }
       Barsroute.find( {'routeId': {$in: misplaces}} ).populate('places routeId')
       .then(barsroute => {
-        console.log(barsroute)
+        // console.log(barsroute)
         return res.status(200).json(barsroute)
       })
     }

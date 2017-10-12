@@ -32,6 +32,7 @@ export class MapComponent implements OnInit {
   placePlaceId
   placeName
   placePhotos
+  mapPlaceId
   public latitude: number
   public longitude: number
   public destinationInput: FormControl
@@ -95,11 +96,13 @@ export class MapComponent implements OnInit {
       this.ngZone.run(() => {
 
         let place: google.maps.places.PlaceResult = autocomplete.getPlace()
+        console.log(place)
         this.placeLatitude = place.geometry.location.lat()
         this.placeLongitude = place.geometry.location.lng()
         this.placePlaceId = place.id
         this.placeName = place.name
         this.placePhotos = place.photos
+        this.mapPlaceId = place.place_id
         this.createPlace()
 
         this.arrPlaces.push({ placeId: place.place_id, placeName: place.name, lng: place.geometry.location.lng(), lat: place.geometry.location.lat() })
@@ -152,7 +155,7 @@ export class MapComponent implements OnInit {
 
 
   createPlace(){
-    this.places.createPlaces(this.placeName, this.places.routeId, this.placePlaceId, this.placeLatitude, this.placeLongitude, this.placePhotos).subscribe( place => {
+    this.places.createPlaces(this.placeName, this.places.routeId, this.placePlaceId, this.placeLatitude, this.placeLongitude, this.placePhotos, this.mapPlaceId).subscribe( place => {
       this.arrPlacesName.push(place.name)
       this.arrPlacesIds.push(place._id)
     })
