@@ -94,6 +94,7 @@ export class MapComponent implements OnInit {
       this.ngZone.run(() => {
 
         let place: google.maps.places.PlaceResult = autocomplete.getPlace()
+        console.log(place)
         this.placeLatitude = place.geometry.location.lat()
         this.placeLongitude = place.geometry.location.lng()
         this.placePlaceId = place.id

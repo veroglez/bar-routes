@@ -7,5 +7,6 @@ router.post('/profile/places/new', routesController.createPlace);
 router.get('/routes', routesController.showAllRoutes);
 // router.get('/profile/:id/routes', routesController.showNewPlaces);
 router.put('/profile/delete/place', routesController.deletePlaces);
+router.post('/', routesController.searchRoutes);
 
 module.exports = router

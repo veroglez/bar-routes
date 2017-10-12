@@ -8,15 +8,30 @@ const RouteSchema = new Schema({
   genre: {
     type: String,
     enum: [
-      'Romántica',
-      'Música en directo',
-      'De after',
+      'Romantic',
+      'Live Music',
+      'After',
       'Comer'
     ]
   },
-  priceRange: String,
-  schedule:String,
-  city: String  
+  priceRange: {
+    type: String,
+    enum: [
+      'Cheap',
+      'Moderate',
+      'Expensive'
+    ]
+  },
+  schedule: {
+    type: String,
+    enum: [
+      'Morning',
+      'Afternoon',
+      'Night'
+    ]
+  },
+  city: String,
+  description: String
 }, {
   timestamps: {
     createdAt: 'created_at',

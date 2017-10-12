@@ -62,7 +62,7 @@ a:hover, a:focus {
 
 footer{
   background: #fcbd20;
-  height: 20vh;
+  height: 10vh;
   bottom:0;
 }
 .btn {
@@ -151,6 +151,7 @@ option:not(:checked) {
 .list-places{
   height: 345px;
   background: #fdcc52;
+  color: white
 }
 .map{
   padding:0;

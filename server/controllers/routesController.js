@@ -37,7 +37,7 @@ module.exports = {
   },
 
   createRoute: (req, res, next) => {
-    const {userId, routeName, routeGenre, priceRange, schedule, city} = req.body
+    const {userId, routeName, routeGenre, priceRange, schedule, city, description} = req.body
 
     Route.findOne({ name:routeName }).exec().then(route =>{
       if(route)
@@ -49,7 +49,8 @@ module.exports = {
         genre: routeGenre,
         priceRange: priceRange,
         schedule:schedule,
-        city: city
+        city: city,
+        description: description
       })
       theRoute.save().then(route =>{
         const theBarsroute = new Barsroute({
@@ -81,6 +82,38 @@ module.exports = {
     Barsroute.findByIdAndUpdate( barsrouteId, {$pull:{"places": placeId}}, {new: true})
     .then( barRoute => {res.json( {barRoute: barRoute} )})
     .catch(e => {res.status(400).json(e) })
+  },
+
+  searchRoutes: (req, res, next) => {
+    const {city, schedule, routegenre, pricerange} = req.body
+
+    console.log(city, schedule, routegenre, pricerange)
+
+
+
+
+    Route.find( { $and:[ {'city':city}, {'schedule':schedule}]} )
+    .then( barRoute => {
+      console.log(barRoute)
+      if(barRoute.length === 0 ){
+        Route.find( { $or:[ {'city':city} ]} )
+        .then( res => {
+          console.log(res)
+          console.log('No ha encontrado nada, te muestro todo')
+          return res.json( {res: res} )
+        })
+       }
+
+       return res.json( {barRoute: barRoute} )
+     })
+    .catch(err => next(err))
+
+    // Barsroute.find( { "routeId.city": { $regex: city, $options: 'i' } })
+    // .then( barRoute => {
+    //   console.log(barRoute)
+    //   res.json( {barRoute: barRoute} )} )
+    // // .then(response => { res.render('index', {products: response, subtitle: 'Products', banner:false  }) })
+    // .catch(err => next(err))
   }
 
 }

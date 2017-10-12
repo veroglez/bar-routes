@@ -34,8 +34,8 @@ export class PlacesService {
       .catch(this.handleError)
   }
 
-  createRoutes(userId, routeName, routeGenre, priceRange,schedule, city) {
-    return this.http.post(`${BASEURL}/profile/${userId}/routes/new`, {userId, routeName, routeGenre, priceRange, schedule, city}, this.options)
+  createRoutes(userId, routeName, routeGenre, priceRange,schedule, city, description) {
+    return this.http.post(`${BASEURL}/profile/${userId}/routes/new`, {userId, routeName, routeGenre, priceRange, schedule, city, description}, this.options)
       .map(res => res.json())
       .map(route => {
         this.routeId = route.routeId
@@ -54,6 +54,12 @@ export class PlacesService {
 
   deletePlace(placeId, barsrouteId) {
     return this.http.put(`${BASEURL}/profile/delete/place`, {placeId, barsrouteId}, this.options)
+      .map(res => res.json())
+      .catch(this.handleError)
+  }
+
+  searchRoutes(city, schedule, routegenre, pricerange) {
+    return this.http.post(`${BASEURL}/`, {city, schedule, routegenre, pricerange}, this.options)
       .map(res => res.json())
       .catch(this.handleError)
   }

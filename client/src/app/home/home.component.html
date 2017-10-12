@@ -9,40 +9,32 @@
 </div>
 
 <div class="">
-  <!-- <div class="col-sm-6 col-md-4">
-    <div class="thumbnail" *ngFor="let e of barsRoutes">
-      <img src="..." alt="...">
-      <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>{{e.routeId.name}}</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
-    </div>
-  </div> -->
   <div class="filter">
     <form class="form-inline">
       <div class="title"><h2>Elige tu ruta</h2></div>
       <div class="form-group">
-        <input type="search" class="form-control" id="exampleInputName2" placeholder="Ciudad">
+        <input class="form-control" type="text" [(ngModel)]="formInfo.city" name="city" placeholder="City"/>
       </div>
       <div class="form-group">
-        <select class="form-control input-lg">
-          <option>Seleccionar </option>
-          <option>Mañana</option>
-          <option>Tarde</option>
-          <option>Noche</option>
+        <select class="form-control input-lg" [(ngModel)]="formInfo.schedule" name="schedule" placeholder="Seleccionar">
+          <option value="">--- Select schedule ---</option>
+          <option  *ngFor="let sched of schedule" value="{{ sched }}">{{ sched }}</option>
         </select>
       </div>
       <div class="form-group">
-        <select class="form-control input-lg">
-          <option>Romántica</option>
-          <option>Música en directo</option>
-          <option>De after</option>
-          <option>Comer</option>
+        <select class="form-control input-lg" [(ngModel)]="formInfo.routegenre" name="routegenre" placeholder="Seleccionar">
+          <option value="">--- Selecet type ---</option>
+          <option  *ngFor="let genre of places_genre" value="{{ genre }}">{{ genre }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control input-lg" [(ngModel)]="formInfo.pricerange" name="pricerange" placeholder="Seleccionar">
+          <option value="">--- Select price ---</option>
+          <option  *ngFor="let price of price_range" value="{{ price }}">{{ price }}</option>
         </select>
       </div>
       <br>
-      <button type="submit" class="btn">Buscar</button>
+      <button type="submit" (click)="searchRoutes()" class="btn">Buscar</button>
     </form>
   </div>
 </div>

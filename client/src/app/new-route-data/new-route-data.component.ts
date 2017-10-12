@@ -9,6 +9,7 @@ interface LoginForm{
   pricerange:string
   schedule:string
   city:string
+  description:string
 }
 
 
@@ -21,27 +22,28 @@ export class NewRouteDataComponent implements OnInit {
   @Output() onSubmitId = new EventEmitter<boolean>();
   user
   places_genre = [
-    'Romántica',
-    'Música en directo',
-    'De after',
-    'Comer'
+    'Romantic',
+    'Live music',
+    'After',
+    'Brunch',
   ]
   price_range = [
-    '€',
-    '€€',
-    '€€€'
+    'Cheap',
+    'Moderate',
+    'Expensive'
   ]
   schedule = [
-    'Mañana',
-    'Tarde',
-    'Noche'
+    'Morning',
+    'Afternoon',
+    'Night'
   ]
   formInfo:LoginForm = {
     routename: "",
     routegenre: "",
     pricerange: "",
     schedule:"",
-    city:""
+    city:"",
+    description:""
   }
 
   constructor( public places:PlacesService, public auth:AuthService  ) { }
@@ -50,7 +52,7 @@ export class NewRouteDataComponent implements OnInit {
 
   createRoute(){
     this.user = this.auth.getUser()
-    this.places.createRoutes(this.user._id, this.formInfo.routename, this.formInfo.routegenre, this.formInfo.pricerange, this.formInfo.schedule, this.formInfo.city).subscribe()
+    this.places.createRoutes(this.user._id, this.formInfo.routename, this.formInfo.routegenre, this.formInfo.pricerange, this.formInfo.schedule, this.formInfo.city, this.formInfo.description).subscribe()
     setTimeout(()=> {
         this.onSubmitId.emit(true)
     }, 1000);

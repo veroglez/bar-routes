@@ -1,23 +1,55 @@
 import { Component, OnInit } from '@angular/core';
 import {PlacesService} from '../services/places.service'
 
+interface LoginForm{
+  routename:string
+  routegenre:string
+  pricerange:string
+  schedule:string
+  city:string
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  barsRoutes
+  places_genre = [
+    'Romantic',
+    'Live music',
+    'After',
+    'Brunch',
+  ]
+  price_range = [
+    'Cheap',
+    'Moderate',
+    'Expensive'
+  ]
+  schedule = [
+    'Morning',
+    'Afternoon',
+    'Night'
+  ]
+  formInfo:LoginForm = {
+    routename: "",
+    routegenre: "",
+    pricerange: "",
+    schedule:"",
+    city:""
+  }
 
   constructor(public places:PlacesService) { }
 
   ngOnInit() {
+    // this.places.getList()
+    //   .subscribe(d => { this.barsRoutes = d;});
+  }
 
-    this.places.getList()
-      .subscribe(d => {
-        this.barsRoutes = d;
-      });
 
+  searchRoutes(){
+    const {city, schedule, routegenre, pricerange} = this.formInfo;
+    this.places.searchRoutes(city, schedule, routegenre, pricerange).subscribe()
   }
 
 }
