@@ -1,5 +1,3 @@
-
-
 <div class="col-md-6  col-xs-12 map">
   <div class="form-group">
     <input placeholder="Enter source location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #pickupInput [formControl]="destinationInput">
@@ -8,6 +6,7 @@
     </sebm-google-map>
   </div>
 </div>
+
 <div class="list-places col-md-6 col-xs-12">
   <h3>Lugares</h3>
   <ul *ngFor="let place of arrPlacesName">

@@ -7,11 +7,11 @@ const mongoose = require('mongoose')
 module.exports = {
   createPlace: (req, res, next) => {
     const {name, routeId, placeId, latitude, longitude, photos, mapPlaceId} = req.body
-
     Place.findOne({id:placeId}).exec().then(place =>{
       if(place){
         Barsroute.findOne({routeId:routeId}).then( res => {
           res.places.push(place._id)
+          return res.save()
         })
         return res.status(200).json(place)
       }

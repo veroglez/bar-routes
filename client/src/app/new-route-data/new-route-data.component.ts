@@ -21,6 +21,7 @@ interface LoginForm{
 export class NewRouteDataComponent implements OnInit {
   @Output() onSubmitId = new EventEmitter<boolean>();
   user
+
   places_genre = [
     'Romantic',
     'Live music',
@@ -51,6 +52,7 @@ export class NewRouteDataComponent implements OnInit {
   ngOnInit() {}
 
   createRoute(){
+
     this.user = this.auth.getUser()
     this.places.createRoutes(this.user._id, this.formInfo.routename, this.formInfo.routegenre, this.formInfo.pricerange, this.formInfo.schedule, this.formInfo.city, this.formInfo.description).subscribe()
     setTimeout(()=> {

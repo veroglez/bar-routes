@@ -106,7 +106,7 @@ export class MapComponent implements OnInit {
         this.createPlace()
 
         this.arrPlaces.push({ placeId: place.place_id, placeName: place.name, lng: place.geometry.location.lng(), lat: place.geometry.location.lat() })
-
+        console.log(this.arrPlaces)
         if (place.geometry === undefined) return
 
         if (mode === 'ORG') {
@@ -158,6 +158,8 @@ export class MapComponent implements OnInit {
     this.places.createPlaces(this.placeName, this.places.routeId, this.placePlaceId, this.placeLatitude, this.placeLongitude, this.placePhotos, this.mapPlaceId).subscribe( place => {
       this.arrPlacesName.push(place.name)
       this.arrPlacesIds.push(place._id)
+
+      console.log(this.arrPlacesName)
     })
   }
 
