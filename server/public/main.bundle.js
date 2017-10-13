@@ -217,7 +217,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/editprofile/editprofile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-container\">\n\n\n  <form >\n    <h2> Edit profile </h2>\n\n    <pre>\n      {{auth.user | json}}\n    </pre>\n\n    <label> Username </label>\n    <input type=\"text\" [(ngModel)]=\"formInfo.username\" name=\"username\" value=\"1\"/>\n    <br>\n    <label> Password </label>\n    <input type=\"password\" [(ngModel)]=\"formInfo.password\" name=\"password\" value=\"1\"/>\n    <br>\n    <label> Email </label>\n    <input type=\"text\" [(ngModel)]=\"formInfo.email\" name=\"email\" value=\"q\"/>\n    <br>\n    <button (click)=\"editProfile()\"> Edit </button>\n  </form>\n\n\n\n</div>\n"
+module.exports = "<div class=\"page-container-section mg-top\">\n  <form class=\"center\">\n    <div class=\"col-md-3\"></div>\n    <div class=\"col-md-6\">\n      <h2> Edit profile </h2>\n      <label> Username </label>\n      <input class=\"form-control\" type=\"text\" [(ngModel)]=\"formInfo.username\" name=\"username\" value=\"{{auth.user.username}}\"/>\n      <br>\n      <label> Password </label>\n      <input class=\"form-control\" type=\"password\" [(ngModel)]=\"formInfo.password\" name=\"password\" value=\"hola\"/>\n      <br>\n      <label> Email </label>\n      <input class=\"form-control\" type=\"text\" [(ngModel)]=\"formInfo.email\" name=\"email\" value=\"{{auth.user.email}}\"/>\n      <br>\n      <button class=\"btn btn-default\"  (click)=\"editProfile()\"> Edit </button>\n    </div>\n  </form>\n</div>\n"
 
 /***/ }),
 
@@ -291,7 +291,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".header h1{\n  color: white;\n  font-size: 6rem;\n  font-weight: 400;\n  /*text-shadow: 3px 3px #000;*/\n}\n\n.header .row{\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n text-align: left;\n}\n.header .image{\n  height: 600px;\n  background: url(" + __webpack_require__("../../../../../src/assets/images/mobile-phone.png") + ");\n  background-size: contain;\n  background-repeat: no-repeat;\n  margin: auto;\n  margin-left: 10%;\n  background-position: 30% 20%;\n}\n.header .title{\n  padding-left: 10%;\n  margin: auto;\n  font-weight: 500;\n  text-align:left;\n}\n.header .title h1{\n  margin: 50px 0;\n}\n\n.header{\n  padding-top: 80px;\n  height: 700px;\n  background: url(" + __webpack_require__("../../../../../src/assets/images/bar4.jpg") + ");\n  /*,linear-gradient(to left,#7b4397,#dc2430);*/\n  background-size: cover;\n  background-attachment: fixed;\n  /*filter: saturate(2);*/\n}\n\n.filter{\n  padding: 50px 0;\n  text-align: center;\n  width: 100%;\n  margin: 0;\n}\n.container{\n  width: 100%;\n}\n\n.filter .title{\n  color: #fdcc52;\n  margin: 50px 0;\n}\n.filter .title h2{\n  font-size: 5rem;\n}\n.filter .btn{\n  margin: 50px;\n  padding: 10px 30px\n}\n\n\n@media screen and (max-width: 768px){\n  .header .title  h1{\n    text-align: center;\n    font-size: 5rem;\n    font-weight: 300;\n    margin-bottom: 10px\n  }\n  .header .title{\n    padding-left: 0;\n    text-align: center;\n  }\n  .header{\n    overflow: hidden;\n    padding-bottom: 80px;\n    height: auto;\n  }\n\n  .row {\n      display: block;\n  }\n  .header .image{\n    display: none\n  }\n  .form-inline{\n    padding: 10px;\n  }\n\n  .profile{\n    text-align: center;\n  }\n}\n", ""]);
+exports.push([module.i, ".header h1{\n  color: white;\n  font-size: 6rem;\n  font-weight: 400;\n  /*text-shadow: 3px 3px #000;*/\n}\n\n.header .row{\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n text-align: left;\n}\n.header .image{\n  height: 600px;\n  background: url(" + __webpack_require__("../../../../../src/assets/images/mobile-phone.png") + ");\n  background-size: contain;\n  background-repeat: no-repeat;\n  margin: auto;\n  margin-left: 10%;\n  background-position: 30% 20%;\n}\n.header .title{\n  padding-left: 10%;\n  margin: auto;\n  font-weight: 500;\n  text-align:left;\n}\n.header .title h1{\n  margin: 50px 0;\n  text-align: left;\n}\n\n.header{\n  padding-top: 80px;\n  height: 700px;\n  background: url(" + __webpack_require__("../../../../../src/assets/images/bar4.jpg") + ");\n  /*,linear-gradient(to left,#7b4397,#dc2430);*/\n  background-size: cover;\n  background-attachment: fixed;\n  /*filter: saturate(2);*/\n}\n\n.filter{\n  padding: 50px 0;\n  text-align: center;\n  width: 100%;\n  margin: 0;\n}\n.container{\n  width: 100%;\n}\n\n.filter .title{\n  color: #fdcc52;\n  margin: 50px 0;\n}\n.filter .title h2{\n  font-size: 5rem;\n}\n.filter .btn{\n  margin: 50px;\n  padding: 10px 30px\n}\n\n\n@media screen and (max-width: 768px){\n  .header .title  h1{\n    text-align: center;\n    font-size: 5rem;\n    font-weight: 300;\n    margin-bottom: 10px\n  }\n  .header .title{\n    padding-left: 0;\n    text-align: center;\n  }\n  .header{\n    overflow: hidden;\n    padding-bottom: 80px;\n    height: auto;\n  }\n\n  .row {\n      display: block;\n  }\n  .header .image{\n    display: none\n  }\n  .form-inline{\n    padding: 10px;\n  }\n\n  .profile{\n    text-align: center;\n  }\n}\n", ""]);
 
 // exports
 
@@ -304,7 +304,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header\">\n  <div class=\"\">\n    <div class=\"col-xs-12 col-sm-6 col-md-6 title\">\n      <h1>Deja de estar perdido y encuentra tu ruta</h1>\n      <button type=\"submit\" class=\"btn-create btn\">Crea tu ruta</button>\n    </div>\n    <div class=\"col-xs-12 col-sm-4 col-md-4 image\"><img src=\"\" alt=\"\"></div>\n  </div>\n</div>\n\n<div class=\"\">\n  <div class=\"filter\">\n    <form class=\"form-inline\">\n      <div class=\"title\"><h2>Elige tu ruta</h2></div>\n      <div class=\"form-group\">\n        <input class=\"form-control\" type=\"text\" [(ngModel)]=\"formInfo.city\" name=\"city\" placeholder=\"City\"/>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.schedule\" name=\"schedule\" placeholder=\"Seleccionar\">\n          <option value=\"\">--- Select schedule ---</option>\n          <option  *ngFor=\"let sched of schedule\" value=\"{{ sched }}\">{{ sched }}</option>\n        </select>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.routegenre\" name=\"routegenre\" placeholder=\"Seleccionar\">\n          <option value=\"\">--- Selecet type ---</option>\n          <option  *ngFor=\"let genre of places_genre\" value=\"{{ genre }}\">{{ genre }}</option>\n        </select>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.pricerange\" name=\"pricerange\" placeholder=\"Seleccionar\">\n          <option value=\"\">--- Select price ---</option>\n          <option  *ngFor=\"let price of price_range\" value=\"{{ price }}\">{{ price }}</option>\n        </select>\n      </div>\n      <br>\n\n      <a [routerLink]=\"['/routes']\">\n        <button type=\"submit\" (click)=\"searchRoutes()\" class=\"btn\">Buscar</button>\n      </a>\n    </form>\n  </div>\n</div>\n"
+module.exports = "<div class=\"header\">\n  <div class=\"\">\n    <div class=\"col-xs-12 col-sm-6 col-md-6 title\">\n      <h1>Deja de estar perdido y encuentra tu ruta</h1>\n      <div *ngIf = \"user\">\n        <a [routerLink]=\"['/profile', user._id, 'routes','new']\"><button type=\"submit\" class=\"btn-create btn\">Crea tu ruta</button></a>\n      </div>\n      <div *ngIf = \"!user\">\n        <a [routerLink]=\"['/login']\"><button type=\"submit\" class=\"btn-create btn\">Crea tu ruta</button></a>\n      </div>\n    </div>\n    <div class=\"col-xs-12 col-sm-4 col-md-4 image\"><img src=\"\" alt=\"\"></div>\n  </div>\n</div>\n\n<div class=\"\">\n  <div class=\"filter\">\n    <form class=\"form-inline\">\n      <div class=\"title\"><h2>Elige tu ruta</h2></div>\n      <div class=\"form-group\">\n        <input class=\"form-control\" type=\"text\" [(ngModel)]=\"formInfo.city\" name=\"city\" placeholder=\"City\"/>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.schedule\" name=\"schedule\" placeholder=\"Seleccionar\">\n          <option value=\"\">--- Select schedule ---</option>\n          <option  *ngFor=\"let sched of schedule\" value=\"{{ sched }}\">{{ sched }}</option>\n        </select>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.routegenre\" name=\"routegenre\" placeholder=\"Seleccionar\">\n          <option value=\"\">--- Selecet type ---</option>\n          <option  *ngFor=\"let genre of places_genre\" value=\"{{ genre }}\">{{ genre }}</option>\n        </select>\n      </div>\n      <div class=\"form-group\">\n        <select class=\"form-control input-lg\" [(ngModel)]=\"formInfo.pricerange\" name=\"pricerange\" placeholder=\"Seleccionar\">\n          <option value=\"\">--- Select price ---</option>\n          <option  *ngFor=\"let price of price_range\" value=\"{{ price }}\">{{ price }}</option>\n        </select>\n      </div>\n      <br>\n\n      <a [routerLink]=\"['/routes']\">\n        <button type=\"submit\" (click)=\"searchRoutes()\" class=\"btn\">Buscar</button>\n      </a>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -315,6 +315,7 @@ module.exports = "<div class=\"header\">\n  <div class=\"\">\n    <div class=\"c
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_places_service__ = __webpack_require__("../../../../../src/app/services/places.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -326,9 +327,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var HomeComponent = (function () {
-    function HomeComponent(places) {
+    function HomeComponent(places, auth) {
+        var _this = this;
         this.places = places;
+        this.auth = auth;
         this.places_genre = [
             'Romantic',
             'Live music',
@@ -352,6 +356,9 @@ var HomeComponent = (function () {
             schedule: "",
             city: ""
         };
+        this.user = this.auth.getUser();
+        this.auth.getLoginEventEmitter()
+            .subscribe(function (user) { return _this.user = user; });
     }
     HomeComponent.prototype.ngOnInit = function () { };
     HomeComponent.prototype.searchRoutes = function () {
@@ -366,10 +373,10 @@ HomeComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/home/home.component.html"),
         styles: [__webpack_require__("../../../../../src/app/home/home.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_places_service__["a" /* PlacesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_places_service__["a" /* PlacesService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_places_service__["a" /* PlacesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_places_service__["a" /* PlacesService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _b || Object])
 ], HomeComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=home.component.js.map
 
 /***/ }),
@@ -382,7 +389,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".login{\n  height: 80vh;\n  background: url(" + __webpack_require__("../../../../../src/assets/images/bar4.jpg") + ");\n  /*,linear-gradient(to left,#7b4397,#dc2430);*/\n  background-size: cover;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.login-form{\n  background: rgba(255,255,255,0.9);\n  margin: 100px auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: auto;\n}\n\n.form-group{\n  margin: 20px auto;\n}\n", ""]);
+exports.push([module.i, ".login{\n  height: 90vh;\n  background: url(" + __webpack_require__("../../../../../src/assets/images/bar4.jpg") + ");\n  /*,linear-gradient(to left,#7b4397,#dc2430);*/\n  background-size: cover;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.login-form{\n  background: rgba(255,255,255,0.9);\n  margin: 100px auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: auto;\n}\n\n.form-group{\n  margin: 20px auto;\n}\n", ""]);
 
 // exports
 
@@ -598,7 +605,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/map/map.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"list-places col-md-6\">\n  <h3>Lugares</h3>\n  <ul *ngFor=\"let place of arrPlacesName\">\n    <li>{{place}} | <span (click)=\"deletePlace(place)\" class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></li>\n  </ul>\n</div>\n\n<div class=\"col-md-6 map\">\n  <div class=\"form-group\">\n    <input placeholder=\"Enter source location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #pickupInput [formControl]=\"destinationInput\">\n    <sebm-google-map [latitude]=\"latitude\" [longitude]=\"longitude\" [scrollwheel]=\"false\" [zoom]=\"zoom\" [styles]=\"mapCustomStyles\">\n      <sebm-google-map-directions [origin]=\"origin\" [destination]=\"destination\" [waypoints]=\"waypoints\"></sebm-google-map-directions>\n    </sebm-google-map>\n  </div>\n</div>\n\n<!-- <button style=\"width: 20%; float:left; margin:0\" class=\"btn add\"(click)=\"createPlace()\"> Add </button> -->\n"
+module.exports = "\n\n<div class=\"col-md-6  col-xs-12 map\">\n  <div class=\"form-group\">\n    <input placeholder=\"Enter source location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #pickupInput [formControl]=\"destinationInput\">\n    <sebm-google-map [latitude]=\"latitude\" [longitude]=\"longitude\" [scrollwheel]=\"false\" [zoom]=\"zoom\" [styles]=\"mapCustomStyles\">\n      <sebm-google-map-directions [origin]=\"origin\" [destination]=\"destination\" [waypoints]=\"waypoints\"></sebm-google-map-directions>\n    </sebm-google-map>\n  </div>\n</div>\n<div class=\"list-places col-md-6 col-xs-12\">\n  <h3>Lugares</h3>\n  <ul *ngFor=\"let place of arrPlacesName\">\n    <li>{{place}}  <span (click)=\"deletePlace(place)\" class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></li>\n  </ul>\n</div>\n"
 
 /***/ }),
 
@@ -891,7 +898,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/new-route/new-route.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "  <div class=\"create-route\">\n    <app-new-route-data (onSubmitId)=\"receiveEmitter($event)\" style=\"width:100%\"></app-new-route-data>\n  </div>\n  <!-- <div *ngIf=\"routeId\"> -->\n    <div class=\"route-map\">\n    <app-map ></app-map>\n  <!-- </div> -->\n\n\n  <div style=\"clear:both\"></div>\n"
+module.exports = "  <div class=\"page-container-section\">\n    <div class=\"create-route \">\n      <app-new-route-data (onSubmitId)=\"receiveEmitter($event)\" style=\"width:100%\"></app-new-route-data>\n    </div>\n    <div *ngIf=\"routeId\">\n      <div class=\"route-map\">\n      <app-map ></app-map>\n    </div>\n  </div>\n  <div style=\"clear:both\"></div>\n"
 
 /***/ }),
 
@@ -1024,7 +1031,7 @@ var AuthService = (function () {
     };
     AuthService.prototype.signup = function (username, password, email) {
         var _this = this;
-        console.log("entrooo");
+        // console.log("entrooo")
         return this.http.post(BASEURL + "/signup", { username: username, password: password, email: email }, this.options)
             .map(function (res) { return res.json(); })
             .map(function (user) { return _this.emitUserLoginEvent(user); })
@@ -1054,14 +1061,19 @@ var AuthService = (function () {
     AuthService.prototype.editProfile = function (username, password, email) {
         var _this = this;
         this.userId = this.getUser();
-        console.log("editoooo", this.userId);
+        // console.log("editoooo", this.userId)
         // console.log(this.userId._id)
         return this.http.put(BASEURL + "/profile/" + this.userId._id + "/edit", { username: username, password: password, email: email }, this.options)
             .map(function (res) { return res.json(); })
             .map(function (response_object) {
-            console.log('response:', response_object.user);
+            // console.log('response:', response_object.user)
             _this.emitUserLoginEvent(response_object.user);
         })
+            .catch(this.handleError);
+    };
+    AuthService.prototype.getUserId = function (id) {
+        return this.http.get(BASEURL + "/profile/" + id, this.options)
+            .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };
     return AuthService;
@@ -1285,7 +1297,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/show-routes/show-routes.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  show-routes works!\n</p>\n<div class=\"routes\">\n  <ul *ngFor=\"let e of places.allRoutes\">\n    <li><img src=\"\" alt=\"\"></li>\n    <li><a href=\"/routes/{{e._id}}\">{{e.routeId.name}}</a></li>\n    <li>{{e.routeId.description}}</li>\n  </ul>\n</div>\n\n<div class=\"row\">\n  <div class=\"col-sm-6 col-md-4\">\n    <div class=\"thumbnail\">\n      <img src=\"...\" alt=\"...\">\n      <div class=\"caption\">\n        <h3>Thumbnail label</h3>\n        <p>...</p>\n        <p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">Button</a> <a href=\"#\" class=\"btn btn-default\" role=\"button\">Button</a></p>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"page-container-section mg-top\">\n  <div class=\"row col-md-12\">\n    <div class=\"col-xs-6 col-sm-4 col-md-2\" *ngFor=\"let e of places.allRoutes\">\n      <div class=\"thumbnail\">\n        <div  class=\"caption\">\n          <img class=\"img-responsive\"  src=\"http://placehold.it/500x325\" alt=\"...\">\n          <a [routerLink]=\"['/routes',e._id]\"><h4>{{e.routeId.name}}</h4></a>\n          <div class=\"description\">\n            {{e.routeId.description}}\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"clearfix\"></div>\n</div>\n"
 
 /***/ }),
 
@@ -1341,7 +1353,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".sebm-google-map-container {\n   height: 300px;\n }\n", ""]);
+exports.push([module.i, ".sebm-google-map-container {\n   height: 300px;\n   width: 100%;\n }\n", ""]);
 
 // exports
 
@@ -1354,7 +1366,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/show-simple-route/show-simple-route.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  show-simple-route works!\n</p>\n<pre>{{route}}</pre>\n\n\n<div class=\"col-md-6 map\">\n  <div class=\"form-group\">\n    <sebm-google-map [latitude]=\"latitude\" [longitude]=\"longitude\" [scrollwheel]=\"false\" [zoom]=\"zoom\" [styles]=\"mapCustomStyles\">\n      <sebm-google-map-directions [origin]=\"origin\" [destination]=\"destination\" [waypoints]=\"waypoints\"></sebm-google-map-directions>\n    </sebm-google-map>\n  </div>\n</div>\n"
+module.exports = "\n<div class=\"page-container-section\" style=\"margin-top:70px;\">\n    <div class=\"col-md-12 map\">\n      <div class=\"form-group\">\n        <sebm-google-map [latitude]=\"latitude\" [longitude]=\"longitude\" [scrollwheel]=\"false\" [zoom]=\"zoom\" [styles]=\"mapCustomStyles\">\n          <sebm-google-map-directions [origin]=\"origin\" [destination]=\"destination\" [waypoints]=\"waypoints\"></sebm-google-map-directions>\n        </sebm-google-map>\n      </div>\n    <div class=\"col-md-12 pd-left pd-right text-left show-route\">\n      <h3>{{route.routeId.name}}</h3>\n      <div class=\"description col-md-5\">\n        <h4>Description</h4>\n        <p>{{route.routeId.description}}</p>\n      </div>\n      <div class=\"col-md-1\">\n      </div>\n      <div class=\"list col-md-6\">\n        <h4>Places</h4>\n        <ol>\n          <li *ngFor=\"let e of route.places\">{{e.name}}</li>\n        </ol>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1470,7 +1482,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".signup{\n  height: 80vh;\n  background: url(" + __webpack_require__("../../../../../src/assets/images/bar4.jpg") + "),linear-gradient(to left,#7b4397,#dc2430);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  background-size: cover;\n}\n\n.signup-form{\n  background: rgba(255,255,255,0.9);\n  margin: 100px auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: auto;\n}\n\n.form-group{\n  margin: 20px auto;\n}\n\n@media screen and (max-width: 768px){\n  h2{\n    margin:20px;\n  }\n\n}\n", ""]);
+exports.push([module.i, ".signup{\n  height: 90vh;\n  background: url(" + __webpack_require__("../../../../../src/assets/images/bar4.jpg") + "),linear-gradient(to left,#7b4397,#dc2430);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  background-size: cover;\n}\n\n.signup-form{\n  background: rgba(255,255,255,0.9);\n  margin: 100px auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: auto;\n}\n\n.form-group{\n  margin: 20px auto;\n}\n\n@media screen and (max-width: 768px){\n  h2{\n    margin:20px;\n  }\n\n}\n", ""]);
 
 // exports
 
@@ -1569,7 +1581,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/userprofile/userprofile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-container\" style=\"padding-top:50px\">\n\n\n<div *ngIf=\"!user\">\n  <h2>NO USER LOGGED IN</h2>\n</div>\n\n\n<div *ngIf=\"user\">\n  <!-- <a [routerLink]=\"['/profile', user._id, 'edit']\">Edit Profile</a>\n  <h2> You are now logged in as {{ user.username }}!! </h2>\n  <p> Here's the user object </p>\n  <pre> {{ user | json }} </pre>\n  <a [routerLink]=\"['/profile', user._id, 'routes','new']\">Create route</a> -->\n  <!-- <button (click)=\"auth.logout().subscribe()\"> logout </button> -->\n\n  <h1>Profile</h1>\n  <div class=\"profile col-md-12\">\n    <div class=\" col-md-8\">\n      <div class=\" col-md-4\">\n        <img src=\"http://www.dinneer.com/images/users/user_icon.png\" alt=\"\">\n      </div>\n      <div class=\" col-md-8 text-left\">\n        <h4>Username:  {{ user.username }}</h4>\n        <h4>Email:  {{ user.email }}</h4>\n        <button [routerLink]=\"['/profile', user._id, 'edit']\" class=\"btn\">Edit profile</button>\n        <button [routerLink]=\"['/profile', user._id, 'routes','new']\" class=\"btn\">Create route</button>\n      </div>\n\n    </div>\n\n\n    <div class=\"profile col-md-4 text-left my-routes\">\n      <h3>Mis rutas</h3>\n    </div>\n  </div>\n\n</div>\n\n\n\n</div>\n"
+module.exports = "<div class=\"page-container-section\" style=\"padding-top:50px\">\n  <div *ngIf=\"!user\">\n    <h2>NO USER LOGGED IN</h2>\n  </div>\n  <div *ngIf=\"user\">\n    <h1>Profile</h1>\n    <div class=\"profile col-md-12\">\n      <div class=\" col-md-6\">\n        <div class=\" col-md-12\">\n          <img class=\"img-responsive\" style=\"margin:0 auto\" src=\"http://www.dinneer.com/images/users/user_icon.png\" alt=\"\">\n        </div>\n        <div class=\" col-md-12 text-center\">\n          <h4>Username:  <span class=\"yellow\">{{ user.username }}</span></h4>\n          <h4>Email:  <span class=\"yellow\">{{ user.email }}</span></h4>\n          <button [routerLink]=\"['/profile', user._id, 'edit']\" class=\"btn\" style=\"margin-right: 20px\">Edit profile</button>\n          <button [routerLink]=\"['/profile', user._id, 'routes','new']\" class=\"btn\">Create route</button>\n        </div>\n      </div>\n      <div class=\"profile col-md-6 text-left my-routes\">\n        <h3 style=\"color:black\">Mis rutas</h3>\n        <ul>\n          <li *ngFor =\"let e of routes\">\n            <div class=\"col-md-10\">\n              <a [routerLink]=\"['/routes', e._id]\">{{e.routeId.name}}</a>\n            </div>\n            <div class=\"col-md-2\">\n              <span class=\"glyphicon glyphicon-remove\" style=\"font-weight:300\" aria-hidden=\"true\"></span>\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1580,6 +1592,7 @@ module.exports = "<div class=\"page-container\" style=\"padding-top:50px\">\n\n\
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserprofileComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1591,15 +1604,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var UserprofileComponent = (function () {
-    function UserprofileComponent(auth) {
+    function UserprofileComponent(auth, router) {
         var _this = this;
         this.auth = auth;
+        this.router = router;
         this.user = this.auth.getUser();
         this.auth.getLoginEventEmitter()
             .subscribe(function (user) { return _this.user = user; });
     }
     UserprofileComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.router.params.subscribe(function (params) {
+            _this.getUserId(params['id']);
+        });
+    };
+    UserprofileComponent.prototype.getUserId = function (id) {
+        var _this = this;
+        this.auth.getUserId(id).subscribe(function (routes) {
+            _this.routes = routes.user;
+            console.log(_this.routes);
+        });
     };
     return UserprofileComponent;
 }());
@@ -1609,10 +1635,10 @@ UserprofileComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/userprofile/userprofile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/userprofile/userprofile.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object])
 ], UserprofileComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=userprofile.component.js.map
 
 /***/ }),
@@ -1627,7 +1653,7 @@ module.exports = __webpack_require__.p + "bar4.24b9b3dbe098fa4e122c.jpg";
 /***/ "../../../../../src/assets/images/mobile-phone.png":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "mobile-phone.98f2e92d74787a11d71e.png";
+module.exports = __webpack_require__.p + "mobile-phone.535a88750dac0edc30a1.png";
 
 /***/ }),
 
