@@ -2,7 +2,12 @@
   <div class="">
     <div class="col-xs-12 col-sm-6 col-md-6 title">
       <h1>Deja de estar perdido y encuentra tu ruta</h1>
-      <button type="submit" class="btn-create btn">Crea tu ruta</button>
+      <div *ngIf = "user">
+        <a [routerLink]="['/profile', user._id, 'routes','new']"><button type="submit" class="btn-create btn">Crea tu ruta</button></a>
+      </div>
+      <div *ngIf = "!user">
+        <a [routerLink]="['/login']"><button type="submit" class="btn-create btn">Crea tu ruta</button></a>
+      </div>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-4 image"><img src="" alt=""></div>
   </div>

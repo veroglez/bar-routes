@@ -17,7 +17,9 @@ h1,h2,h3,h4,h5,h6{
   letter-spacing: 1px;
 }
 h2,h1{ margin: 50px}
-
+h3,.yellow{
+  color:#fdcc52;
+}
 .navbar-brand img{
   width: 110px;
 }
@@ -127,10 +129,14 @@ option:not(:checked) {
 }
 
 .page-container{
-  height: 80vh;
+  height: 90vh;
   width: 100%;
-  /*display: flex;*/
 }
+.page-container-section{
+  min-height: 90vh;
+  width: 100%;
+}
+
 .flex{
   display: flex;
 }
@@ -159,6 +165,10 @@ option:not(:checked) {
 .route-map{
   margin: 50px auto;
   width: 60%;
+  -webkit-transition: all .100s;
+  -moz-transition: all .100s;
+  transition: all .100s;
+  min-height: 400px;
 }
 .map .add, .map .form-control{
   border-radius: 0px
@@ -177,13 +187,63 @@ option:not(:checked) {
   padding: 0 10%
 }
 .my-routes{
-  background: #eee;
-  border-radius: 10px;
+  border-left: 1px solid #ddd;
 }
 
+.mg-top{
+  padding-top:100px;
+}
 
+.flex-footer{
+  height: auto;
+}
 
-@media screen and (min-width: 768px){
+.thumbnail{
+  border-radius: 0px;
+  padding: 0;
+}
+.thumbnail .caption{
+  padding: 0 0 20px 0;
+}
+
+.thumbnail .description{
+  height: 40px;
+  padding: 10px;
+  overflow: hidden;
+  font-size: 13px;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+}
+.pd-left{
+  padding-left: 5%;
+}
+.pd-right{
+  padding-left: 5%;
+}
+.mg-left{
+  margin-left: 5%;
+}
+.mg-right{
+  margin-right: 5%;
+}
+
+.show-route .description, .show-route .list{
+  margin-top: 20px;
+  border-top:1px solid #eee;
+
+}
+.show-route ol{
+  list-style-type:upper-alpha;
+  padding-left: 20px;
+}
+.show-route li{
+  padding: 5px
+}
+.header .title  h1{
+  text-align: left;
+}
+
+@media screen and (max-width: 768px){
   .header .title  h1{
     text-align: center;
   }
@@ -192,6 +252,12 @@ option:not(:checked) {
   }
   .profile{
     text-align: center;
+  }
+  .my-routes{
+    margin-top: 50px;
+    border-left: 0px;
+    border-top: 1px solid #ddd;
+
   }
 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PlacesService} from '../services/places.service'
+import { AuthService } from '../services/auth.service';
+
 
 interface LoginForm{
   routename:string
@@ -39,8 +41,12 @@ export class HomeComponent implements OnInit {
     city:""
   }
   resultRoutes
+  user
 
-  constructor(public places:PlacesService) { }
+  constructor(public places:PlacesService, public auth:AuthService) {
+    this.user = this.auth.getUser();
+    this.auth.getLoginEventEmitter()
+        .subscribe( user => this.user=user );}
 
   ngOnInit() {}
 
