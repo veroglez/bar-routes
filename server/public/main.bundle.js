@@ -605,7 +605,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/map/map.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<div class=\"col-md-6  col-xs-12 map\">\n  <div class=\"form-group\">\n    <input placeholder=\"Enter source location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #pickupInput [formControl]=\"destinationInput\">\n    <sebm-google-map [latitude]=\"latitude\" [longitude]=\"longitude\" [scrollwheel]=\"false\" [zoom]=\"zoom\" [styles]=\"mapCustomStyles\">\n      <sebm-google-map-directions [origin]=\"origin\" [destination]=\"destination\" [waypoints]=\"waypoints\"></sebm-google-map-directions>\n    </sebm-google-map>\n  </div>\n</div>\n<div class=\"list-places col-md-6 col-xs-12\">\n  <h3>Lugares</h3>\n  <ul *ngFor=\"let place of arrPlacesName\">\n    <li>{{place}}  <span (click)=\"deletePlace(place)\" class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></li>\n  </ul>\n</div>\n"
+module.exports = "<div class=\"col-md-6  col-xs-12 map\">\n  <div class=\"form-group\">\n    <input placeholder=\"Enter source location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #pickupInput [formControl]=\"destinationInput\">\n    <sebm-google-map [latitude]=\"latitude\" [longitude]=\"longitude\" [scrollwheel]=\"false\" [zoom]=\"zoom\" [styles]=\"mapCustomStyles\">\n      <sebm-google-map-directions [origin]=\"origin\" [destination]=\"destination\" [waypoints]=\"waypoints\"></sebm-google-map-directions>\n    </sebm-google-map>\n  </div>\n</div>\n\n<div class=\"list-places col-md-6 col-xs-12\">\n  <h3>Lugares</h3>\n  <ul *ngFor=\"let place of arrPlacesName\">\n    <li>{{place}}  <span (click)=\"deletePlace(place)\" class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></li>\n  </ul>\n</div>\n"
 
 /***/ }),
 
@@ -675,6 +675,7 @@ var MapComponent = (function () {
                 _this.mapPlaceId = place.place_id;
                 _this.createPlace();
                 _this.arrPlaces.push({ placeId: place.place_id, placeName: place.name, lng: place.geometry.location.lng(), lat: place.geometry.location.lat() });
+                console.log(_this.arrPlaces);
                 if (place.geometry === undefined)
                     return;
                 if (mode === 'ORG') {
@@ -719,6 +720,7 @@ var MapComponent = (function () {
         this.places.createPlaces(this.placeName, this.places.routeId, this.placePlaceId, this.placeLatitude, this.placeLongitude, this.placePhotos, this.mapPlaceId).subscribe(function (place) {
             _this.arrPlacesName.push(place.name);
             _this.arrPlacesIds.push(place._id);
+            console.log(_this.arrPlacesName);
         });
     };
     MapComponent.prototype.deletePlace = function (place) {
@@ -898,7 +900,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/new-route/new-route.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "  <div class=\"page-container-section\">\n    <div class=\"create-route \">\n      <app-new-route-data (onSubmitId)=\"receiveEmitter($event)\" style=\"width:100%\"></app-new-route-data>\n    </div>\n    <div *ngIf=\"routeId\">\n      <div class=\"route-map\">\n      <app-map ></app-map>\n    </div>\n  </div>\n  <div style=\"clear:both\"></div>\n"
+module.exports = "  <div class=\"page-container-section\">\n    <pre>{{user}}</pre>\n    <div class=\"create-route \">\n      <app-new-route-data (onSubmitId)=\"receiveEmitter($event)\" style=\"width:100%\"></app-new-route-data>\n    </div>\n    <div *ngIf=\"routeId\">\n      <div class=\"route-map\">\n      <app-map ></app-map>\n      <a [routerLink]=\"['/profile',user._id]\"><button type=\"submit\" class=\"btn-create btn\">Save</button></a>\n    </div>\n  </div>\n  <div style=\"clear:both\"></div>\n"
 
 /***/ }),
 
@@ -908,6 +910,7 @@ module.exports = "  <div class=\"page-container-section\">\n    <div class=\"cre
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewRouteComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -918,11 +921,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var NewRouteComponent = (function () {
-    function NewRouteComponent() {
+    function NewRouteComponent(auth) {
+        this.auth = auth;
         this.routeId = false;
     }
-    NewRouteComponent.prototype.ngOnInit = function () { };
+    NewRouteComponent.prototype.ngOnInit = function () {
+        this.user = this.auth.getUser();
+        console.log(this.user);
+    };
     NewRouteComponent.prototype.receiveEmitter = function (a) {
         this.routeId = a;
         console.log('componente padre', this.routeId);
@@ -935,9 +943,10 @@ NewRouteComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/new-route/new-route.component.html"),
         styles: [__webpack_require__("../../../../../src/app/new-route/new-route.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object])
 ], NewRouteComponent);
 
+var _a;
 //# sourceMappingURL=new-route.component.js.map
 
 /***/ }),
@@ -1581,7 +1590,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/userprofile/userprofile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-container-section\" style=\"padding-top:50px\">\n  <div *ngIf=\"!user\">\n    <h2>NO USER LOGGED IN</h2>\n  </div>\n  <div *ngIf=\"user\">\n    <h1>Profile</h1>\n    <div class=\"profile col-md-12\">\n      <div class=\" col-md-6\">\n        <div class=\" col-md-12\">\n          <img class=\"img-responsive\" style=\"margin:0 auto\" src=\"http://www.dinneer.com/images/users/user_icon.png\" alt=\"\">\n        </div>\n        <div class=\" col-md-12 text-center\">\n          <h4>Username:  <span class=\"yellow\">{{ user.username }}</span></h4>\n          <h4>Email:  <span class=\"yellow\">{{ user.email }}</span></h4>\n          <button [routerLink]=\"['/profile', user._id, 'edit']\" class=\"btn\" style=\"margin-right: 20px\">Edit profile</button>\n          <button [routerLink]=\"['/profile', user._id, 'routes','new']\" class=\"btn\">Create route</button>\n        </div>\n      </div>\n      <div class=\"profile col-md-6 text-left my-routes\">\n        <h3 style=\"color:black\">Mis rutas</h3>\n        <ul>\n          <li *ngFor =\"let e of routes\">\n            <div class=\"col-md-10\">\n              <a [routerLink]=\"['/routes', e._id]\">{{e.routeId.name}}</a>\n            </div>\n            <div class=\"col-md-2\">\n              <span class=\"glyphicon glyphicon-remove\" style=\"font-weight:300\" aria-hidden=\"true\"></span>\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"page-container-section\" style=\"padding-top:50px\">\n  <div *ngIf=\"!user\">\n    <h2>NO USER LOGGED IN</h2>\n  </div>\n  <div *ngIf=\"user\">\n    <h1>Profile</h1>\n    <div class=\"profile col-md-12\">\n      <div class=\" col-md-6\">\n        <div class=\" col-md-12\">\n          <img class=\"img-responsive\" style=\"margin:0 auto\" src=\"http://www.dinneer.com/images/users/user_icon.png\" alt=\"\">\n        </div>\n        <div class=\" col-md-12 text-center\">\n          <h4>Username:  <span class=\"yellow\">{{ user.username }}</span></h4>\n          <h4>Email:  <span class=\"yellow\">{{ user.email }}</span></h4>\n          <button [routerLink]=\"['/profile', user._id, 'edit']\" class=\"btn\" style=\"margin-right: 20px\">Edit profile</button>\n          <button [routerLink]=\"['/profile', user._id, 'routes','new']\" class=\"btn\">Create route</button>\n        </div>\n      </div>\n      <div class=\"profile col-md-6 text-left my-routes\">\n        <h3 style=\"color:black\">Mis rutas</h3>\n        <ul>\n          <li *ngFor =\"let e of routes\">\n            <div class=\"col-md-10\">\n              <a [routerLink]=\"['/routes', e._id]\">{{e.routeId.name}}</a>\n            </div>\n            <div class=\"col-md-2\">\n              <!-- <span class=\"glyphicon glyphicon-remove\" style=\"font-weight:300\" aria-hidden=\"true\"></span> -->\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
