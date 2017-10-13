@@ -1,9 +1,8 @@
 const User = require('../models/User')
-// const multer = require('multer')
+const Barsroute = require('../models/Barsroute')
 const bcrypt = require('bcrypt')
 const path = require('path')
 const destination = path.join(__dirname, "../public/avatar/")
-// const upload = multer({dest : destination})
 
 
 module.exports = {
@@ -19,6 +18,14 @@ module.exports = {
   		password: hashPass
   	}
     User.findByIdAndUpdate(userId, { $set: updateObject }, {new: true})
+    .then( user => res.json({  user: user }) )
+    .catch( err => res.status(400).json({  error: err }) )
+  },
+
+  showUserRoutes: (req, res, next) => {
+    const userId = req.params.id
+
+    Barsroute.find({ userId: userId}).populate('places routeId')
     .then( user => res.json({  user: user }) )
     .catch( err => res.status(400).json({  error: err }) )
   },

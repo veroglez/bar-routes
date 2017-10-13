@@ -242,8 +242,16 @@ option:not(:checked) {
 .header .title  h1{
   text-align: left;
 }
+.my-routes ul{
+  list-style: none;
+  padding-left: 5px
+}
+.my-routes li{
+  padding: 5px 0px
+}
 
-@media screen and (max-width: 768px){
+
+@media screen and (max-width: 970px){
   .header .title  h1{
     text-align: center;
   }

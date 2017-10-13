@@ -1,35 +1,27 @@
-<div class="page-container" style="padding-top:50px">
-
-
-<div *ngIf="!user">
-  <h2>NO USER LOGGED IN</h2>
-</div>
-
-
-<div *ngIf="user">
-  <h1>Profile</h1>
-  <div class="profile col-md-12">
-    <div class=" col-md-6">
-      <div class=" col-md-12">
-        <img class="img-responsive" style="margin:0 auto" src="http://www.dinneer.com/images/users/user_icon.png" alt="">
+<div class="page-container-section" style="padding-top:50px">
+  <div *ngIf="!user">
+    <h2>NO USER LOGGED IN</h2>
+  </div>
+  <div *ngIf="user">
+    <h1>Profile</h1>
+    <div class="profile col-md-12">
+      <div class=" col-md-6">
+        <div class=" col-md-12">
+          <img class="img-responsive" style="margin:0 auto" src="http://www.dinneer.com/images/users/user_icon.png" alt="">
+        </div>
+        <div class=" col-md-12 text-center">
+          <h4>Username:  <span class="yellow">{{ user.username }}</span></h4>
+          <h4>Email:  <span class="yellow">{{ user.email }}</span></h4>
+          <button [routerLink]="['/profile', user._id, 'edit']" class="btn" style="margin-right: 20px">Edit profile</button>
+          <button [routerLink]="['/profile', user._id, 'routes','new']" class="btn">Create route</button>
+        </div>
       </div>
-      <div class=" col-md-12 text-center">
-        <h4>Username:  <span class="yellow">{{ user.username }}</span></h4>
-        <h4>Email:  <span class="yellow">{{ user.email }}</span></h4>
-        <button [routerLink]="['/profile', user._id, 'edit']" class="btn" style="margin-right: 20px">Edit profile</button>
-        <button [routerLink]="['/profile', user._id, 'routes','new']" class="btn">Create route</button>
+      <div class="profile col-md-6 text-left my-routes">
+        <h3 style="color:black">Mis rutas</h3>
+        <ul>
+          <li *ngFor ="let e of routes"><a [routerLink]="['/routes', e._id]">{{e.routeId.name}}</a></li>
+        </ul>
       </div>
-
-    </div>
-
-
-    <div class="profile col-md-6 text-left my-routes">
-      <h3>Mis rutas</h3>
     </div>
   </div>
-
-</div>
-
-
-
 </div>

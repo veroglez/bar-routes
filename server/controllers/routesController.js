@@ -87,7 +87,7 @@ module.exports = {
   searchRoutes: (req, res, next) => {
     const { city, schedule, routegenre, pricerange } = req.body
 
-    Route.find( { $and:[ {'city':city}, {'schedule':schedule}]} )
+    Route.find( { $and:[ {'city':city}, {'schedule':schedule}, {'routegenre':routegenre}, {'pricerange':pricerange} ]} )
       .then( barRoute => {
         if(barRoute.length === 0 ){
           Route.find( { $or:[ {'city':city}, {'schedule':schedule}, {'routegenre':routegenre}, {'pricerange':pricerange} ]} )
