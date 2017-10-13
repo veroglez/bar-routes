@@ -19,7 +19,14 @@
       <div class="profile col-md-6 text-left my-routes">
         <h3 style="color:black">Mis rutas</h3>
         <ul>
-          <li *ngFor ="let e of routes"><a [routerLink]="['/routes', e._id]">{{e.routeId.name}}</a></li>
+          <li *ngFor ="let e of routes">
+            <div class="col-md-10">
+              <a [routerLink]="['/routes', e._id]">{{e.routeId.name}}</a>
+            </div>
+            <div class="col-md-2">
+              <span class="glyphicon glyphicon-remove" style="font-weight:300" aria-hidden="true"></span>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
