@@ -61,9 +61,9 @@ app.use('/api', authRoutes)
 app.use('/api', profileRoutes)
 app.use('/api', routesRoutes)
 
-// app.use(function(req, res){
-//   res.sendFile(__dirname + './public/index.html')
-// })
+app.use(function(req, res){
+  res.sendFile(__dirname + './public/index.html')
+})
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

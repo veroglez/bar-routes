@@ -900,7 +900,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/new-route/new-route.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "  <div class=\"page-container-section\">\n    <pre>{{user}}</pre>\n    <div class=\"create-route \">\n      <app-new-route-data (onSubmitId)=\"receiveEmitter($event)\" style=\"width:100%\"></app-new-route-data>\n    </div>\n    <div *ngIf=\"routeId\">\n      <div class=\"route-map\">\n      <app-map ></app-map>\n      <a [routerLink]=\"['/profile',user._id]\"><button type=\"submit\" class=\"btn-create btn\">Save</button></a>\n    </div>\n  </div>\n  <div style=\"clear:both\"></div>\n"
+module.exports = "  <div class=\"page-container-section\">\n    <div class=\"create-route \">\n      <app-new-route-data (onSubmitId)=\"receiveEmitter($event)\" style=\"width:100%\"></app-new-route-data>\n    </div>\n    <div *ngIf=\"routeId\">\n      <div class=\"route-map\">\n      <app-map ></app-map>\n      <a [routerLink]=\"['/profile',user._id]\"><button type=\"submit\" class=\"btn-create btn\">Save</button></a>\n    </div>\n  </div>\n  <div style=\"clear:both\"></div>\n"
 
 /***/ }),
 
