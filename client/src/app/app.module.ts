@@ -55,7 +55,7 @@ import { ShowSimpleRouteComponent } from './show-simple-route/show-simple-route.
     RouterModule.forRoot(routes),
     // ReactiveFormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyD6kQpdkVk-xQXObw1jvODNoEgIOLDfVBc',
+      apiKey: 'AIzaSyAdiKx5c_lSDsGJW8KhCDm9Yid5YefDBnA',
       libraries: ["places"]
     }),
     ReactiveFormsModule
