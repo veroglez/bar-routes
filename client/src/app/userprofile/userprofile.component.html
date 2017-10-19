@@ -24,7 +24,7 @@
               <a [routerLink]="['/routes', e._id]">{{e.routeId.name}}</a>
             </div>
             <div class="col-md-2">
-              <!-- <span class="glyphicon glyphicon-remove" style="font-weight:300" aria-hidden="true"></span> -->
+              <span class="glyphicon glyphicon-remove" (click)="deleteRoute(e)" style="font-weight:300" aria-hidden="true"></span>
             </div>
           </li>
         </ul>

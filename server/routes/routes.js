@@ -7,6 +7,7 @@ router.post('/profile/places/new', routesController.createPlace);
 router.get('/routes', routesController.showAllRoutes);
 router.get('/routes/:id', routesController.getRoute);
 router.put('/profile/delete/place', routesController.deletePlaces);
+router.put('/profile/delete/route', routesController.deleteRoutes);
 router.post('/', routesController.searchRoutes);
 
 

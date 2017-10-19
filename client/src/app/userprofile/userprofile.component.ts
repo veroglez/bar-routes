@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { AuthService } from '../services/auth.service'
 import { Router, ActivatedRoute } from '@angular/router'
+import { PlacesService } from '../services/places.service'
+
 
 
 @Component({
@@ -12,7 +14,7 @@ export class UserprofileComponent implements OnInit {
   user
   routes
 
-  constructor(public auth:AuthService, public router: ActivatedRoute) {
+  constructor(public auth:AuthService, public router: ActivatedRoute, public places:PlacesService) {
     this.user = this.auth.getUser()
     this.auth.getLoginEventEmitter()
         .subscribe( user => this.user=user )
@@ -29,6 +31,14 @@ export class UserprofileComponent implements OnInit {
       this.routes = routes.user
       console.log(this.routes)
     })
+  }
+
+  deleteRoute(route){
+    console.log(route)
+    let positionId = this.routes.indexOf(route)
+    this.places.deleteRoute(this.routes[positionId]).subscribe()
+    this.routes.splice(positionId,1)
+    console.log(positionId)
   }
 
 }

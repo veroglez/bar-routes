@@ -47,9 +47,6 @@ export class MapComponent implements OnInit {
 
   arrPlacesName:Array<string> = []
   arrPlacesIds:Array<string> = []
-  // types
-  // photos
-  // address_components
   place:Place
 
 

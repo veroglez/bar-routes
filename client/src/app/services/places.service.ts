@@ -54,6 +54,12 @@ export class PlacesService {
       .catch(this.handleError)
   }
 
+  deleteRoute(barsrouteId) {
+    return this.http.put(`${BASEURL}/profile/delete/route`, {barsrouteId}, this.options)
+      .map(res => res.json())
+      .catch(this.handleError)
+  }
+
   searchRoutes(city, schedule, routegenre, pricerange) {
     return this.http.post(`${BASEURL}/`, {city, schedule, routegenre, pricerange}, this.options)
       .map(res => {

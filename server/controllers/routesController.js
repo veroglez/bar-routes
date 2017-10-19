@@ -84,6 +84,14 @@ module.exports = {
     .catch(e => {res.status(400).json(e) })
   },
 
+  deleteRoutes: (req, res, next) => {
+    const { barsrouteId } = req.body
+    console.log(barsrouteId)
+    Barsroute.findByIdAndRemove( barsrouteId )
+    .then( barRoute => {res.json( {barRoute: barRoute} )})
+    .catch(e => {res.status(400).json(e) })
+  },
+
   searchRoutes: (req, res, next) => {
     const { city, schedule, routegenre, pricerange } = req.body
 
