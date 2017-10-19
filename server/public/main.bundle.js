@@ -182,7 +182,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_21__routes__["a" /* routes */]),
             // ReactiveFormsModule,
             __WEBPACK_IMPORTED_MODULE_7_angular2_google_maps_core__["AgmCoreModule"].forRoot({
-                apiKey: 'AIzaSyD6kQpdkVk-xQXObw1jvODNoEgIOLDfVBc',
+                apiKey: 'AIzaSyAdiKx5c_lSDsGJW8KhCDm9Yid5YefDBnA',
                 libraries: ["places"]
             }),
             __WEBPACK_IMPORTED_MODULE_6__angular_forms__["c" /* ReactiveFormsModule */]
@@ -335,9 +335,9 @@ var HomeComponent = (function () {
         this.auth = auth;
         this.places_genre = [
             'Romantic',
-            'Live music',
+            'Live Music',
             'After',
-            'Brunch',
+            'Brunch'
         ];
         this.price_range = [
             'Cheap',
@@ -827,9 +827,9 @@ var NewRouteDataComponent = (function () {
         this.onSubmitId = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.places_genre = [
             'Romantic',
-            'Live music',
+            'Live Music',
             'After',
-            'Brunch',
+            'Brunch'
         ];
         this.price_range = [
             'Cheap',
@@ -1199,6 +1199,11 @@ var PlacesService = (function () {
             .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };
+    PlacesService.prototype.deleteRoute = function (barsrouteId, routeId) {
+        return this.http.put(BASEURL + "/profile/delete/route", { barsrouteId: barsrouteId, routeId: routeId }, this.options)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
     PlacesService.prototype.searchRoutes = function (city, schedule, routegenre, pricerange) {
         var _this = this;
         return this.http.post(BASEURL + "/", { city: city, schedule: schedule, routegenre: routegenre, pricerange: pricerange }, this.options)
@@ -1336,7 +1341,7 @@ var ShowRoutesComponent = (function () {
         var _this = this;
         setTimeout(function () {
             console.log('estoy en /routes:', _this.places.allRoutes);
-        }, 100);
+        }, 1000);
     };
     return ShowRoutesComponent;
 }());
@@ -1590,7 +1595,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/userprofile/userprofile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-container-section\" style=\"padding-top:50px\">\n  <div *ngIf=\"!user\">\n    <h2>NO USER LOGGED IN</h2>\n  </div>\n  <div *ngIf=\"user\">\n    <h1>Profile</h1>\n    <div class=\"profile col-md-12\">\n      <div class=\" col-md-6\">\n        <div class=\" col-md-12\">\n          <img class=\"img-responsive\" style=\"margin:0 auto\" src=\"http://www.dinneer.com/images/users/user_icon.png\" alt=\"\">\n        </div>\n        <div class=\" col-md-12 text-center\">\n          <h4>Username:  <span class=\"yellow\">{{ user.username }}</span></h4>\n          <h4>Email:  <span class=\"yellow\">{{ user.email }}</span></h4>\n          <button [routerLink]=\"['/profile', user._id, 'edit']\" class=\"btn\" style=\"margin-right: 20px\">Edit profile</button>\n          <button [routerLink]=\"['/profile', user._id, 'routes','new']\" class=\"btn\">Create route</button>\n        </div>\n      </div>\n      <div class=\"profile col-md-6 text-left my-routes\">\n        <h3 style=\"color:black\">Mis rutas</h3>\n        <ul>\n          <li *ngFor =\"let e of routes\">\n            <div class=\"col-md-10\">\n              <a [routerLink]=\"['/routes', e._id]\">{{e.routeId.name}}</a>\n            </div>\n            <div class=\"col-md-2\">\n              <!-- <span class=\"glyphicon glyphicon-remove\" style=\"font-weight:300\" aria-hidden=\"true\"></span> -->\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"page-container-section\" style=\"padding-top:50px\">\n  <div *ngIf=\"!user\">\n    <h2>NO USER LOGGED IN</h2>\n  </div>\n  <div *ngIf=\"user\">\n    <h1>Profile</h1>\n    <div class=\"profile col-md-12\">\n      <div class=\" col-md-6\">\n        <div class=\" col-md-12\">\n          <img class=\"img-responsive\" style=\"margin:0 auto\" src=\"http://www.dinneer.com/images/users/user_icon.png\" alt=\"\">\n        </div>\n        <div class=\" col-md-12 text-center\">\n          <h4>Username:  <span class=\"yellow\">{{ user.username }}</span></h4>\n          <h4>Email:  <span class=\"yellow\">{{ user.email }}</span></h4>\n          <button [routerLink]=\"['/profile', user._id, 'edit']\" class=\"btn\" style=\"margin-right: 20px\">Edit profile</button>\n          <button [routerLink]=\"['/profile', user._id, 'routes','new']\" class=\"btn\">Create route</button>\n        </div>\n      </div>\n      <div class=\"profile col-md-6 text-left my-routes\">\n        <h3 style=\"color:black\">Mis rutas</h3>\n        <ul>\n          <li *ngFor =\"let e of routes\">\n            <div class=\"col-md-10\">\n              <a [routerLink]=\"['/routes', e._id]\">{{e.routeId.name}}</a>\n            </div>\n            <div class=\"col-md-2\">\n              <span class=\"glyphicon glyphicon-remove\" (click)=\"deleteRoute(e)\" style=\"font-weight:300\" aria-hidden=\"true\"></span>\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1602,6 +1607,7 @@ module.exports = "<div class=\"page-container-section\" style=\"padding-top:50px
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_places_service__ = __webpack_require__("../../../../../src/app/services/places.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1614,11 +1620,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var UserprofileComponent = (function () {
-    function UserprofileComponent(auth, router) {
+    function UserprofileComponent(auth, router, places) {
         var _this = this;
         this.auth = auth;
         this.router = router;
+        this.places = places;
         this.user = this.auth.getUser();
         this.auth.getLoginEventEmitter()
             .subscribe(function (user) { return _this.user = user; });
@@ -1636,6 +1644,13 @@ var UserprofileComponent = (function () {
             console.log(_this.routes);
         });
     };
+    UserprofileComponent.prototype.deleteRoute = function (route) {
+        console.log(route.routeId._id);
+        var positionId = this.routes.indexOf(route);
+        this.places.deleteRoute(this.routes[positionId], route.routeId._id).subscribe();
+        this.routes.splice(positionId, 1);
+        console.log(positionId);
+    };
     return UserprofileComponent;
 }());
 UserprofileComponent = __decorate([
@@ -1644,10 +1659,10 @@ UserprofileComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/userprofile/userprofile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/userprofile/userprofile.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_places_service__["a" /* PlacesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_places_service__["a" /* PlacesService */]) === "function" && _c || Object])
 ], UserprofileComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=userprofile.component.js.map
 
 /***/ }),
