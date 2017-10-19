@@ -11,7 +11,7 @@ const RouteSchema = new Schema({
       'Romantic',
       'Live Music',
       'After',
-      'Comer'
+      'Brunch'
     ]
   },
   priceRange: {

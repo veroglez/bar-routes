@@ -24,9 +24,9 @@ export class NewRouteDataComponent implements OnInit {
 
   places_genre = [
     'Romantic',
-    'Live music',
+    'Live Music',
     'After',
-    'Brunch',
+    'Brunch'
   ]
   price_range = [
     'Cheap',

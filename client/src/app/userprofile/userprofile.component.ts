@@ -34,9 +34,9 @@ export class UserprofileComponent implements OnInit {
   }
 
   deleteRoute(route){
-    console.log(route)
+    console.log(route.routeId._id)
     let positionId = this.routes.indexOf(route)
-    this.places.deleteRoute(this.routes[positionId]).subscribe()
+    this.places.deleteRoute(this.routes[positionId], route.routeId._id).subscribe()
     this.routes.splice(positionId,1)
     console.log(positionId)
   }

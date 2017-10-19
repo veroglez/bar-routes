@@ -85,10 +85,14 @@ module.exports = {
   },
 
   deleteRoutes: (req, res, next) => {
-    const { barsrouteId } = req.body
+    const { barsrouteId, routeId } = req.body
     console.log(barsrouteId)
+    console.log(routeId)
     Barsroute.findByIdAndRemove( barsrouteId )
-    .then( barRoute => {res.json( {barRoute: barRoute} )})
+    .then( barRoute => {
+      Route.findByIdAndRemove ( routeId )
+      .then( route => res.json( {barRoute: barRoute} ) )
+    })
     .catch(e => {res.status(400).json(e) })
   },
 
