@@ -20,7 +20,6 @@ import { LoginformComponent } from './loginform/loginform.component'
 import { SignupformComponent } from './signupform/signupform.component'
 import { UserprofileComponent } from './userprofile/userprofile.component'
 import { EditprofileComponent } from './editprofile/editprofile.component'
-import { VerotronikComponent } from './shared/verotronik/verotronik.component'
 import { NewRouteDataComponent } from './new-route-data/new-route-data.component'
 
 // Services
@@ -38,7 +37,6 @@ import { ShowSimpleRouteComponent } from './show-simple-route/show-simple-route.
     LoginformComponent,
     UserprofileComponent,
     EditprofileComponent,
-    VerotronikComponent,
     MapComponent,
     NewRouteComponent,
     NewRouteDataComponent,
@@ -53,7 +51,6 @@ import { ShowSimpleRouteComponent } from './show-simple-route/show-simple-route.
     FormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
-    // ReactiveFormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAdiKx5c_lSDsGJW8KhCDm9Yid5YefDBnA',
       libraries: ["places"]

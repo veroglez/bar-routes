@@ -8,7 +8,7 @@ const destination = path.join(__dirname, "../public/avatar/")
 module.exports = {
   editProfile: (req, res, next) => {
     const userId = req.params.id
-    const {username, email, password} = req.body;
+    const {username, email, password} = req.body
 
     const hashPass = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
 

@@ -37,7 +37,6 @@ export class AuthService {
     }
 
     signup(username,password, email) {
-      // console.log("entrooo")
       return this.http.post(`${BASEURL}/signup`, {username,password, email}, this.options)
         .map(res => res.json())
         .map(user => this.emitUserLoginEvent(user))
@@ -67,12 +66,9 @@ export class AuthService {
 
     editProfile(username,password, email) {
       this.userId = this.getUser()
-      // console.log("editoooo", this.userId)
-      // console.log(this.userId._id)
       return this.http.put(`${BASEURL}/profile/${this.userId._id}/edit`, {username,password, email}, this.options)
         .map(res => res.json())
         .map(response_object => {
-          // console.log('response:', response_object.user)
           this.emitUserLoginEvent(response_object.user)
         })
         .catch(this.handleError)

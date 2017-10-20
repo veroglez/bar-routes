@@ -1,15 +1,14 @@
-import { Routes } from '@angular/router';
-
-import {UserprofileComponent} from './userprofile/userprofile.component';
-import {EditprofileComponent} from './editprofile/editprofile.component';
-import {LoginformComponent} from './loginform/loginform.component';
-import {SignupformComponent} from './signupform/signupform.component';
-import {IsLoggedInService} from './services/isLoggedIn.canactivate.service';
-import {MapComponent} from './map/map.component';
-import {HomeComponent} from './home/home.component';
-import {NewRouteComponent} from './new-route/new-route.component';
-import {ShowRoutesComponent} from './show-routes/show-routes.component';
-import {ShowSimpleRouteComponent} from './show-simple-route/show-simple-route.component';
+import { Routes } from '@angular/router'
+import {UserprofileComponent} from './userprofile/userprofile.component'
+import {EditprofileComponent} from './editprofile/editprofile.component'
+import {LoginformComponent} from './loginform/loginform.component'
+import {SignupformComponent} from './signupform/signupform.component'
+import {IsLoggedInService} from './services/isLoggedIn.canactivate.service'
+import {MapComponent} from './map/map.component'
+import {HomeComponent} from './home/home.component'
+import {NewRouteComponent} from './new-route/new-route.component'
+import {ShowRoutesComponent} from './show-routes/show-routes.component'
+import {ShowSimpleRouteComponent} from './show-simple-route/show-simple-route.component'
 
 export const routes: Routes = [
     { path: '',  component: HomeComponent },
@@ -21,4 +20,4 @@ export const routes: Routes = [
     { path: 'routes', component: ShowRoutesComponent },
     { path: 'routes/:id',  component: ShowSimpleRouteComponent},
     { path: '**', redirectTo: '' },
-];
+]

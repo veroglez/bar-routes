@@ -29,16 +29,13 @@ export class UserprofileComponent implements OnInit {
   getUserId(id){
     this.auth.getUserId(id).subscribe(routes =>{
       this.routes = routes.user
-      console.log(this.routes)
     })
   }
 
   deleteRoute(route){
-    console.log(route.routeId._id)
     let positionId = this.routes.indexOf(route)
     this.places.deleteRoute(this.routes[positionId], route.routeId._id).subscribe()
     this.routes.splice(positionId,1)
-    console.log(positionId)
   }
 
 }

@@ -14,9 +14,7 @@ interface Place{
   lng:any
   id:string
   name:string
-  // types:Array<string>
   photos:Array<object>
-  // address_components: Array<object>
 }
 
 @Component({
@@ -93,7 +91,6 @@ export class MapComponent implements OnInit {
       this.ngZone.run(() => {
 
         let place: google.maps.places.PlaceResult = autocomplete.getPlace()
-        console.log(place)
         this.placeLatitude = place.geometry.location.lat()
         this.placeLongitude = place.geometry.location.lng()
         this.placePlaceId = place.id
@@ -103,7 +100,6 @@ export class MapComponent implements OnInit {
         this.createPlace()
 
         this.arrPlaces.push({ placeId: place.place_id, placeName: place.name, lng: place.geometry.location.lng(), lat: place.geometry.location.lat() })
-        console.log(this.arrPlaces)
         if (place.geometry === undefined) return
 
         if (mode === 'ORG') {
@@ -155,23 +151,18 @@ export class MapComponent implements OnInit {
     this.places.createPlaces(this.placeName, this.places.routeId, this.placePlaceId, this.placeLatitude, this.placeLongitude, this.placePhotos, this.mapPlaceId).subscribe( place => {
       this.arrPlacesName.push(place.name)
       this.arrPlacesIds.push(place._id)
-
-      console.log(this.arrPlacesName)
     })
   }
 
   deletePlace(place){
 
-    console.log(place)
 
     let positionId = this.arrPlacesName.indexOf(place)
-    console.log(positionId)
     this.places.deletePlace(this.arrPlacesIds[positionId], this.places.barsroute._id).subscribe()
     this.arrPlacesName.splice(positionId,1)
     this.arrPlacesIds.splice(positionId,1)
     this.arrPlaces.splice(positionId,1)
 
-    console.log(this.arrPlacesName)
     this.vc.waypoints=[]
     this.vc.origin = { longitude: this.arrPlaces[0]['lng'], latitude: this.arrPlaces[0]['lat'] }
     this.vc.originPlaceId = this.arrPlaces[0]['placeId']
@@ -184,8 +175,5 @@ export class MapComponent implements OnInit {
 
     this.vc.updateDirections()
 
-
   }
-
-
 }

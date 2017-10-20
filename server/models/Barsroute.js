@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema   = mongoose.Schema
 
 const BarsrouteSchema = new Schema({
   userId: String,
@@ -10,7 +10,7 @@ const BarsrouteSchema = new Schema({
     createdAt: 'created_at',
     updatedAt: 'updated_at'
   }
-});
+})
 
-const Barsroute = mongoose.model('Barsroute', BarsrouteSchema);
-module.exports = Barsroute;
+const Barsroute = mongoose.model('Barsroute', BarsrouteSchema)
+module.exports = Barsroute

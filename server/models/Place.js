@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema   = mongoose.Schema
 
 const placeSchema = new Schema({
   id: String,
@@ -13,7 +13,7 @@ const placeSchema = new Schema({
     createdAt: 'created_at',
     updatedAt: 'updated_at'
   }
-});
+})
 
-const Place = mongoose.model('Place', placeSchema);
-module.exports = Place;
+const Place = mongoose.model('Place', placeSchema)
+module.exports = Place

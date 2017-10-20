@@ -51,7 +51,6 @@ module.exports = {
       })
     })
     .catch(e => {
-      console.log(e)
       res.status(400).json({ message: 'Something went wrong' })
     })
   },
@@ -74,14 +73,14 @@ module.exports = {
   },
 
   logout: (req, res, next) => {
-    req.logout();
-    res.status(200).json({ message: 'Success' });
+    req.logout()
+    res.status(200).json({ message: 'Success' })
   },
 
   loggedIn: (req, res, next) => {
     if (req.isAuthenticated())
-      return res.status(200).json(req.user);
-    res.status(403).json({ message: 'Unauthorized' });
+      return res.status(200).json(req.user)
+    res.status(403).json({ message: 'Unauthorized' })
   },
 
 }

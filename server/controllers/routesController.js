@@ -58,7 +58,7 @@ module.exports = {
           routeId:route._id,
         })
         theBarsroute.save().then( br =>{
-          res.status(200).json(br);
+          res.status(200).json(br)
         })
       })
     })
@@ -86,8 +86,6 @@ module.exports = {
 
   deleteRoutes: (req, res, next) => {
     const { barsrouteId, routeId } = req.body
-    console.log(barsrouteId)
-    console.log(routeId)
     Barsroute.findByIdAndRemove( barsrouteId )
     .then( barRoute => {
       Route.findByIdAndRemove ( routeId )

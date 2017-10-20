@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../services/auth.service';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core'
+import {AuthService} from '../services/auth.service'
+import { Router } from '@angular/router'
 
 
 @Component({
@@ -20,14 +20,13 @@ formInfo = {
   }
 
   signup(){
-    const {username, password, email} = this.formInfo;
+    const {username, password, email} = this.formInfo
     if(username != "" && password != "" && email != ""){
-      console.log(`Signup with ${username} ${password}`)
       this.auth.signup(username, password, email)
       .map(user => console.log(user))
-      .subscribe( ()=> this.router.navigate(["/"]) );
+      .subscribe( ()=> this.router.navigate(["/"]) )
     } else{
-      console.log("You must set a username and a password");
+      console.log("You must set a username and a password")
     }
   }
 

@@ -14,12 +14,10 @@ export class NewRouteComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.auth.getUser()
-    console.log(this.user)
 
   }
 
   receiveEmitter(a){
     this.routeId = a
-    console.log('componente padre', this.routeId)
   }
 }

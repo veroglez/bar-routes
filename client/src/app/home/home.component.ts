@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 import {PlacesService} from '../services/places.service'
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../services/auth.service'
 
 
 interface LoginForm{
@@ -44,15 +44,15 @@ export class HomeComponent implements OnInit {
   user
 
   constructor(public places:PlacesService, public auth:AuthService) {
-    this.user = this.auth.getUser();
+    this.user = this.auth.getUser()
     this.auth.getLoginEventEmitter()
-        .subscribe( user => this.user=user );}
+        .subscribe( user => this.user=user )}
 
   ngOnInit() {}
 
 
   searchRoutes(){
-    const {city, schedule, routegenre, pricerange} = this.formInfo;
+    const {city, schedule, routegenre, pricerange} = this.formInfo
     this.places.searchRoutes(city, schedule, routegenre, pricerange).subscribe(
       res => console.log('componente',res)
     )

@@ -1,4 +1,4 @@
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router'
 import { Component, NgModule, NgZone, OnInit, ViewChild, ElementRef, Directive, Input } from '@angular/core'
 import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms"
 import { BrowserModule } from "@angular/platform-browser"
@@ -18,7 +18,6 @@ export class ShowSimpleRouteComponent implements OnInit {placeLatitude
 
   public latitude: number
   public longitude: number
-  // public destinationInput: FormControl
   public zoom: number
   public iconurl: string
   public mapCustomStyles: any
@@ -64,9 +63,9 @@ export class ShowSimpleRouteComponent implements OnInit {placeLatitude
   }
 
   getRoute(id){
-    this.places.getRoute(id).subscribe(route =>
-      {console.log(route)
-      this.route = route})
+    this.places.getRoute(id).subscribe(route =>{
+      this.route = route
+    })
   }
 
   showRoute(){
